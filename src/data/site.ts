@@ -247,16 +247,39 @@ export const features = [
 ];
 
 export const comparison = {
-  columns: ["Asheville Water Specialists", "Typical Installer"],
+  columns: [
+    "Asheville Water Specialists",
+    "Culligan",
+    "Kinetico",
+    "Leaf Home Water",
+    "Home Depot DIY",
+  ],
   rows: [
-    { feature: "Lab-backed water report before recommending", us: true, them: false },
-    { feature: "Recommends only what your water needs", us: true, them: false },
-    { feature: "Flat, all-in pricing quoted up front", us: true, them: "varies" },
-    { feature: "Installed by a licensed NC plumber", us: true, them: "varies" },
-    { feature: "Lifetime valve warranty", us: true, them: "varies" },
-    { feature: "No scare tactics or one-size-fits-all systems", us: true, them: false },
-    { feature: "Locally owned, personally installed", us: true, them: false },
-  ] as { feature: string; us: boolean; them: boolean | "varies" }[],
+    {
+      feature: "Starting whole-home install price",
+      values: ["$2,699", "$5,500–$8,000", "$6,000–$9,000", "$5,000–$8,000", "$3,000–$4,500 + labor"],
+    },
+    {
+      feature: "NC-licensed plumber installation",
+      values: [true, "Varies", "Varies", "Varies", "DIY"],
+    },
+    {
+      feature: "Lifetime valve warranty",
+      values: [true, "Check local terms", "Check local terms", "Check local terms", false],
+    },
+    {
+      feature: "Flat, all-in pricing published",
+      values: [true, "Contact for quote", "Contact for quote", "Contact for quote", "Product price only"],
+    },
+    {
+      feature: "Water tested before recommendation",
+      values: [true, "Varies", "Varies", "Varies", false],
+    },
+    {
+      feature: "Local Asheville & WNC focus",
+      values: [true, "Varies by dealer", "Varies by dealer", "Regional service", false],
+    },
+  ] as { feature: string; values: (string | boolean)[] }[],
 };
 
 export const waterSources = [
