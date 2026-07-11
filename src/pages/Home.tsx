@@ -10,6 +10,7 @@ import { Journey } from "../components/Journey";
 import { Stats } from "../components/Stats";
 import { ServiceArea } from "../components/ServiceArea";
 import { CtaBand } from "../components/CtaBand";
+import { HomeContact } from "../components/HomeContact";
 
 export function Home() {
   return (
@@ -26,6 +27,7 @@ export function Home() {
       <Stats />
       <ServiceArea />
       <CtaBand />
+      <HomeContact />
     </>
   );
 }
