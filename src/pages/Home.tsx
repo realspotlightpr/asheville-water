@@ -4,6 +4,7 @@ import { WhyUs } from "../components/WhyUs";
 import { Products } from "../components/Products";
 import { Comparison } from "../components/Comparison";
 import { WaterSourceTabs } from "../components/WaterSourceTabs";
+import { WaterHealth } from "../components/WaterHealth";
 import { Features } from "../components/Features";
 import { Journey } from "../components/Journey";
 import { Stats } from "../components/Stats";
@@ -19,6 +20,7 @@ export function Home() {
       <Products limit={3} showViewAll heading="Popular Systems" />
       <Comparison />
       <WaterSourceTabs />
+      <WaterHealth />
       <Features />
       <Journey />
       <Stats />
