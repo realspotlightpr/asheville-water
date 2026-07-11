@@ -2,10 +2,27 @@ import { Link } from "react-router-dom";
 import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
 import { business, serviceCities } from "../data/site";
+import { Seo } from "../components/Seo";
 
 export function ServiceAreasPage() {
   return (
     <>
+      <Seo
+        title="Water Filtration Service Areas in Western NC | Asheville Water Specialists"
+        description="Explore water filtration, softening, reverse osmosis, and private-well treatment service areas across Asheville and Western North Carolina."
+        path="/service-areas"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Asheville Water Specialists service areas",
+          itemListElement: serviceCities.map((city, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: `${city.name}, NC`,
+            url: `https://asheville-water-specialists-432.netlify.app/service-areas/${city.slug}`,
+          })),
+        }}
+      />
       <PageHeader
         eyebrow="Service Areas"
         title="Proudly Serving Western North Carolina"

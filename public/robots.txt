@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asheville-water-specialists-432.netlify.app/sitemap.xml
