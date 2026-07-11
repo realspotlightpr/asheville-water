@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Logo } from "./Logo";
 import { business } from "../data/site";
 import { navMenus } from "../data/nav";
+import { GoogleLanguageSwitch } from "./GoogleLanguageSwitch";
 
 const plainLinks = [
   { label: "Gallery", to: "/gallery" },
@@ -24,6 +25,11 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-mist bg-white/95 backdrop-blur">
+      <div className="bg-navy">
+        <div className="mx-auto flex max-w-6xl justify-end px-4 py-1.5 sm:px-6">
+          <GoogleLanguageSwitch />
+        </div>
+      </div>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link to="/" onClick={() => setMobileOpen(false)}>
           <Logo />
@@ -89,12 +95,6 @@ export function Navbar() {
           >
             {business.phone}
           </a>
-          <Link
-            to="/es"
-            className="rounded-md border border-mist px-2 py-1 font-body text-xs font-semibold text-ink/60 hover:text-specialist"
-          >
-            ES
-          </Link>
           <Link
             to="/contact"
             className="rounded-full bg-amber px-5 py-2.5 font-body text-sm font-semibold text-ink shadow-sm transition hover:brightness-95"
@@ -165,13 +165,6 @@ export function Navbar() {
               {business.phone}
             </a>
             <div className="mt-2 flex gap-3">
-              <Link
-                to="/es"
-                onClick={() => setMobileOpen(false)}
-                className="rounded-md border border-mist px-3 py-2 font-body text-xs font-semibold text-ink/60"
-              >
-                ES
-              </Link>
               <Link
                 to="/contact"
                 onClick={() => setMobileOpen(false)}
