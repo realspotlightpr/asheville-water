@@ -2,24 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { business, featured } from "../data/site";
 
-function SystemIllustration() {
-  return (
-    <svg viewBox="0 0 200 200" className="h-44 w-44" aria-hidden="true">
-      {/* tank body */}
-      <rect x="66" y="40" width="68" height="120" rx="14" fill="#ffffff" />
-      <rect x="66" y="40" width="68" height="120" rx="14" fill="none" stroke="#0F4B91" strokeWidth="2" opacity="0.25" />
-      {/* faucet */}
-      <path d="M134 70 h20 a8 8 0 018 8 v6" fill="none" stroke="#0F4B91" strokeWidth="6" strokeLinecap="round" />
-      <rect x="158" y="90" width="8" height="18" rx="3" fill="#0F4B91" />
-      {/* wave mark on tank */}
-      <path d="M78 100 C 88 90, 98 90, 108 98 C 116 104, 124 104, 128 98" fill="none" stroke="#3897D2" strokeWidth="4" strokeLinecap="round" />
-      <path d="M78 114 C 88 104, 98 104, 108 112 C 116 118, 124 118, 128 112" fill="none" stroke="#0F4B91" strokeWidth="5" strokeLinecap="round" />
-      {/* base */}
-      <rect x="72" y="160" width="56" height="8" rx="4" fill="#2B3369" opacity="0.5" />
-    </svg>
-  );
-}
-
 export function ProductSpotlight() {
   const [index, setIndex] = useState(0);
   const item = featured[index];
@@ -48,8 +30,12 @@ export function ProductSpotlight() {
         </svg>
       </button>
 
-      <div className="flex justify-center">
-        <SystemIllustration />
+      <div className="flex h-52 items-center justify-center">
+        <img
+          src={item.image}
+          alt={item.name}
+          className="h-full w-full object-contain drop-shadow-xl"
+        />
       </div>
 
       <div className="mt-4 border-t border-white/15 pt-5">
@@ -76,7 +62,7 @@ export function ProductSpotlight() {
               Get a Quote
             </a>
             <Link
-              to="/products"
+              to={`/products/${item.slug}`}
               className="rounded-full bg-white px-4 py-2 font-body text-sm font-semibold text-navy transition hover:bg-mist"
             >
               Learn More →

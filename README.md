@@ -86,34 +86,26 @@ Defined as Tailwind theme tokens in `src/index.css` (use as `text-navy`,
 | `mist` | `#F1F6FC` | Light background |
 | `ink` | `#14233B` | Body text |
 
-The logo (`src/components/Logo.tsx`) is a CSS/SVG recreation of the wave mark —
-no raster asset yet. A reversed/white logo variant does **not** exist; dark
-sections use solid navy, not the logo.
+The official logo is stored at `public/assets/asheville-water-logo.png` and is
+rendered through `src/components/Logo.tsx` in the navigation and footer.
 
 ## Known TODO / placeholders (for the next agent)
 
 Everything below is intentionally stubbed and safe to build out:
 
-1. **Hero background video** — `src/components/Hero.tsx` renders
-   `<video src="/hero.mp4">` behind a gradient. Drop a file at
-   `public/hero.mp4` (+ optional `public/hero-poster.jpg`). No file exists yet;
-   it falls back to the gradient. If large, host externally rather than
-   committing to git.
-2. **Contact form** — `src/components/ContactForm.tsx` is UI-only; `onSubmit`
+1. **Contact form** — `src/components/ContactForm.tsx` is UI-only; `onSubmit`
    just sets local success state. Wire it to a real backend / CRM / email
    service (owner uses "HomeServiceHub" CRM; lead routing TBD).
-3. **Product photos** — detail pages and the hero spotlight use an SVG
-   illustration placeholder. Replace with real product images.
-4. **Social links** — `social` in `site.ts` has `#` placeholders for Instagram
+2. **Social links** — `social` in `site.ts` has `#` placeholders for Instagram
    & LinkedIn.
-5. **Stub page content** — city pages, resource articles, `/es`, and the legal
+3. **Stub page content** — city pages, resource articles, `/es`, and the legal
    pages (`privacy-policy`, `terms-of-service`, `warranty`) have starter copy
    only.
-6. **Gallery** — `src/pages/GalleryPage.tsx` uses placeholder tiles; add real
+4. **Gallery** — `src/pages/GalleryPage.tsx` uses placeholder tiles; add real
    install photos.
-7. **Testimonials** — none (pre-launch, no real reviews). Deliberately omitted
+5. **Testimonials** — none (pre-launch, no real reviews). Deliberately omitted
    rather than faked; add a section once real Google reviews exist.
-8. **EWG water-quality data** — `social.ewgTapWater` links to ewg.org generally;
+6. **EWG water-quality data** — `social.ewgTapWater` links to ewg.org generally;
    no city-specific PWS data is embedded.
 
 ## Business facts (source of truth: `src/data/site.ts`)
@@ -124,7 +116,5 @@ Everything below is intentionally stubbed and safe to build out:
 
 ## Deployment
 
-Static SPA — deploys to Netlify/Vercel/etc. from `npm run build` (output in
-`dist/`). Because it uses client-side routing, configure an SPA fallback so all
-paths serve `index.html` (e.g. a `_redirects` file with `/* /index.html 200`
-for Netlify, or `vercel.json` rewrites). Not yet configured.
+Static SPA deployed on Netlify from `npm run build` (output in `dist/`). Build
+and SPA fallback settings are defined in `netlify.toml`.

@@ -17,11 +17,11 @@ export function ProductDetailPage() {
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="flex items-center justify-center rounded-3xl bg-mist p-10">
-            <svg viewBox="0 0 200 200" className="h-56 w-56" aria-hidden="true">
-              <rect x="66" y="40" width="68" height="120" rx="14" fill="#ffffff" stroke="#0F4B91" strokeWidth="2" opacity="0.9" />
-              <path d="M78 100 C 88 90, 98 90, 108 98 C 116 104, 124 104, 128 98" fill="none" stroke="#3897D2" strokeWidth="4" strokeLinecap="round" />
-              <path d="M78 114 C 88 104, 98 104, 108 112 C 116 118, 124 118, 128 112" fill="none" stroke="#0F4B91" strokeWidth="5" strokeLinecap="round" />
-            </svg>
+            <img
+              src={product.image}
+              alt={product.name}
+              className="h-72 w-full object-contain drop-shadow-lg"
+            />
           </div>
           <div>
             <p className="font-heading text-3xl font-extrabold text-specialist">
@@ -44,10 +44,6 @@ export function ProductDetailPage() {
                 Call {business.phone}
               </a>
             </div>
-
-            <p className="mt-6 rounded-lg bg-mist px-4 py-3 font-body text-xs text-ink/60">
-              Starter product page — full specs, photos, and details to be added.
-            </p>
           </div>
         </div>
 

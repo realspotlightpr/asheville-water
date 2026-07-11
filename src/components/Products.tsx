@@ -36,6 +36,17 @@ export function Products({ limit, showViewAll, heading }: ProductsProps) {
                 {product.tag}
               </span>
             )}
+            <Link
+              to={`/products/${product.slug}`}
+              className="mb-5 flex h-52 items-center justify-center overflow-hidden rounded-xl bg-mist p-4"
+            >
+              <img
+                src={product.image}
+                alt={product.name}
+                className="h-full w-full object-contain transition duration-300 hover:scale-105"
+                loading="lazy"
+              />
+            </Link>
             <h3 className="font-heading text-lg font-semibold text-navy">
               <Link to={`/products/${product.slug}`} className="hover:text-specialist">
                 {product.name}

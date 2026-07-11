@@ -1,3 +1,15 @@
+import completeHomeSystemImage from "../../images/complete-home-system-ro.png";
+import extraLargeSoftenerImage from "../../images/WATER SOFTENER WITH CHLORINE FILTRATION.webp";
+import cityWaterDualTankImage from "../../images/CITY WATER DUAL TANK.webp";
+import carbonFilterImage from "../../images/WHOLE HOME WATER FILER CARBON ONLY TANK.webp";
+import saltFreeConditionerImage from "../../images/WHOLE HOME SALT-FREE CONDITIONER.webp";
+import wellWaterDualTankImage from "../../images/WELL WATER DUAL TANK.webp";
+import ironSulfurRemovalImage from "../../images/PREMIUM HOME IRON AND SULFUR REMOVAL SYSTEM.webp";
+import sevenStageRoImage from "../../images/HW800 AlkaPro 7 STAGE REVERSE OSMOSIS.webp";
+import fiveStageRoImage from "../../images/5STAGE REVERSE OSMOSIS SYS.webp";
+import uvSterilizerImage from "../../images/uv-sterilizer.webp";
+import preSedimentFilterImage from "../../images/pre-sediment-filter.webp";
+
 export const business = {
   name: "Asheville Water Specialists",
   phone: "(828) 903-8433",
@@ -25,12 +37,14 @@ export type Product = {
   category: string;
   price: string;
   blurb: string;
+  image: string;
   tag?: string;
 };
 
 export const products: Product[] = [
   {
     slug: "complete-home-system",
+    image: completeHomeSystemImage,
     name: "Complete Home Softener & Filtration — Large",
     category: "Whole-Home · City Water",
     price: "$2,699",
@@ -40,6 +54,7 @@ export const products: Product[] = [
   },
   {
     slug: "single-tank-softener",
+    image: extraLargeSoftenerImage,
     name: "Complete Home Softener & Filtration — Extra Large",
     category: "Whole-Home · City Water",
     price: "$2,999",
@@ -48,6 +63,7 @@ export const products: Product[] = [
   },
   {
     slug: "dual-tank-softener",
+    image: cityWaterDualTankImage,
     name: "Complete Home Softener & Filtration — Dual-Tank, Extra Large",
     category: "Whole-Home · City Water",
     price: "$3,299",
@@ -56,6 +72,7 @@ export const products: Product[] = [
   },
   {
     slug: "carbon-filter",
+    image: carbonFilterImage,
     name: "Carbon-Only Water Filter",
     category: "Whole-Home · City Water",
     price: "$2,699",
@@ -64,6 +81,7 @@ export const products: Product[] = [
   },
   {
     slug: "salt-free-conditioner",
+    image: saltFreeConditionerImage,
     name: "Salt-Free Water Conditioner",
     category: "Whole-Home · City Water",
     price: "$2,999",
@@ -72,6 +90,7 @@ export const products: Product[] = [
   },
   {
     slug: "well-water-system",
+    image: wellWaterDualTankImage,
     name: "Dual-Tank Well Water System",
     category: "Whole-Home · Private Well",
     price: "$3,999",
@@ -80,6 +99,7 @@ export const products: Product[] = [
   },
   {
     slug: "iron-sulfur-removal",
+    image: ironSulfurRemovalImage,
     name: "Complete Home Iron & Sulfur Removal System",
     category: "Whole-Home · Private Well",
     price: "$5,499",
@@ -88,6 +108,7 @@ export const products: Product[] = [
   },
   {
     slug: "7-stage-ro",
+    image: sevenStageRoImage,
     name: "Tankless Under-Sink RO",
     category: "Point-of-Use · Drinking Water",
     price: "$699",
@@ -96,6 +117,7 @@ export const products: Product[] = [
   },
   {
     slug: "5-stage-ro",
+    image: fiveStageRoImage,
     name: "Tank Under-Sink RO",
     category: "Point-of-Use · Drinking Water",
     price: "$599",
@@ -104,6 +126,7 @@ export const products: Product[] = [
   },
   {
     slug: "uv-sterilizer",
+    image: uvSterilizerImage,
     name: "UV Sterilizer",
     category: "Add-On · Well Water",
     price: "$699",
@@ -112,6 +135,7 @@ export const products: Product[] = [
   },
   {
     slug: "pre-sediment-filter",
+    image: preSedimentFilterImage,
     name: "Pre-Sediment Filter",
     category: "Add-On · Well Water",
     price: "$399",
@@ -150,18 +174,24 @@ export const heroPains = [
 
 export const featured = [
   {
+    slug: "complete-home-system",
+    image: completeHomeSystemImage,
     eyebrow: "Whole-Home · City Water",
     name: "Complete Softener & Filtration",
     spec: "Removes hardness & chlorine · lifetime valve warranty",
     price: "$2,699",
   },
   {
+    slug: "7-stage-ro",
+    image: sevenStageRoImage,
     eyebrow: "Point-of-Use · Drinking Water",
     name: "Tankless Under-Sink RO",
     spec: "Compact, remineralized, pH-balanced water on demand",
     price: "$699",
   },
   {
+    slug: "well-water-system",
+    image: wellWaterDualTankImage,
     eyebrow: "Whole-Home · Private Well",
     name: "Dual-Tank Well Water System",
     spec: "Air-injection removal of iron, sulfur & manganese",
