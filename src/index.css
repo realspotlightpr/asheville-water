@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --color-navy: #2b3369;
+  --color-specialist: #0f4b91;
+  --color-sky: #3897d2;
+  --color-amber: #f2a93b;
+  --color-mist: #f1f6fc;
+  --color-ink: #14233b;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
