@@ -4,10 +4,13 @@ import { WaterEducation } from "../components/WaterEducation";
 import { FAQ } from "../components/FAQ";
 import { CtaBand } from "../components/CtaBand";
 import { resourceArticles } from "../data/site";
+import { articleGuides } from "../data/articles";
+import { Seo } from "../components/Seo";
 
 export function ResourcesPage() {
   return (
     <>
+      <Seo title="Water Filtration Guides for Western NC | Asheville Water Specialists" description="Source-backed guides to water softeners, PFAS, lead, reverse osmosis, private-well testing, costs, maintenance, and water treatment in Western North Carolina." path="/resources" />
       <PageHeader
         eyebrow="Resources"
         title="Know What's In Your Water"
@@ -39,7 +42,7 @@ export function ResourcesPage() {
                 {article.blurb}
               </p>
               <span className="mt-4 font-body text-sm font-semibold text-specialist">
-                Read more →
+                {articleGuides.find((guide) => guide.slug === article.slug)?.readTime ?? "Read guide"} · Read more →
               </span>
             </Link>
           ))}
