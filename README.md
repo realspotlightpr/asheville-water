@@ -101,11 +101,9 @@ Everything below is intentionally stubbed and safe to build out:
 3. **Stub page content** — city pages, resource articles, `/es`, and the legal
    pages (`privacy-policy`, `terms-of-service`, `warranty`) have starter copy
    only.
-4. **Gallery** — `src/pages/GalleryPage.tsx` uses placeholder tiles; add real
-   install photos.
-5. **Testimonials** — none (pre-launch, no real reviews). Deliberately omitted
+4. **Testimonials** — none (pre-launch, no real reviews). Deliberately omitted
    rather than faked; add a section once real Google reviews exist.
-6. **EWG water-quality data** — `social.ewgTapWater` links to ewg.org generally;
+5. **EWG water-quality data** — `social.ewgTapWater` links to ewg.org generally;
    no city-specific PWS data is embedded.
 
 ## Business facts (source of truth: `src/data/site.ts`)
