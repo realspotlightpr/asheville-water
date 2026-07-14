@@ -78,7 +78,7 @@ export function Comparison() {
         </div>
 
         <p className="mx-auto mt-4 max-w-4xl text-center font-body text-xs leading-relaxed text-ink/45">
-          Competitor pricing and terms reflect publicly available information from Honest Water NC as of June 2026 and may vary by location, dealer, home, and selected equipment. Verify current terms directly with each provider.
+          Competitor pricing and terms reflect publicly available information as of June 2026 and may vary by location, provider, home, and selected equipment. Verify current terms directly with each provider.
         </p>
 
         <div className="mt-9 text-center">

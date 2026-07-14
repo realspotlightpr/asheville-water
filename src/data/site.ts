@@ -163,7 +163,7 @@ export const pillars = [
   },
 ];
 
-export const dealerBadge = "Official Honest Water Co Dealer";
+export const heroBadge = "Locally Owned & Operated in Western NC";
 
 export const heroPains = [
   { label: "Dry, itchy skin after showering", icon: "droplet" },

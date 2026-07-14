@@ -1,4 +1,5 @@
 import { business } from "../data/site";
+import { HighLevelForm } from "./HighLevelForm";
 
 function InfoIcon({ type }: { type: "phone" | "email" | "area" }) {
   const paths = {
@@ -84,30 +85,11 @@ export function HomeContact() {
                 <p className="font-heading text-lg font-bold text-navy">Request Your Free Report</p>
                 <p className="mt-1 font-body text-xs text-ink/50">Secure form powered by GoHighLevel</p>
               </div>
-              <span className="rounded-full bg-amber/20 px-3 py-1 font-body text-[10px] font-bold uppercase tracking-wide text-ink">Embed Pending</span>
+              <span className="rounded-full bg-emerald-100 px-3 py-1 font-body text-[10px] font-bold uppercase tracking-wide text-emerald-800">Live Form</span>
             </div>
 
-            <div className="relative overflow-hidden rounded-2xl border-2 border-dashed border-sky/25 bg-mist/40 p-5 sm:p-7">
-              <div className="pointer-events-none space-y-4 opacity-55" aria-hidden="true">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div><div className="mb-2 h-2 w-16 rounded bg-ink/20" /><div className="h-11 rounded-lg border border-slate-200 bg-white" /></div>
-                  <div><div className="mb-2 h-2 w-16 rounded bg-ink/20" /><div className="h-11 rounded-lg border border-slate-200 bg-white" /></div>
-                </div>
-                <div><div className="mb-2 h-2 w-20 rounded bg-ink/20" /><div className="h-11 rounded-lg border border-slate-200 bg-white" /></div>
-                <div><div className="mb-2 h-2 w-24 rounded bg-ink/20" /><div className="h-11 rounded-lg border border-slate-200 bg-white" /></div>
-                <div><div className="mb-2 h-2 w-16 rounded bg-ink/20" /><div className="h-24 rounded-lg border border-slate-200 bg-white" /></div>
-                <div className="h-12 rounded-lg bg-sky" />
-              </div>
-
-              <div className="absolute inset-0 flex items-center justify-center bg-white/35 p-6 backdrop-blur-[1px]">
-                <div className="max-w-sm rounded-2xl border border-sky/20 bg-white p-6 text-center shadow-lg">
-                  <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-specialist/10 text-specialist">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5" /><path d="M5 21h14" /></svg>
-                  </span>
-                  <p className="mt-4 font-heading text-base font-bold text-navy">GoHighLevel Form Placeholder</p>
-                  <p className="mt-2 font-body text-xs leading-relaxed text-ink/55">The final GoHighLevel iframe or embed code will replace this panel.</p>
-                </div>
-              </div>
+            <div className="min-h-[608px] overflow-hidden rounded-2xl bg-white">
+              <HighLevelForm />
             </div>
           </div>
         </div>

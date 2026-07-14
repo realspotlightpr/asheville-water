@@ -27,10 +27,21 @@ FILES = {
     "20260314_122945-rotated-e1773939116196.jpg": "single-tank-water-softener.webp",
 }
 
+created = 0
+skipped = 0
+
 for source_name, output_name in FILES.items():
+    output_path = OUTPUT / output_name
+    # Published gallery files may include approved white-label retouching. Keep
+    # those derivatives unless they are intentionally removed first.
+    if output_path.exists():
+        skipped += 1
+        continue
+
     with Image.open(SOURCE / source_name) as source:
         image = ImageOps.exif_transpose(source).convert("RGB")
         image.thumbnail((1400, 1400), Image.Resampling.LANCZOS)
-        image.save(OUTPUT / output_name, "WEBP", quality=78, method=6)
+        image.save(output_path, "WEBP", quality=78, method=6)
+        created += 1
 
-print(f"Optimized {len(FILES)} gallery images to {OUTPUT}")
+print(f"Created {created} gallery images and preserved {skipped} existing white-label assets in {OUTPUT}")

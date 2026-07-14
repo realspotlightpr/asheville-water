@@ -57,8 +57,9 @@ export function Footer() {
               <Logo />
             </div>
             <p className="mt-4 font-body text-sm text-white/60">
-              Official Honest Water Co dealer serving Asheville &amp; Western
-              North Carolina. Honest recommendations, licensed installation.
+              Locally owned water treatment specialists serving Asheville
+              &amp; Western North Carolina. Thoughtful recommendations and
+              licensed installation.
             </p>
             <p className="mt-4 font-body text-sm text-white/60">
               <a href={business.phoneHref} className="hover:text-white">

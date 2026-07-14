@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Icon } from "./Icon";
 import { ProductSpotlight } from "./ProductSpotlight";
-import { business, dealerBadge, heroPains } from "../data/site";
+import { business, heroBadge, heroPains } from "../data/site";
 
 export function Hero() {
   return (
@@ -41,7 +41,7 @@ export function Hero() {
                 <path d="M20 6L9 17l-5-5" />
               </svg>
             </span>
-            {dealerBadge}
+            {heroBadge}
           </span>
 
           <h1 className="mt-6 font-heading text-5xl font-extrabold leading-[1.05] text-white sm:text-6xl">

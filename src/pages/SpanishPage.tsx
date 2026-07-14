@@ -8,7 +8,7 @@ export function SpanishPage() {
       <PageHeader
         eyebrow="Español"
         title="Filtración de Agua en Asheville, NC"
-        subtitle="Distribuidor oficial de Honest Water Co. Sistemas de filtración y ablandamiento para toda la casa, instalados por un plomero con licencia de Carolina del Norte."
+        subtitle="Especialistas locales en sistemas de filtración y ablandamiento para toda la casa, instalados por un plomero con licencia de Carolina del Norte."
       />
       <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
         <p className="font-body text-ink/70">
