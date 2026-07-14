@@ -22,7 +22,7 @@ export function ContactForm() {
           </div>
 
           <div className="min-h-[608px] overflow-hidden rounded-2xl bg-white p-2">
-            <HighLevelForm />
+            <HighLevelForm placement="contact" />
           </div>
         </div>
       </div>

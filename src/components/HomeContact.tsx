@@ -89,7 +89,7 @@ export function HomeContact() {
             </div>
 
             <div className="min-h-[608px] overflow-hidden rounded-2xl bg-white">
-              <HighLevelForm />
+              <HighLevelForm placement="home" />
             </div>
           </div>
         </div>

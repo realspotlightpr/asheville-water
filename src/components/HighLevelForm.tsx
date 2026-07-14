@@ -1,24 +1,19 @@
-import { useEffect } from "react";
+const formId = "q1VWW0cYTti5sXIX4QNz";
 
-const formScriptId = "highlevel-form-embed-script";
+type HighLevelFormProps = {
+  placement: "home" | "contact";
+  className?: string;
+};
 
-export function HighLevelForm({ className = "" }: { className?: string }) {
-  useEffect(() => {
-    if (document.getElementById(formScriptId)) return;
-
-    const script = document.createElement("script");
-    script.id = formScriptId;
-    script.src = "https://api.homeservicehub.app/js/form_embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
+export function HighLevelForm({ placement, className = "" }: HighLevelFormProps) {
+  const iframeId = `inline-${formId}-${placement}`;
 
   return (
     <iframe
-      src="https://api.homeservicehub.app/widget/form/q1VWW0cYTti5sXIX4QNz"
+      src={`https://api.homeservicehub.app/widget/form/${formId}`}
       style={{ width: "100%", height: "608px", border: "none", borderRadius: "8px" }}
       className={className}
-      id="inline-q1VWW0cYTti5sXIX4QNz"
+      id={iframeId}
       data-layout='{"id":"INLINE"}'
       data-trigger-type="alwaysShow"
       data-trigger-value=""
@@ -28,10 +23,10 @@ export function HighLevelForm({ className = "" }: { className?: string }) {
       data-deactivation-value=""
       data-form-name="Form 0"
       data-height="608"
-      data-layout-iframe-id="inline-q1VWW0cYTti5sXIX4QNz"
-      data-form-id="q1VWW0cYTti5sXIX4QNz"
+      data-layout-iframe-id={iframeId}
+      data-form-id={formId}
       title="Request a free water report from Asheville Water Specialists"
-      loading="lazy"
+      loading="eager"
     />
   );
 }
