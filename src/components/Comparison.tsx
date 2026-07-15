@@ -55,7 +55,7 @@ export function Comparison() {
                     }`}
                   >
                     {index === 0 && <span className="mb-1 block font-body text-[10px] uppercase tracking-wider text-white/70">Our Company</span>}
-                    {column}
+                    <span className="notranslate" translate="no">{column}</span>
                   </th>
                 ))}
               </tr>

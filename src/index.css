@@ -16,6 +16,16 @@ body {
   font-family: var(--font-body);
   color: var(--color-ink);
   background: #ffffff;
+  top: 0 !important;
+}
+
+.gtranslate_wrapper,
+.gt_float_switcher,
+[class^="gt_float"],
+[class*=" gt_float"],
+body > .skiptranslate,
+body > iframe.goog-te-banner-frame {
+  display: none !important;
 }
 
 h1,

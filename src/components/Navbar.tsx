@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Logo } from "./Logo";
 import { business } from "../data/site";
 import { navMenus } from "../data/nav";
-import { GoogleLanguageSwitch } from "./GoogleLanguageSwitch";
+import { LanguageToggle } from "./LanguageToggle";
 
 const plainLinks = [
   { label: "Gallery", to: "/gallery" },
@@ -25,11 +25,6 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-mist bg-white/95 backdrop-blur">
-      <div className="bg-navy">
-        <div className="mx-auto flex max-w-6xl justify-end px-4 py-1.5 sm:px-6">
-          <GoogleLanguageSwitch />
-        </div>
-      </div>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link to="/" onClick={() => setMobileOpen(false)}>
           <Logo />
@@ -91,10 +86,12 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href={business.phoneHref}
-            className="font-body text-sm font-semibold text-navy hover:text-specialist"
+            className="notranslate font-body text-sm font-semibold text-navy hover:text-specialist"
+            translate="no"
           >
             {business.phone}
           </a>
+          <LanguageToggle />
           <Link
             to="/contact"
             className="rounded-full bg-amber px-5 py-2.5 font-body text-sm font-semibold text-ink shadow-sm transition hover:brightness-95"
@@ -161,9 +158,13 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a href={business.phoneHref} className="py-3 font-body text-sm font-semibold text-navy">
+            <a href={business.phoneHref} className="notranslate py-3 font-body text-sm font-semibold text-navy" translate="no">
               {business.phone}
             </a>
+            <div className="flex items-center justify-between gap-4 border-b border-mist/60 py-3">
+              <span className="font-body text-sm font-semibold text-ink">Language</span>
+              <LanguageToggle />
+            </div>
             <div className="mt-2 flex gap-3">
               <Link
                 to="/contact"

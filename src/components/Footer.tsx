@@ -62,11 +62,11 @@ export function Footer() {
               licensed installation.
             </p>
             <p className="mt-4 font-body text-sm text-white/60">
-              <a href={business.phoneHref} className="hover:text-white">
+              <a href={business.phoneHref} className="notranslate hover:text-white" translate="no">
                 {business.phone}
               </a>
               <br />
-              <a href={`mailto:${business.email}`} className="hover:text-white">
+              <a href={`mailto:${business.email}`} className="notranslate hover:text-white" translate="no">
                 {business.email}
               </a>
             </p>
@@ -131,7 +131,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-body text-xs text-white/40">
-            © {new Date().getFullYear()} {business.name}. All rights reserved.
+            © {new Date().getFullYear()} <span className="notranslate" translate="no">{business.name}</span>. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4">
             {legalLinks.map((link) => (

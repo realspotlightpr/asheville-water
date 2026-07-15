@@ -10,7 +10,6 @@ import { AboutPage } from "./pages/AboutPage";
 import { ResourcesPage } from "./pages/ResourcesPage";
 import { ResourceArticlePage } from "./pages/ResourceArticlePage";
 import { ContactPage } from "./pages/ContactPage";
-import { SpanishPage } from "./pages/SpanishPage";
 import { LegalPage } from "./pages/LegalPage";
 import { NotFound } from "./pages/NotFound";
 
@@ -33,7 +32,6 @@ function App() {
         <Route path="resources/:slug" element={<ResourceArticlePage />} />
 
         <Route path="contact" element={<ContactPage />} />
-        <Route path="es" element={<SpanishPage />} />
 
         <Route
           path="privacy-policy"

@@ -41,7 +41,7 @@ export function CtaBand({
             href={business.phoneHref}
             className="rounded-full border-2 border-white/80 bg-navy/20 px-7 py-3.5 font-body text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white hover:text-specialist"
           >
-            Call {business.phone}
+            Call <span className="notranslate" translate="no">{business.phone}</span>
           </a>
         </div>
       </div>

@@ -20,7 +20,7 @@ export function ContactPage() {
             <p className="font-body text-xs font-semibold uppercase tracking-wide text-specialist">
               Call
             </p>
-            <p className="mt-2 font-heading text-lg font-bold text-navy">
+            <p className="notranslate mt-2 font-heading text-lg font-bold text-navy" translate="no">
               {business.phone}
             </p>
           </a>
@@ -31,7 +31,7 @@ export function ContactPage() {
             <p className="font-body text-xs font-semibold uppercase tracking-wide text-specialist">
               Email
             </p>
-            <p className="mt-2 font-heading text-base font-bold text-navy break-words">
+            <p className="notranslate mt-2 break-words font-heading text-base font-bold text-navy" translate="no">
               {business.email}
             </p>
           </a>

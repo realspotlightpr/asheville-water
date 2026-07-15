@@ -86,7 +86,7 @@ export function Hero() {
               href={business.phoneHref}
               className="rounded-full border-2 border-white/40 px-7 py-3.5 font-body text-base font-semibold text-white transition hover:bg-white hover:text-navy"
             >
-              Call {business.phone}
+              Call <span className="notranslate" translate="no">{business.phone}</span>
             </a>
           </div>
         </div>

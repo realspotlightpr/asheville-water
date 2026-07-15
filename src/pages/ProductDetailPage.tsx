@@ -41,7 +41,7 @@ export function ProductDetailPage() {
                 href={business.phoneHref}
                 className="rounded-full border-2 border-navy px-6 py-3 font-body text-sm font-semibold text-navy transition hover:bg-navy hover:text-white"
               >
-                Call {business.phone}
+                Call <span className="notranslate" translate="no">{business.phone}</span>
               </a>
             </div>
           </div>

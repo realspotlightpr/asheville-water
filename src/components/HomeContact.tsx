@@ -38,7 +38,7 @@ export function HomeContact() {
                 <InfoIcon type="phone" />
                 <span>
                   <span className="block font-heading text-sm font-semibold text-navy">Phone</span>
-                  <span className="mt-1 block font-body text-sm text-ink/65 group-hover:text-specialist">{business.phone}</span>
+                  <span className="notranslate mt-1 block font-body text-sm text-ink/65 group-hover:text-specialist" translate="no">{business.phone}</span>
                 </span>
               </a>
 
@@ -46,7 +46,7 @@ export function HomeContact() {
                 <InfoIcon type="email" />
                 <span>
                   <span className="block font-heading text-sm font-semibold text-navy">Email</span>
-                  <span className="mt-1 block break-all font-body text-sm text-ink/65 group-hover:text-specialist">{business.email}</span>
+                  <span className="notranslate mt-1 block break-all font-body text-sm text-ink/65 group-hover:text-specialist" translate="no">{business.email}</span>
                 </span>
               </a>
 
@@ -74,7 +74,7 @@ export function HomeContact() {
               <p className="font-heading text-lg font-semibold">Prefer to talk first?</p>
               <p className="mt-2 font-body text-sm text-white/70">Call and tell us what you’re noticing. We’ll help you identify the right next step.</p>
               <a href={business.phoneHref} className="mt-5 inline-flex items-center gap-2 font-heading text-base font-bold text-amber hover:underline">
-                {business.phone} <span aria-hidden="true">→</span>
+                <span className="notranslate" translate="no">{business.phone}</span> <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>

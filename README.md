@@ -64,7 +64,6 @@ from it.
 | `/resources` | Water education + FAQ + article list |
 | `/resources/:slug` | Resource article (7 articles) |
 | `/contact` | Contact + report form |
-| `/es` | Spanish landing (stub) |
 | `/privacy-policy`, `/terms-of-service`, `/warranty` | Legal (stub) |
 | `*` | 404 |
 
@@ -97,7 +96,7 @@ Everything below is intentionally stubbed and safe to build out:
    service (owner uses "HomeServiceHub" CRM; lead routing TBD).
 2. **Social links** — `social` in `site.ts` has `#` placeholders for Instagram
    & LinkedIn.
-3. **Stub page content** — city pages, resource articles, `/es`, and the legal
+3. **Stub page content** — city pages, resource articles, and the legal
    pages (`privacy-policy`, `terms-of-service`, `warranty`) have starter copy
    only.
 4. **Testimonials** — none (pre-launch, no real reviews). Deliberately omitted

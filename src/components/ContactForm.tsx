@@ -17,7 +17,7 @@ export function ContactForm() {
               No obligation and no high-pressure sales—just clear next steps based on your home and water concerns. Prefer to talk first?
             </p>
             <a href={business.phoneHref} className="mt-5 inline-block font-heading text-lg font-bold text-amber">
-              {business.phone}
+              <span className="notranslate" translate="no">{business.phone}</span>
             </a>
           </div>
 

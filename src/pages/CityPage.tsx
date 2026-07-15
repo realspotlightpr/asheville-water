@@ -132,7 +132,7 @@ export function CityPage() {
               <p className="mt-6 max-w-3xl font-body text-lg leading-relaxed text-white/75">{city.tagline}</p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link to="/contact" className="rounded-full bg-amber px-7 py-3.5 font-body text-sm font-semibold text-ink shadow-lg transition hover:-translate-y-0.5 hover:brightness-105">Get My Free Water Report</Link>
-                <a href={business.phoneHref} className="rounded-full border-2 border-white/40 px-7 py-3.5 font-body text-sm font-semibold text-white transition hover:bg-white hover:text-navy">Call {business.phone}</a>
+                <a href={business.phoneHref} className="rounded-full border-2 border-white/40 px-7 py-3.5 font-body text-sm font-semibold text-white transition hover:bg-white hover:text-navy">Call <span className="notranslate" translate="no">{business.phone}</span></a>
               </div>
             </div>
 
