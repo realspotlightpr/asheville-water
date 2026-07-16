@@ -1,11 +1,11 @@
 import completeHomeSystemImage from "../../images/complete-home-system-ro.png";
-import extraLargeSoftenerImage from "../../images/WATER SOFTENER WITH CHLORINE FILTRATION.webp";
-import cityWaterDualTankImage from "../../images/CITY WATER DUAL TANK.webp";
+import extraLargeSoftenerImage from "../../images/WATER SOFTENER WITH CHLORINE FILTRATION.png";
+import cityWaterDualTankImage from "../../images/CITY WATER DUAL TANK.png";
 import carbonFilterImage from "../../images/WHOLE HOME WATER FILER CARBON ONLY TANK.webp";
 import saltFreeConditionerImage from "../../images/WHOLE HOME SALT-FREE CONDITIONER.webp";
-import wellWaterDualTankImage from "../../images/WELL WATER DUAL TANK.webp";
-import ironSulfurRemovalImage from "../../images/PREMIUM HOME IRON AND SULFUR REMOVAL SYSTEM.webp";
-import sevenStageRoImage from "../../images/HW800 AlkaPro 7 STAGE REVERSE OSMOSIS.webp";
+import wellWaterDualTankImage from "../../images/WELL WATER DUAL TANK.png";
+import ironSulfurRemovalImage from "../../images/PREMIUM HOME IRON AND SULFUR REMOVAL SYSTEM.png";
+import sevenStageRoImage from "../../images/HW800 AlkaPro 7 STAGE REVERSE OSMOSIS.png";
 import fiveStageRoImage from "../../images/5STAGE REVERSE OSMOSIS SYS.webp";
 import uvSterilizerImage from "../../images/uv-sterilizer.webp";
 import preSedimentFilterImage from "../../images/pre-sediment-filter.webp";
