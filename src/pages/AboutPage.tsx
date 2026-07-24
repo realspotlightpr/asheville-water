@@ -3,6 +3,7 @@ import { About } from "../components/About";
 import { WhyUs } from "../components/WhyUs";
 import { CtaBand } from "../components/CtaBand";
 import { Seo } from "../components/Seo";
+import { siteUrl } from "../data/seo";
 
 const aboutSchema = {
   "@context": "https://schema.org",
@@ -14,7 +15,7 @@ const aboutSchema = {
     "@type": "LocalBusiness",
     name: "Asheville Water Specialists",
     image:
-      "https://asheville-water-specialists-432.netlify.app/assets/doug-makenna-founders.webp",
+      `${siteUrl}/assets/doug-makenna-founders.webp`,
     telephone: "+1-828-903-8433",
     areaServed: "Western North Carolina",
     founder: [

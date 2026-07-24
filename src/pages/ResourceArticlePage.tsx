@@ -1,10 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 import { CtaBand } from "../components/CtaBand";
 import { Seo } from "../components/Seo";
+import { siteUrl } from "../data/seo";
 import { articleGuides } from "../data/articles";
 import { NotFound } from "./NotFound";
 
-const siteUrl = "https://asheville-water-specialists-432.netlify.app";
 
 export function ResourceArticlePage() {
   const { slug } = useParams();

@@ -3,6 +3,7 @@ import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
 import { business, serviceCities } from "../data/site";
 import { Seo } from "../components/Seo";
+import { siteUrl } from "../data/seo";
 
 export function ServiceAreasPage() {
   return (
@@ -19,7 +20,7 @@ export function ServiceAreasPage() {
             "@type": "ListItem",
             position: index + 1,
             name: `${city.name}, NC`,
-            url: `https://asheville-water-specialists-432.netlify.app/service-areas/${city.slug}`,
+            url: `${siteUrl}/service-areas/${city.slug}`,
           })),
         }}
       />

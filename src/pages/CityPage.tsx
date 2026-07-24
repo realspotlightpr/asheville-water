@@ -5,6 +5,7 @@ import { Seo } from "../components/Seo";
 import { business, products } from "../data/site";
 import { cityProfiles } from "../data/cities";
 import { NotFound } from "./NotFound";
+import { siteUrl } from "../data/seo";
 
 const serviceCards = [
   {
@@ -92,19 +93,19 @@ export function CityPage() {
         name: business.name,
         telephone: business.phone,
         email: business.email,
-        url: "https://asheville-water-specialists-432.netlify.app",
-        image: "https://asheville-water-specialists-432.netlify.app/assets/asheville-water-logo.png",
+        url: siteUrl,
+        image: `${siteUrl}/assets/asheville-water-logo.png`,
         areaServed: `${city.name}, NC`,
       },
-      url: `https://asheville-water-specialists-432.netlify.app${path}`,
+      url: `${siteUrl}${path}`,
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://asheville-water-specialists-432.netlify.app/" },
-        { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://asheville-water-specialists-432.netlify.app/service-areas" },
-        { "@type": "ListItem", position: 3, name: `${city.name}, NC`, item: `https://asheville-water-specialists-432.netlify.app${path}` },
+        { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+        { "@type": "ListItem", position: 2, name: "Service Areas", item: `${siteUrl}/service-areas` },
+        { "@type": "ListItem", position: 3, name: `${city.name}, NC`, item: `${siteUrl}${path}` },
       ],
     },
   ];

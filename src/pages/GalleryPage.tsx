@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CtaBand } from "../components/CtaBand";
 import { PageHeader } from "../components/PageHeader";
 import { Seo } from "../components/Seo";
+import { siteUrl } from "../data/seo";
 
 type Category = "All" | "Whole-Home" | "Dual-Tank" | "Reverse Osmosis" | "Specialty";
 
@@ -40,7 +41,7 @@ export function GalleryPage() {
     description: "Real whole-home filtration, softener, dual-tank, and reverse-osmosis installations in Western North Carolina.",
     mainEntity: {
       "@type": "ItemList",
-      itemListElement: photos.map((photo, index) => ({ "@type": "ImageObject", position: index + 1, name: photo.title, caption: photo.alt, contentUrl: `https://asheville-water-specialists-432.netlify.app${photo.src}` })),
+      itemListElement: photos.map((photo, index) => ({ "@type": "ImageObject", position: index + 1, name: photo.title, caption: photo.alt, contentUrl: `${siteUrl}${photo.src}` })),
     },
   };
 
