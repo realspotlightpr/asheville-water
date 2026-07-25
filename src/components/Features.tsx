@@ -9,7 +9,7 @@ export function Features() {
           What's Included
         </p>
         <h2 className="mt-3 font-heading text-3xl font-bold text-navy sm:text-4xl">
-          The <span className="notranslate" translate="no">Asheville Water Specialists</span> Standard
+          What you get before, during, and after installation
         </h2>
       </div>
 

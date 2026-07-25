@@ -32,11 +32,11 @@ export function Comparison() {
             How We Compare
           </p>
           <h2 className="mt-3 font-heading text-3xl font-extrabold text-navy sm:text-4xl">
-            We Named <span className="bg-gradient-to-r from-specialist to-sky bg-clip-text text-transparent">The Competition</span>
+            See the price, process, and proof before you choose.
           </h2>
           <p className="mt-4 font-body text-ink/65">
-            Vague comparisons are not useful. Here is how our published offer
-            stacks up against common alternatives.
+            You should not need a three-hour in-home pitch to understand your options.
+            We publish starting prices, explain the tradeoffs, and show what each system is designed to treat.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export function Comparison() {
             to="/contact"
             className="inline-flex items-center gap-3 rounded-lg bg-sky px-8 py-4 font-body text-base font-semibold text-navy shadow-md transition hover:-translate-y-0.5 hover:brightness-105"
           >
-            Get Our Price — No Obligation
+            See Our Published Prices — No Obligation
             <span aria-hidden="true">→</span>
           </Link>
         </div>

@@ -9,7 +9,7 @@ export function WhyUs() {
             Why Homeowners Choose Us
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-white sm:text-4xl">
-            We Sell Clarity and Confidence — Not Just Equipment
+            The right treatment starts with a water test — not a sales pitch.
           </h2>
         </div>
 

@@ -52,13 +52,17 @@ export function Hero() {
             <span className="text-sky">in Asheville, NC</span>
           </h1>
 
-          <p className="mt-6 font-body text-lg font-medium text-white/90">
-            Not sure what's actually in your water?
+          <p className="mt-6 font-body text-lg font-semibold text-white/95">
+            Know what's in your water before you buy a system.
           </p>
-          <p className="mt-2 max-w-xl font-body text-lg text-white/70">
-            Get clean, soft water from every tap. We test first, then recommend
-            only what your home's water needs — no scare tactics, no
-            one-size-fits-all systems.
+          <p className="mt-2 max-w-xl font-body text-lg text-white/75">
+            Start with a free personalized water report. We test city or well water,
+            explain the results in plain English, and recommend only what your home
+            actually needs — no scare tactics or one-size-fits-all package.
+          </p>
+          <p className="mt-3 max-w-xl font-body text-sm font-medium text-white/70">
+            Whole-home systems start at $2,699; add-on and drinking-water options start at $399.
+            Licensed North Carolina plumber installation.
           </p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">

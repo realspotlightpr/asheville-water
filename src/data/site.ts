@@ -147,19 +147,19 @@ export const products: Product[] = [
 export const pillars = [
   {
     title: "Science First",
-    body: "We don't guess. Every recommendation starts with understanding your home's actual water — not a one-size-fits-all sales pitch.",
+    body: "We start with your water source and test results, then explain what each issue means and which equipment treats it.",
   },
   {
     title: "Local Expertise",
-    body: "We're not selling the same filter nationwide. We solve problems unique to Asheville, Hendersonville, Weaverville, and the surrounding WNC communities.",
+    body: "City water and private wells behave differently across Asheville, Hendersonville, Weaverville, and WNC. Your recommendation is sized for your home and water source.",
   },
   {
     title: "Licensed Installation",
-    body: "Every system is installed by a licensed North Carolina plumber — not a subcontractor cutting corners.",
+    body: "Every system is installed by a licensed North Carolina plumber, with the plumbing scope and warranty explained before work begins.",
   },
   {
     title: "Honest Recommendations",
-    body: "We recommend only what your water requires — not the most expensive system on the truck.",
+    body: "You see the price, what the system treats, what it does not treat, and what maintenance costs before you decide.",
   },
 ];
 

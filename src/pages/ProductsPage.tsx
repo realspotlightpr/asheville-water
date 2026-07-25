@@ -10,7 +10,7 @@ export function ProductsPage() {
       <PageHeader
         eyebrow="Products & Pricing"
         title="Systems Built for Your Home's Water"
-        subtitle="Flat-rate, all-in pricing quoted up front. Every whole-home system is installed by a licensed North Carolina plumber."
+        subtitle="See published starting prices for whole-home filtration, softening, well-water treatment, and drinking-water RO. We test first, size the system to your water, and explain exactly what it does and does not treat."
       />
       <Products heading="Whole-Home & Point-of-Use Systems" />
 
