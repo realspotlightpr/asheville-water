@@ -100,11 +100,19 @@ export function Navbar() {
           </Link>
         </div>
 
-        <button
-          className="flex items-center justify-center rounded-md p-2 text-navy lg:hidden"
+        <div className="flex items-center gap-2 lg:hidden">
+          <Link
+            to="/contact"
+            onClick={() => setMobileOpen(false)}
+            className="rounded-full bg-amber px-3.5 py-2 font-body text-xs font-bold text-ink shadow-sm transition hover:brightness-95 sm:px-5 sm:text-sm"
+          >
+            Free Water Report
+          </Link>
+          <button
+          className="flex items-center justify-center rounded-md p-2 text-navy"
           aria-label="Toggle menu"
           onClick={() => setMobileOpen((v) => !v)}
-        >
+          >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             {mobileOpen ? (
               <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
@@ -112,7 +120,8 @@ export function Navbar() {
               <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
             )}
           </svg>
-        </button>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -171,7 +180,7 @@ export function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="flex-1 rounded-full bg-amber px-5 py-2.5 text-center font-body text-sm font-semibold text-ink"
               >
-                Contact
+                Get My Free Water Report
               </Link>
             </div>
           </nav>
