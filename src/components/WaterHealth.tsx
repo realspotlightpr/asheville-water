@@ -162,7 +162,7 @@ export function WaterHealth() {
           </div>
           <div className="flex shrink-0 flex-wrap gap-3">
             <a href="https://www.ewg.org/tapwater/system.php?pws=NC0111010" target="_blank" rel="noreferrer" className="rounded-full border border-white/25 px-4 py-2 font-body text-xs font-semibold text-white transition hover:bg-white hover:text-navy">View EWG Data</a>
-            <Link to="/contact" className="rounded-full bg-sky px-4 py-2 font-body text-xs font-semibold text-navy transition hover:brightness-110">Get My Water Report</Link>
+            <Link to="/contact" className="rounded-full bg-sky px-4 py-2 font-body text-xs font-semibold text-navy transition hover:brightness-110">Get a Free Consultation</Link>
           </div>
         </div>
 

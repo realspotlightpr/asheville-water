@@ -69,7 +69,7 @@ export function Products({ limit, showViewAll, heading }: ProductsProps) {
                 to="/contact"
                 className="flex-1 rounded-full bg-amber px-4 py-2 text-center font-body text-sm font-semibold text-ink transition hover:brightness-95"
               >
-                Get a Quote
+                Free Consultation
               </Link>
             </div>
           </div>
@@ -79,10 +79,10 @@ export function Products({ limit, showViewAll, heading }: ProductsProps) {
       {showViewAll && (
         <div className="mt-10 text-center">
           <Link
-            to="/products"
+            to="/services"
             className="inline-block rounded-full bg-specialist px-7 py-3 font-body text-sm font-semibold text-white transition hover:brightness-110"
           >
-            View All Systems &amp; Pricing
+            Explore Our Services
           </Link>
         </div>
       )}

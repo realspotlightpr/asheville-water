@@ -13,7 +13,7 @@ export function Logo({ className = "", variant = "full" }: LogoProps) {
       className={`notranslate ${
         variant === "mark"
           ? "h-12 w-20 object-cover object-top"
-          : "h-14 w-48 object-contain"
+          : "h-24 w-auto object-contain sm:h-28 lg:h-32"
       } ${className}`}
     />
   );

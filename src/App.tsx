@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { Home } from "./pages/Home";
 import { ProductsPage } from "./pages/ProductsPage";
+import { ServicesPage } from "./pages/ServicesPage";
 import { ProductDetailPage } from "./pages/ProductDetailPage";
 import { ServiceAreasPage } from "./pages/ServiceAreasPage";
 import { CityPage } from "./pages/CityPage";
@@ -21,6 +22,7 @@ function App() {
 
         <Route path="products" element={<ProductsPage />} />
         <Route path="products/:slug" element={<ProductDetailPage />} />
+        <Route path="services" element={<ServicesPage />} />
 
         <Route path="service-areas" element={<ServiceAreasPage />} />
         <Route path="service-areas/:slug" element={<CityPage />} />

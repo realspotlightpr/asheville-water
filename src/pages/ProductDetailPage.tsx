@@ -35,7 +35,7 @@ export function ProductDetailPage() {
                 to="/contact"
                 className="rounded-full bg-amber px-6 py-3 font-body text-sm font-semibold text-ink shadow-md transition hover:brightness-95"
               >
-                Get My Free Water Report
+                Get a Free Consultation
               </Link>
               <a
                 href={business.phoneHref}

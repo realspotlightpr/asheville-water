@@ -31,7 +31,7 @@ export function WaterEducation() {
           <p className="mt-4 font-body text-ink/70">
             We don't publish generic contamination numbers because they don't
             apply to your home. That's why every recommendation starts with a
-            personalized water report — not a canned sales pitch.
+            personalized consultation — not a canned sales pitch.
           </p>
         </div>
 

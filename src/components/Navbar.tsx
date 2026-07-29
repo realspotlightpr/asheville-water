@@ -25,7 +25,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-mist bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-1 sm:px-6">
         <Link to="/" onClick={() => setMobileOpen(false)}>
           <Logo />
         </Link>
@@ -96,7 +96,7 @@ export function Navbar() {
             to="/contact"
             className="rounded-full bg-amber px-5 py-2.5 font-body text-sm font-semibold text-ink shadow-sm transition hover:brightness-95"
           >
-            Contact
+            Get a Free Consultation
           </Link>
         </div>
 
@@ -106,7 +106,7 @@ export function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="rounded-full bg-amber px-3.5 py-2 font-body text-xs font-bold text-ink shadow-sm transition hover:brightness-95 sm:px-5 sm:text-sm"
           >
-            Free Water Report
+            Free Consultation
           </Link>
           <button
           className="flex items-center justify-center rounded-md p-2 text-navy"
@@ -180,7 +180,7 @@ export function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="flex-1 rounded-full bg-amber px-5 py-2.5 text-center font-body text-sm font-semibold text-ink"
               >
-                Get My Free Water Report
+                Get a Free Consultation
               </Link>
             </div>
           </nav>

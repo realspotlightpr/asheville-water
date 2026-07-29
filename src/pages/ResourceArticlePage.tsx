@@ -128,7 +128,7 @@ export function ResourceArticlePage() {
         </article>
       </main>
 
-      <CtaBand heading="Want Answers About Your Own Water?" sub="Start with a personalized water report and a recommendation tied to your home—not a generic online checklist." />
+      <CtaBand heading="Want Answers About Your Own Water?" sub="Start with a free consultation and a recommendation tied to your home—not a generic online checklist." />
     </>
   );
 }

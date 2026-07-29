@@ -8,7 +8,7 @@ type CtaBandProps = {
 
 export function CtaBand({
   heading = "Ready to Know What's In Your Water?",
-  sub = "Start with a free personalized water report — no obligation, no high-pressure sales.",
+  sub = "Start with a free consultation — no obligation and no high-pressure sales.",
 }: CtaBandProps) {
   return (
     <section className="relative overflow-hidden bg-navy">
@@ -35,7 +35,7 @@ export function CtaBand({
             to="/contact"
             className="rounded-full bg-amber px-7 py-3.5 font-body text-base font-semibold text-ink shadow-lg transition hover:-translate-y-0.5 hover:brightness-105"
           >
-            Get My Free Water Report
+            Get a Free Consultation
           </Link>
           <a
             href={business.phoneHref}

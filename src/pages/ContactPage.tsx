@@ -7,7 +7,7 @@ export function ContactPage() {
     <>
       <PageHeader
         eyebrow="Contact"
-        title="Get Your Free Water Report"
+        title="Get a Free Consultation"
         subtitle="No obligation, no high-pressure sales — just answers about what's coming out of your tap."
       />
 

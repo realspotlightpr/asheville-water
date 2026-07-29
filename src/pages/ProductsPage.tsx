@@ -42,7 +42,7 @@ export function ProductsPage() {
           <p className="mx-auto mt-8 max-w-2xl text-center font-body text-sm text-ink/60">
             Not sure which system fits your home?{" "}
             <Link to="/contact" className="font-semibold text-specialist underline">
-              Get a free water report
+              Get a free consultation
             </Link>{" "}
             and we'll recommend only what your water actually needs.
           </p>

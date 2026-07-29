@@ -52,7 +52,7 @@ export function CityPage() {
   if (!city) return <NotFound />;
 
   const title = `Water Filtration & Softening in ${city.name}, NC | Asheville Water Specialists`;
-  const description = `Water filtration, softeners, reverse osmosis, and private-well treatment in ${city.name}, NC. Licensed installation, transparent pricing, and a free personalized water report.`;
+  const description = `Water filtration, softeners, reverse osmosis, and private-well treatment in ${city.name}, NC. Licensed installation, transparent pricing, and a free consultation.`;
   const path = `/service-areas/${city.slug}`;
   const nearbyCities = city.nearby.map((nearbySlug) => cityProfiles.find((profile) => profile.slug === nearbySlug)).filter(Boolean);
   const startingPrice = products.find((product) => product.slug === "complete-home-system")?.price ?? "$2,699";
@@ -132,7 +132,7 @@ export function CityPage() {
               </h1>
               <p className="mt-6 max-w-3xl font-body text-lg leading-relaxed text-white/75">{city.tagline}</p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link to="/contact" className="rounded-full bg-amber px-7 py-3.5 font-body text-sm font-semibold text-ink shadow-lg transition hover:-translate-y-0.5 hover:brightness-105">Get My Free Water Report</Link>
+                <Link to="/contact" className="rounded-full bg-amber px-7 py-3.5 font-body text-sm font-semibold text-ink shadow-lg transition hover:-translate-y-0.5 hover:brightness-105">Get a Free Consultation</Link>
                 <a href={business.phoneHref} className="rounded-full border-2 border-white/40 px-7 py-3.5 font-body text-sm font-semibold text-white transition hover:bg-white hover:text-navy">Call <span className="notranslate" translate="no">{business.phone}</span></a>
               </div>
             </div>
@@ -233,7 +233,7 @@ export function CityPage() {
         </div>
       </section>
 
-      <CtaBand heading={`Ready for Better Water in ${city.name}?`} sub={`Start with a free personalized water report for your ${city.name} home—no obligation and no high-pressure sales.`} />
+      <CtaBand heading={`Ready for Better Water in ${city.name}?`} sub={`Start with a free consultation for your ${city.name} home—no obligation and no high-pressure sales.`} />
     </>
   );
 }

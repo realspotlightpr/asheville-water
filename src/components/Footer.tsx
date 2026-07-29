@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
 import { business, serviceCities, resourceArticles, social } from "../data/site";
 
-const productLinks = [
-  { label: "Whole-Home Systems", to: "/products" },
-  { label: "Water Softeners", to: "/products/single-tank-softener" },
-  { label: "Reverse Osmosis", to: "/products/7-stage-ro" },
-  { label: "Pre-Filters", to: "/products/pre-sediment-filter" },
+const serviceLinks = [
+  { label: "Whole-Home Filtration", to: "/services#whole-home-filtration" },
+  { label: "Reverse Osmosis", to: "/services#reverse-osmosis" },
+  { label: "Well Water Treatment", to: "/services#well-water-treatment" },
+  { label: "Water Softeners", to: "/services#water-softeners" },
+  { label: "Carbon Filtration", to: "/services#carbon-filtration" },
+  { label: "City Water Treatment", to: "/services#city-water-treatment" },
 ];
 
 const companyLinks = [
@@ -94,7 +96,7 @@ export function Footer() {
             </div>
           </div>
 
-          <Column title="Products" links={productLinks} />
+          <Column title="Services" links={serviceLinks} />
 
           <div>
             <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-white">

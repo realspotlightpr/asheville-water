@@ -16,7 +16,7 @@ export function Journey() {
             How It Works
           </p>
           <h2 className="mt-3 font-heading text-3xl font-extrabold text-navy sm:text-4xl">
-            From Free Report to Clean Water — Start to Finish
+            From Free Consultation to Clean Water — Start to Finish
           </h2>
           <p className="mx-auto mt-4 max-w-2xl font-body text-ink/65">
             In three steps, you’ll know what is in your water, what it means, and what we would install — if anything.
@@ -61,7 +61,7 @@ export function Journey() {
         <div className="mt-10 flex justify-center">
           <div className="flex items-center gap-3 rounded-full border border-sky/15 bg-mist/60 px-5 py-2.5 font-body text-xs text-ink/60">
             <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-            One clear point of contact from report through follow-up
+            One clear point of contact from consultation through follow-up
           </div>
         </div>
       </div>

@@ -59,7 +59,7 @@ export function ProductSpotlight() {
               href={business.phoneHref}
               className="font-body text-sm font-semibold text-white underline-offset-4 hover:underline"
             >
-              Get a Quote
+              Get a Free Consultation
             </a>
             <Link
               to={`/products/${item.slug}`}

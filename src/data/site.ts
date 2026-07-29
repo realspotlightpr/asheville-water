@@ -49,7 +49,7 @@ export const products: Product[] = [
     category: "Whole-Home · City Water",
     price: "$2,699",
     blurb:
-      "Single-tank mixed-bed system for standard city water. Removes hardness and chlorine. Lifetime valve warranty, 5-year media, 1-year RO.",
+      "Made in the USA. Single-tank mixed-bed system for standard city water. Removes hardness and chlorine. Lifetime warranty, 5-year media, 1-year RO.",
     tag: "Most popular",
   },
   {
@@ -178,7 +178,7 @@ export const featured = [
     image: completeHomeSystemImage,
     eyebrow: "Whole-Home · City Water",
     name: "Complete Softener & Filtration",
-    spec: "Removes hardness & chlorine · lifetime valve warranty",
+    spec: "Made in USA · removes hardness & chlorine · lifetime warranty",
     price: "$2,699",
   },
   {
@@ -201,13 +201,13 @@ export const featured = [
 
 export const trustBadges = [
   { label: "Licensed & Insured", sub: "NC-licensed plumber" },
-  { label: "Lifetime Valve Warranty", sub: "On every whole-home system" },
-  { label: "Free Water Report", sub: "No obligation, no pressure" },
+  { label: "Lifetime Warranty", sub: "On every whole-home system" },
+  { label: "Free Consultation", sub: "No obligation, no pressure" },
   { label: "Locally Owned", sub: "Serving Western NC" },
 ];
 
 export const stats = [
-  { value: "Lifetime", label: "Valve warranty on whole-home systems" },
+  { value: "Lifetime", label: "Warranty on whole-home systems" },
   { value: "5-Year", label: "Media warranty, standard" },
   { value: "35 mi", label: "Service radius around Asheville" },
   { value: "100%", label: "Honest recommendations — no upselling" },
@@ -215,8 +215,8 @@ export const stats = [
 
 export const features = [
   {
-    title: "Free Water Report",
-    body: "Lab-backed testing for city or well water before we recommend anything.",
+    title: "Free Consultation",
+    body: "Clear next steps for city or well water before we recommend anything.",
     icon: "beaker",
   },
   {
@@ -231,7 +231,7 @@ export const features = [
   },
   {
     title: "Strong Warranties",
-    body: "Lifetime valve warranty and multi-year media coverage, no fine print.",
+    body: "Lifetime warranty and multi-year media coverage, with terms explained clearly.",
     icon: "shield",
   },
   {
@@ -264,7 +264,7 @@ export const comparison = {
       values: [true, "Varies", "Varies", "Varies", "DIY"],
     },
     {
-      feature: "Lifetime valve warranty",
+      feature: "Lifetime warranty",
       values: [true, "Check local terms", "Check local terms", "Check local terms", false],
     },
     {
@@ -345,7 +345,7 @@ export const addOns = [
 ];
 
 export const journey = [
-  "Free personalized water report",
+  "Free consultation",
   "Educational follow-up (what we found, what it means)",
   "Phone consultation",
   "Custom recommendation",
@@ -356,7 +356,7 @@ export const journey = [
 export const faqs = [
   {
     q: "Our water seems fine — do I really need this?",
-    a: "Most water problems aren't visible or don't show up until years of exposure — chlorine byproducts, PFAS, and hard-water mineral buildup rarely announce themselves. A free water report tells you what's actually in your water before you decide anything.",
+    a: "Most water problems aren't visible or don't show up until years of exposure — chlorine byproducts, PFAS, and hard-water mineral buildup rarely announce themselves. A free consultation helps you understand the right next step before you decide anything.",
   },
   {
     q: "Isn't this expensive?",
@@ -368,7 +368,7 @@ export const faqs = [
   },
   {
     q: "Will I have to replace filters constantly?",
-    a: "No. Whole-home systems use long-life media (5+ years) and a lifetime valve warranty. Point-of-use RO filters are serviced on an annual schedule we handle for you.",
+    a: "No. Whole-home systems use long-life media (5+ years) and include a lifetime warranty. Point-of-use RO filters are serviced on an annual schedule we handle for you.",
   },
   {
     q: "I already have a refrigerator filter — isn't that enough?",

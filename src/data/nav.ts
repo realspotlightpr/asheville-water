@@ -29,9 +29,16 @@ export const resourceMenu: NavLink[] = resourceArticles.map((a) => ({
 
 export const navMenus: NavMenu[] = [
   {
-    label: "Products",
-    to: "/products",
-    items: [{ label: "All Products", to: "/products" }, ...productMenu],
+    label: "Services",
+    to: "/services",
+    items: [
+      { label: "Whole-Home Water Filtration Services", to: "/services#whole-home-filtration" },
+      { label: "Reverse Osmosis Drinking Water Systems", to: "/services#reverse-osmosis" },
+      { label: "Well Water Treatment Systems", to: "/services#well-water-treatment" },
+      { label: "Water Softener Systems", to: "/services#water-softeners" },
+      { label: "Carbon Filtration Systems", to: "/services#carbon-filtration" },
+      { label: "City Water Treatment Systems", to: "/services#city-water-treatment" },
+    ],
   },
   {
     label: "Service Areas",

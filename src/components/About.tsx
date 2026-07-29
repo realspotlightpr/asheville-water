@@ -18,10 +18,6 @@ export function About() {
             decoding="async"
             translate="no"
           />
-          <figcaption className="absolute -bottom-5 left-5 right-5 rounded-2xl border border-white/60 bg-white/95 px-5 py-4 shadow-xl backdrop-blur sm:left-8 sm:right-8">
-            <p className="font-heading text-sm font-bold text-navy">A local family serving Western North Carolina</p>
-            <p className="mt-1 font-body text-xs text-ink/60">Education first. Thoughtful recommendations. No pressure.</p>
-          </figcaption>
         </figure>
 
         <div className="pt-8 lg:pt-0">

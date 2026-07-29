@@ -24,7 +24,7 @@ export function HomeContact() {
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-specialist">Contact Us</p>
           <h2 className="mt-3 font-heading text-3xl font-extrabold text-navy sm:text-4xl">
-            Get Your <span className="text-specialist">Free Water Report</span>
+            Get Your <span className="text-specialist">Free Consultation</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl font-body text-ink/65">
             Tell us a little about your home and water. We’ll explain your options clearly—no pressure and no obligation.
@@ -82,13 +82,13 @@ export function HomeContact() {
           <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl sm:p-8">
             <div className="mb-6 flex items-center justify-between gap-4 border-b border-slate-100 pb-5">
               <div>
-                <p className="font-heading text-lg font-bold text-navy">Request Your Free Report</p>
-                <p className="mt-1 font-body text-xs text-ink/50">Secure form powered by GoHighLevel</p>
+                <p className="font-heading text-lg font-bold text-navy">Request Your Free Consultation</p>
+                <p className="mt-1 font-body text-xs text-ink/50">Secure form powered by HighLevel</p>
               </div>
               <span className="rounded-full bg-emerald-100 px-3 py-1 font-body text-[10px] font-bold uppercase tracking-wide text-emerald-800">Live Form</span>
             </div>
 
-            <div className="min-h-[608px] overflow-hidden rounded-2xl bg-white">
+            <div className="overflow-hidden rounded-2xl bg-white">
               <HighLevelForm placement="home" />
             </div>
           </div>
