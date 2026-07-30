@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const formId = "35HJJbBk8aXNCP3UMZZ3";
 
 type HighLevelFormProps = {
@@ -7,7 +9,18 @@ type HighLevelFormProps = {
 
 export function HighLevelForm({ placement, className = "" }: HighLevelFormProps) {
   const iframeId = `inline-${formId}-${placement}`;
-  const height = placement === "hero" ? 820 : 940;
+  const height = placement === "hero" ? 1060 : placement === "contact" ? 1280 : 1200;
+
+  useEffect(() => {
+    const scriptId = "highlevel-form-embed-script";
+    if (document.getElementById(scriptId)) return;
+
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.src = "https://link.msgsndr.com/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <iframe
@@ -28,6 +41,7 @@ export function HighLevelForm({ placement, className = "" }: HighLevelFormProps)
       data-form-id={formId}
       title="Request a free consultation from Asheville Water Specialists"
       loading="eager"
+      scrolling="no"
     />
   );
 }

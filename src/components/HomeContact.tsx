@@ -20,7 +20,7 @@ function InfoIcon({ type }: { type: "phone" | "email" | "area" }) {
 export function HomeContact() {
   return (
     <section id="home-contact" className="bg-slate-50 py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-specialist">Contact Us</p>
           <h2 className="mt-3 font-heading text-3xl font-extrabold text-navy sm:text-4xl">
@@ -31,7 +31,7 @@ export function HomeContact() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <div className="mt-14 grid gap-8 lg:grid-cols-[0.62fr_1.38fr] lg:items-start xl:gap-10">
           <div>
             <div className="space-y-6">
               <a href={business.phoneHref} className="group flex items-start gap-4">
@@ -79,7 +79,7 @@ export function HomeContact() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl sm:p-8">
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xl sm:p-7">
             <div className="mb-6 flex items-center justify-between gap-4 border-b border-slate-100 pb-5">
               <div>
                 <p className="font-heading text-lg font-bold text-navy">Request Your Free Consultation</p>
@@ -88,7 +88,7 @@ export function HomeContact() {
               <span className="rounded-full bg-emerald-100 px-3 py-1 font-body text-[10px] font-bold uppercase tracking-wide text-emerald-800">Live Form</span>
             </div>
 
-            <div className="overflow-hidden rounded-2xl bg-white">
+            <div className="overflow-hidden rounded-lg bg-white">
               <HighLevelForm placement="home" />
             </div>
           </div>

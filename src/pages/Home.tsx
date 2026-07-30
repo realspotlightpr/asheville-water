@@ -11,12 +11,14 @@ import { Stats } from "../components/Stats";
 import { ServiceArea } from "../components/ServiceArea";
 import { CtaBand } from "../components/CtaBand";
 import { HomeContact } from "../components/HomeContact";
+import { ProductSpotlight } from "../components/ProductSpotlight";
 
 export function Home() {
   return (
     <>
       <Hero />
       <TrustBar />
+      <ProductSpotlight />
       <WhyUs />
       <Products limit={3} showViewAll heading="Popular Systems" />
       <Comparison />

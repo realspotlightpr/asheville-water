@@ -18,6 +18,12 @@ const routes = {
     heading: "Systems Built for Your Home's Water",
     intro: "Published starting prices, licensed installation, and recommendations based on your city or well water.",
   },
+  "/services": {
+    title: "Water Filtration Services in Asheville, NC | Asheville Water Specialists",
+    description: "Whole-home filtration, water softeners, reverse osmosis, carbon filtration, and well-water treatment in Asheville and Western NC. Book a free consultation.",
+    heading: "Water Filtration & Treatment Services in Asheville, NC",
+    intro: "Explore professional water treatment services selected around your water source, household demand, plumbing, and water-quality goals.",
+  },
   "/service-areas": {
     title: "Water Treatment Service Areas | Asheville Water Specialists",
     description: "Water filtration, softener, reverse osmosis, and well-water treatment across Asheville and Western North Carolina.",
@@ -30,6 +36,12 @@ const routes = {
     heading: "Local Water Expertise. Honest Recommendations.",
     intro: "We test first, explain the results in plain English, and recommend only the treatment your home actually needs.",
   },
+  "/gallery": {
+    title: "Water Treatment Installation Gallery | Asheville Water Specialists",
+    description: "See whole-home water filtration, softener, reverse osmosis, and well-water treatment installations completed across Western North Carolina.",
+    heading: "Water Treatment Installation Gallery",
+    intro: "See real residential water filtration and treatment projects completed by Asheville Water Specialists.",
+  },
   "/resources": {
     title: "Water Treatment Resources | Asheville Water Specialists",
     description: "Helpful guides about hard water, chlorine, well-water problems, reverse osmosis, iron, sulfur, and water filtration in Western North Carolina.",
@@ -37,17 +49,36 @@ const routes = {
     intro: "Clear answers to common Asheville-area water questions, from hard-water scale to private-well treatment.",
   },
   "/contact": {
-    title: "Get a Free Water Report | Asheville Water Specialists",
-    description: "Request a free personalized water report from Asheville Water Specialists. Get clear next steps with no pressure or obligation.",
-    heading: "Get Your Free Water Report",
+    title: "Free Water Treatment Consultation | Asheville Water Specialists",
+    description: "Book a free water treatment consultation in Asheville or Western North Carolina. Get clear recommendations with no pressure or obligation.",
+    heading: "Get Your Free Water Treatment Consultation",
     intro: "Tell us about your water and we will help you understand what it needs before recommending equipment.",
+  },
+  "/privacy-policy": {
+    title: "Privacy Policy | Asheville Water Specialists",
+    description: "Read the Asheville Water Specialists privacy policy.",
+    heading: "Privacy Policy",
+    intro: "How Asheville Water Specialists collects, uses, and protects information.",
+  },
+  "/terms-of-service": {
+    title: "Terms of Service | Asheville Water Specialists",
+    description: "Read the Asheville Water Specialists website terms of service.",
+    heading: "Terms of Service",
+    intro: "Terms governing use of the Asheville Water Specialists website and services.",
+  },
+  "/warranty": {
+    title: "Water Treatment System Warranty | Asheville Water Specialists",
+    description: "Review warranty information for Asheville Water Specialists filtration, softening, and reverse osmosis systems.",
+    heading: "Water Treatment System Warranty",
+    intro: "Review coverage information for water treatment systems installed by Asheville Water Specialists.",
   },
 };
 
 // Expand the high-value content clusters so each city, product, and resource URL
 // receives a route-specific HTML fallback during the static build.
 const citySource = fs.readFileSync(path.join(root, "src/data/cities.ts"), "utf8");
-for (const slug of [...citySource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1])) {
+const citySlugs = [...citySource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1]);
+for (const slug of citySlugs) {
   const city = slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
   routes[`/service-areas/${slug}`] = {
     title: `Water Filtration & Softening in ${city}, NC | Asheville Water Specialists`,
@@ -58,12 +89,23 @@ for (const slug of [...citySource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) =>
 }
 const siteSource = fs.readFileSync(path.join(root, "src/data/site.ts"), "utf8");
 for (const slug of [...siteSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1])) {
-  if (slug === "") continue;
+  if (slug === "" || citySlugs.includes(slug)) continue;
   routes[`/products/${slug}`] = {
     title: `${slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase())} | Asheville Water Specialists`,
     description: "Explore a water treatment system with published pricing, clear specifications, and licensed Asheville-area installation.",
     heading: slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
     intro: "See what this system treats, who it is for, what installation includes, and whether it fits your home's water.",
+  };
+}
+
+const articleSource = fs.readFileSync(path.join(root, "src/data/articles.ts"), "utf8");
+for (const slug of [...articleSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1])) {
+  const heading = slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  routes[`/resources/${slug}`] = {
+    title: `${heading} | Asheville Water Specialists`,
+    description: `Read local guidance about ${heading.toLowerCase()} from Asheville Water Specialists.`,
+    heading,
+    intro: "Practical water-quality guidance for Asheville and Western North Carolina homeowners.",
   };
 }
 
@@ -85,4 +127,25 @@ for (const [route, page] of Object.entries(routes)) {
   fs.writeFileSync(path.join(target, "index.html"), html);
 }
 
-console.log(`Prerendered ${Object.keys(routes).length} SEO routes.`);
+const routePriorities = {
+  "/": "1.0",
+  "/services": "0.9",
+  "/service-areas": "0.9",
+  "/contact": "0.9",
+  "/gallery": "0.8",
+  "/resources": "0.8",
+  "/products": "0.7",
+};
+const lastModified = new Date().toISOString().slice(0, 10);
+const sitemapUrls = [...new Set(Object.keys(routes))]
+  .sort((a, b) => a.localeCompare(b))
+  .map((route) => {
+    const priority = routePriorities[route] ?? (route.startsWith("/service-areas/") ? "0.8" : "0.7");
+    return `  <url><loc>https://ashevillewaterspecialists.com${route}</loc><lastmod>${lastModified}</lastmod><priority>${priority}</priority></url>`;
+  })
+  .join("\n");
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls}\n</urlset>\n`;
+fs.writeFileSync(path.join(root, "public/sitemap.xml"), sitemap);
+fs.writeFileSync(path.join(dist, "sitemap.xml"), sitemap);
+
+console.log(`Prerendered ${Object.keys(routes).length} SEO routes and generated sitemap.xml.`);

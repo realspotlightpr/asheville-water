@@ -8,25 +8,21 @@ export function Hero() {
       <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline>
         <source src="/hero.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-specialist/88 to-ink/95" />
-      <svg className="pointer-events-none absolute inset-x-0 bottom-0 h-64 w-full opacity-[0.12]" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 180 C 300 80, 600 260, 1200 120 L 1200 300 L 0 300 Z" fill="#3897D2" />
-        <path d="M0 230 C 300 140, 600 300, 1200 180 L 1200 300 L 0 300 Z" fill="#ffffff" />
-      </svg>
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-navy/80 to-ink/75" />
 
-      <div className="relative mx-auto grid max-w-6xl gap-7 px-4 py-14 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:gap-5 lg:py-20">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 font-body text-sm font-medium text-white backdrop-blur">
+      <div className="relative mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-10 lg:py-16">
+        <div className="lg:pt-12">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/20 px-4 py-1.5 font-body text-sm font-medium text-white backdrop-blur">
             <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-400 text-navy">✓</span>
             {heroBadge}
           </span>
 
-          <h1 className="mt-6 font-heading text-4xl font-extrabold leading-[1.08] text-white sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="mt-6 font-heading text-4xl font-extrabold leading-[1.04] text-white sm:text-5xl lg:text-[3.45rem]">
             #1 Top-Rated Water Filtration &amp; Treatment Experts{" "}
             <span className="text-sky">in Asheville, NC</span>
           </h1>
 
-          <p className="mt-6 max-w-2xl font-body text-lg leading-8 text-white/80">
+          <p className="mt-6 max-w-2xl font-body text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
             Asheville Water Specialists helps Western North Carolina homeowners enjoy cleaner,
             better-tasting water with professional whole-home water filtration, reverse osmosis
             drinking water systems, water softeners, carbon filtration, well water treatment,
@@ -34,27 +30,48 @@ export function Hero() {
             installation designed around your home&apos;s water quality needs.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap gap-3">
+            <span className="rounded-full border-2 border-sky px-5 py-2.5 font-body text-sm font-semibold text-white">
+              ✓ Whole-Home Water Filtration
+            </span>
+            <span className="rounded-full border-2 border-sky px-5 py-2.5 font-body text-sm font-semibold text-white">
+              ✓ Reverse Osmosis Drinking Water
+            </span>
+          </div>
+
+          <div className="mt-7 flex flex-wrap gap-4">
             <Link to="/contact" className="rounded-full bg-amber px-7 py-3.5 font-body text-base font-semibold text-ink shadow-lg transition hover:brightness-95">
               Book a Free Consultation →
             </Link>
-            <a href={business.phoneHref} className="rounded-full border-2 border-white/40 px-7 py-3.5 font-body text-base font-semibold text-white transition hover:bg-white hover:text-navy">
+            <a href={business.phoneHref} className="rounded-full border-2 border-white/50 px-7 py-3.5 font-body text-base font-semibold text-white transition hover:bg-white hover:text-navy">
               Call <span className="notranslate" translate="no">{business.phone}</span>
             </a>
           </div>
         </div>
 
-        <div className="lg:-ml-2 lg:pt-1">
-          <div className="rounded-3xl border border-white/20 bg-navy/90 p-6 shadow-2xl backdrop-blur sm:p-8">
-            <p className="text-center font-heading text-xl font-bold text-white">
-              Request a <span className="text-amber">FREE</span><br />Consultation Today!
+        <div>
+          <div className="rounded-2xl border border-white/80 bg-[#0d1f50]/95 p-4 shadow-2xl backdrop-blur sm:p-7">
+            <p className="text-center font-heading text-2xl font-medium leading-tight text-white">
+              Request a <span className="font-bold underline decoration-2 underline-offset-4">FREE</span>
+              <br />
+              Consultation Today!
             </p>
             <div className="mt-5 overflow-hidden rounded-2xl bg-white">
               <HighLevelForm placement="hero" />
             </div>
-            <p className="mt-4 text-center font-body text-xs font-semibold uppercase tracking-[0.13em] text-white/60">
-              Licensed · Local · Trusted
+            <p className="mx-auto mt-4 max-w-md text-center font-body text-[11px] leading-[1.35] text-white">
+              By pressing &apos;Get A Free Consultation&apos; you are agreeing to our{" "}
+              <Link className="underline underline-offset-2" to="/terms-of-service">terms and conditions</Link>
+              {" "}and{" "}
+              <Link className="underline underline-offset-2" to="/privacy-policy">privacy policy</Link>,
+              and consenting to receive text messages. To unsubscribe, text STOP to{" "}
+              <span className="notranslate whitespace-nowrap" translate="no">(984) 384-6991</span>.
             </p>
+            <img
+              src="/hero-form-logos.png"
+              alt="Google 5.0 rating, Facebook 5.0 rating, and BBB Rated A Trusted"
+              className="mx-auto mt-5 h-auto w-full max-w-md"
+            />
           </div>
         </div>
       </div>

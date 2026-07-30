@@ -3,9 +3,9 @@ import { HighLevelForm } from "./HighLevelForm";
 
 export function ContactForm() {
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-      <div className="overflow-hidden rounded-3xl bg-navy shadow-xl">
-        <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:p-12">
+    <section id="contact" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <div className="overflow-hidden rounded-xl bg-navy shadow-xl">
+        <div className="grid gap-8 p-6 sm:p-9 lg:grid-cols-[0.55fr_1.45fr] lg:items-start lg:p-10">
           <div className="lg:sticky lg:top-28">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-sky">
               Free Consultation
@@ -21,7 +21,7 @@ export function ContactForm() {
             </a>
           </div>
 
-          <div className="overflow-hidden rounded-2xl bg-white p-2">
+          <div className="overflow-hidden rounded-lg bg-white p-2">
             <HighLevelForm placement="contact" />
           </div>
         </div>
