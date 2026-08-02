@@ -2,8 +2,15 @@
   command = "npm run build"
   publish = "dist"
 
+# Permanently consolidate the legacy Netlify staging hostname with the
+# official domain while preserving every path and query string.
+[[redirects]]
+  from = "/*"
+  to = "https://ashevillewaterspecialists.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
