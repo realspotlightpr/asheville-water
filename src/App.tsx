@@ -13,6 +13,7 @@ import { ResourceArticlePage } from "./pages/ResourceArticlePage";
 import { ContactPage } from "./pages/ContactPage";
 import { LegalPage } from "./pages/LegalPage";
 import { NotFound } from "./pages/NotFound";
+import { RankingPage } from "./pages/RankingPage";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
           }
         />
 
+        <Route path=":slug" element={<RankingPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

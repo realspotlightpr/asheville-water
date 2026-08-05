@@ -6,6 +6,7 @@ import { CtaBand } from "../components/CtaBand";
 import { resourceArticles } from "../data/site";
 import { articleGuides } from "../data/articles";
 import { Seo } from "../components/Seo";
+import { newRankingPages } from "../data/rankingPages";
 
 export function ResourcesPage() {
   return (
@@ -46,6 +47,17 @@ export function ResourcesPage() {
               </span>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="border-t border-mist bg-slate-50 py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-specialist">More homeowner resources</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold text-navy">Water Treatment Questions, Costs &amp; Comparisons</h2>
+          <p className="mt-3 max-w-3xl font-body text-sm leading-7 text-ink/65">Browse testing-first explanations for Asheville and Western North Carolina homeowners. These guides do not replace appropriate water testing or product-specific certification.</p>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {newRankingPages.map((page) => <Link key={page.slug} to={page.slug} className="rounded-xl border border-mist bg-white p-4 font-heading text-sm font-semibold text-navy transition hover:border-sky/40 hover:shadow-sm">{page.title}<span className="mt-2 block font-body text-xs font-semibold text-specialist">Read guide →</span></Link>)}
+          </div>
         </div>
       </section>
 
