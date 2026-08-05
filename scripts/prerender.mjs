@@ -109,6 +109,26 @@ for (const slug of [...articleSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match)
   };
 }
 
+// Publish the reviewed ranking-page batch from versioned Markdown sources.
+// The service-area hub is already represented above, so it is not duplicated.
+const rankingContentDir = path.join(root, "src/content/ranking-pages");
+for (const file of fs.readdirSync(rankingContentDir).filter((name) => name.endsWith(".md"))) {
+  const source = fs.readFileSync(path.join(rankingContentDir, file), "utf8").replaceAll("\r", "");
+  const blocks = source.split(/(?=^## \d+\. )/m).filter((block) => /^## \d+\./.test(block));
+  for (const block of blocks) {
+    const draftTitle = block.match(/^## \d+\. (.+)$/m)?.[1]?.trim();
+    const slug = block.match(/\*\*(?:URL|Slug):\*\*\s*`?([^`\s]+)`?/)?.[1]?.replace(/^\/+|\/+$/g, "");
+    if (!draftTitle || !slug) continue;
+    const route = `/${slug}`;
+    if (routes[route]) continue;
+    const heading = block.match(/\*\*H1:\*\*\s*(.+)$/m)?.[1]?.trim() || draftTitle;
+    const title = block.match(/\*\*Title tag:\*\*\s*(.+)$/m)?.[1]?.trim() || `${draftTitle} | Asheville Water Specialists`;
+    const firstParagraph = block.split(/\n\s*\n/).map((part) => part.trim()).find((part) => part && !part.startsWith("#") && !part.startsWith("**")) || `Practical guidance about ${draftTitle.toLowerCase()}.`;
+    const description = block.match(/\*\*Meta description:\*\*\s*(.+)$/m)?.[1]?.trim() || `${firstParagraph.slice(0, 150).replace(/[.,;:]?$/, "")}…`;
+    routes[route] = { title, description, heading, intro: firstParagraph };
+  }
+}
+
 function escapeHtml(value) {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
