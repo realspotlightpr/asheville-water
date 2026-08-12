@@ -1,19 +1,48 @@
+import { Link } from "react-router-dom";
 import { PageHeader } from "../components/PageHeader";
+import { business } from "../data/site";
+import { openCookieSettings } from "../lib/consent";
 
-type LegalPageProps = {
-  title: string;
-  intro: string;
+export type LegalDocument = "privacy" | "terms" | "cookies" | "accessibility" | "warranty";
+type Section = { heading: string; paragraphs: string[]; bullets?: string[] };
+const effectiveDate = "August 11, 2026";
+
+const documents: Record<LegalDocument, { eyebrow: string; title: string; intro: string; sections: Section[] }> = {
+  privacy: { eyebrow: "Legal · Privacy", title: "Privacy Policy", intro: "How we collect, use, share, and protect information submitted through this website.", sections: [
+    { heading: "Information we collect", paragraphs: ["We collect information you choose to provide when requesting a consultation or contacting us. Form fields may include your name, email address, telephone number, service location, water source, property or water concerns, and message details.", "Our website and providers may also process basic technical information such as IP address, browser and device type, referring page, pages requested, timestamps, and security or diagnostic logs."], bullets: ["Contact and consultation-request information", "Property, water-source, and requested-service details", "Communications and appointment details", "Consent preferences and necessary site storage", "Basic hosting, security, and diagnostic records"] },
+    { heading: "How we use information", paragraphs: ["We use information to respond to inquiries, prepare or schedule consultations, provide requested services, communicate about a customer relationship, operate and secure the website, maintain records, comply with law, and improve our services.", "Submitting a website form does not create a service contract. Quotes, scope, scheduling, warranties, and payment terms are established separately in applicable written documents."] },
+    { heading: "Providers and disclosures", paragraphs: ["HighLevel provides the embedded consultation form and related communication tools. GTranslate provides optional Spanish translation. Website hosting and infrastructure providers may process technical logs needed to deliver and secure the site.", "We may disclose information when reasonably necessary to comply with law, protect rights or safety, investigate misuse, complete a business transfer, or work with professional advisers. We do not sell personal information for money."], bullets: ["HighLevel / HomeServiceHub form services", "GTranslate, only with functional consent", "Hosting, security, email, and infrastructure providers", "Professional advisers or authorities when legally appropriate"] },
+    { heading: "Cookies and choices", paragraphs: ["Necessary storage remembers privacy choices. Optional functional services do not load until you consent. The site does not currently activate optional analytics through this consent manager. You can use necessary storage only, accept optional services, customize categories, or reopen Cookie Settings from the footer."] },
+    { heading: "Retention and security", paragraphs: ["We retain records as reasonably needed for customer service, operations, dispute resolution, safety, accounting, warranty, and legal obligations. Periods vary by record and relationship.", "We use reasonable safeguards, but no website, email, or electronic storage system can be guaranteed completely secure."] },
+    { heading: "Requests, children, and contact", paragraphs: ["You may request access to, correction of, or deletion of information you submitted where appropriate. We may verify the request and retain records when permitted or required. The website is intended for a general audience and is not directed to children under 13.", `Send privacy questions to ${business.email} or call ${business.phone}. We may update this policy as our services, vendors, or obligations change.`] },
+  ]},
+  terms: { eyebrow: "Legal · Website use", title: "Terms of Website Use", intro: "Rules for using this website and important limits on its educational content.", sections: [
+    { heading: "Acceptance and scope", paragraphs: ["By using this website, you agree to these terms. If you do not agree, do not use it. These terms govern the website; estimates, sales, installations, warranties, or maintenance may be governed by separate written terms."] },
+    { heading: "Educational information", paragraphs: ["Website content is general education, not medical, public-health, laboratory, engineering, legal, code, electrical, or property-specific plumbing advice. Appearance, taste, odor, staining, or a field demonstration cannot establish that water is safe.", "For health-related contaminants or microorganisms, use an appropriately certified laboratory and follow applicable health-department, utility, environmental-agency, and healthcare guidance."] },
+    { heading: "Quotes, products, and availability", paragraphs: ["Online prices, descriptions, service areas, certifications, capacities, warranties, schedules, and promotions may change and may not apply to every property. A website request is not acceptance of a project, a guaranteed appointment, or a final quote. Written project documents control if they conflict with general website information."] },
+    { heading: "Permitted use", paragraphs: ["Use the website only for lawful purposes. Do not interfere with the site, attempt unauthorized access, introduce malicious code, scrape disruptively, impersonate another person, submit false information, or reuse content misleadingly."] },
+    { heading: "Ownership and third parties", paragraphs: ["Original site text, branding, layout, graphics, and other materials are owned by Asheville Water Specialists or used with permission. Links and embedded services may be operated by third parties with their own terms and privacy practices."] },
+    { heading: "Disclaimers and limitation", paragraphs: ["The website is provided on an “as available” basis. To the extent allowed by law, we do not guarantee uninterrupted access, error-free content, a particular search ranking, or that general content fits a specific property.", "To the extent permitted by law, Asheville Water Specialists is not liable for indirect, incidental, special, consequential, or punitive damages arising solely from website use. Nothing excludes liability that cannot lawfully be limited."] },
+    { heading: "Changes and contact", paragraphs: [`We may update these terms. North Carolina law governs them without overriding mandatory consumer protections or jurisdiction rules. Questions may be sent to ${business.email}.`] },
+  ]},
+  cookies: { eyebrow: "Legal · Your choices", title: "Cookie Policy", intro: "What browser storage and third-party services this website uses, and how you control them.", sections: [
+    { heading: "Cookies and similar storage", paragraphs: ["Cookies are small browser values. Websites may also use local storage, embedded frames, pixels, or related technologies to remember choices, provide functions, measure use, or communicate with a provider."] },
+    { heading: "Necessary storage", paragraphs: ["The local-storage key aws_cookie_consent_v1 records category choices, a consent version, and decision time so the site can honor your preference. The aws_language and googtrans cookies may remember an English or Spanish selection after functional services are enabled and may last up to one year."] },
+    { heading: "Functional services", paragraphs: ["With functional consent, the site may load the HighLevel consultation form from api.homeservicehub.app with supporting code from link.msgsndr.com. It may load GTranslate from cdn.gtranslate.net when Spanish translation is requested. Those providers may receive technical data and use their own storage under their policies."] },
+    { heading: "Analytics", paragraphs: ["The interface includes an analytics category for future compatibility. No optional analytics tool is intentionally loaded by the current site code. This policy and configuration should be updated before one is activated."] },
+    { heading: "Change or withdraw consent", paragraphs: ["Use Cookie Settings below or in the footer to change future loading. Disabling a category prevents later site loading, but storage already placed by a third party may also need removal through browser settings."], bullets: ["Necessary: always active", "Functional: optional HighLevel and GTranslate", "Analytics: optional and currently not configured"] },
+  ]},
+  accessibility: { eyebrow: "Access for everyone", title: "Accessibility Statement", intro: "Our commitment to a usable website and alternative ways to reach our team.", sections: [
+    { heading: "Our commitment", paragraphs: ["We want people with disabilities to access information and contact our team. We work to support keyboard use, readable contrast, descriptive structure, responsive layouts, text alternatives, and clear labels, using WCAG guidance as a reference point."] },
+    { heading: "Ongoing work", paragraphs: ["Accessibility is ongoing rather than a one-time claim. Some optional embedded services, including HighLevel and GTranslate, are not fully controlled by us. We welcome reports about barriers in our pages and integrations."] },
+    { heading: "Assistance and feedback", paragraphs: [`If you cannot access information or complete a task, call ${business.phone} or email ${business.email}. Identify the page, task, assistive technology or browser if relevant, and the alternative format or accommodation that would help. We will make a reasonable effort to provide an accessible alternative.`] },
+  ]},
+  warranty: { eyebrow: "Customer information", title: "Warranty", intro: "Coverage depends on the exact product and written warranty supplied with the project.", sections: [
+    { heading: "Written terms control", paragraphs: ["Warranty duration, covered components, media, labor, travel, service, exclusions, maintenance requirements, transferability, and remedies vary by product and project. Request and review the written warranty for the exact equipment before purchase.", `For applicable warranty terms, contact ${business.email} or call ${business.phone}.`] },
+  ]},
 };
 
-export function LegalPage({ title, intro }: LegalPageProps) {
-  return (
-    <>
-      <PageHeader eyebrow="Legal" title={title} subtitle={intro} />
-      <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-        <p className="rounded-lg bg-mist px-4 py-3 font-body text-sm text-ink/60">
-          Placeholder page — {title.toLowerCase()} content to be added.
-        </p>
-      </section>
-    </>
-  );
+export function LegalPage({ document }: { document: LegalDocument }) {
+  const content = documents[document];
+  return <><PageHeader eyebrow={content.eyebrow} title={content.title} subtitle={content.intro} /><section className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20"><div className="border-b border-mist pb-7"><p className="font-body text-sm text-ink/60"><strong className="text-ink">Effective:</strong> {effectiveDate}</p><p className="mt-2 font-body text-xs leading-5 text-ink/50">General business information; qualified counsel should review these documents for the company’s specific operations and jurisdictions.</p></div><div className="divide-y divide-mist">{content.sections.map(section => <article className="py-8" key={section.heading}><h2 className="font-heading text-xl font-bold text-navy sm:text-2xl">{section.heading}</h2><div className="mt-4 space-y-4 font-body text-sm leading-7 text-ink/70 sm:text-base">{section.paragraphs.map(p => <p key={p}>{p}</p>)}{section.bullets && <ul className="list-disc space-y-2 pl-6">{section.bullets.map(b => <li key={b}>{b}</li>)}</ul>}</div></article>)}</div>{document === "cookies" && <button className="mt-4 rounded-full bg-specialist px-5 py-3 font-body text-sm font-bold text-white" onClick={openCookieSettings}>Open Cookie Settings</button>}<p className="mt-10 font-body text-sm text-ink/55">Related: <Link className="font-semibold text-specialist underline underline-offset-2" to="/privacy-policy">Privacy Policy</Link> · <Link className="font-semibold text-specialist underline underline-offset-2" to="/terms-of-service">Terms of Website Use</Link></p></section></>;
 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
 import { business, serviceCities, resourceArticles, social } from "../data/site";
+import { openCookieSettings } from "../lib/consent";
 
 const serviceLinks = [
   { label: "Whole-Home Filtration", to: "/services#whole-home-filtration" },
@@ -21,6 +22,8 @@ const companyLinks = [
 const legalLinks = [
   { label: "Privacy Policy", to: "/privacy-policy" },
   { label: "Terms of Service", to: "/terms-of-service" },
+  { label: "Cookie Policy", to: "/cookie-policy" },
+  { label: "Accessibility", to: "/accessibility" },
   { label: "Warranty", to: "/warranty" },
 ];
 
@@ -145,6 +148,7 @@ export function Footer() {
                 {link.label}
               </Link>
             ))}
+            <button type="button" onClick={openCookieSettings} className="font-body text-xs text-white/40 hover:text-white/70">Cookie Settings</button>
           </div>
         </div>
       </div>
