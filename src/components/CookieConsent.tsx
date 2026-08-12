@@ -33,7 +33,10 @@ export function CookieConsent() {
   }, []);
 
   const commit = (nextFunctional: boolean, nextAnalytics: boolean) => {
-    const shouldReload = Boolean(choice?.functional && !nextFunctional);
+    const shouldReload = Boolean(
+      (choice?.functional && !nextFunctional) ||
+      (choice?.analytics && !nextAnalytics),
+    );
     setChoice(saveConsent(nextFunctional, nextAnalytics));
     setOpen(false);
     if (shouldReload) window.location.reload();
@@ -48,7 +51,7 @@ export function CookieConsent() {
           <div className="max-w-2xl">
             <p className="font-heading text-lg font-bold">Your privacy choices</p>
             <p className="mt-2 font-body text-sm leading-6 text-white/70">
-              We use necessary storage to remember your preferences. With your permission, functional services load our Spanish translator and consultation form. Analytics is currently disabled unless separately configured.
+              We use necessary storage to remember your preferences. With permission, functional services load our translator and consultation form, while analytics enables Meta Pixel page-view measurement.
             </p>
             <p className="mt-2 font-body text-xs text-white/55">
               Read our <Link className="underline underline-offset-2" to="/cookie-policy">Cookie Policy</Link> and <Link className="underline underline-offset-2" to="/privacy-policy">Privacy Policy</Link>.
@@ -64,7 +67,7 @@ export function CookieConsent() {
           <div className="mt-5 grid gap-3 border-t border-white/15 pt-5 sm:grid-cols-3">
             <ConsentToggle title="Necessary" description="Stores your consent and language choice." checked disabled onChange={() => undefined} />
             <ConsentToggle title="Functional" description="Loads HighLevel forms and Spanish translation." checked={functional} onChange={setFunctional} />
-            <ConsentToggle title="Analytics" description="Reserved for optional measurement tools." checked={analytics} onChange={setAnalytics} />
+            <ConsentToggle title="Analytics" description="Loads Meta Pixel to measure page views and advertising performance." checked={analytics} onChange={setAnalytics} />
             <div className="sm:col-span-3 sm:text-right">
               <button className="rounded-full bg-white px-5 py-2.5 font-body text-sm font-bold text-ink" onClick={() => commit(functional, analytics)}>Save choices</button>
             </div>

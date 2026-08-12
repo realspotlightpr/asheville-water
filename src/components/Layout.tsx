@@ -5,6 +5,7 @@ import { ScrollToTop } from "./ScrollToTop";
 import { TranslationNavigationGuard } from "./TranslationNavigationGuard";
 import { CookieConsent } from "./CookieConsent";
 import { GTranslateLoader } from "./GTranslateLoader";
+import { MetaPixel } from "./MetaPixel";
 
 export function Layout() {
   return (
@@ -12,6 +13,7 @@ export function Layout() {
       <ScrollToTop />
       <TranslationNavigationGuard />
       <GTranslateLoader />
+      <MetaPixel />
       <Navbar />
       <main className="flex-1">
         <Outlet />
