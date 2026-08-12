@@ -61,10 +61,22 @@ const routes = {
     intro: "How Asheville Water Specialists collects, uses, and protects information.",
   },
   "/terms-of-service": {
-    title: "Terms of Service | Asheville Water Specialists",
-    description: "Read the Asheville Water Specialists website terms of service.",
-    heading: "Terms of Service",
+    title: "Terms of Website Use | Asheville Water Specialists",
+    description: "Read the Asheville Water Specialists website terms, educational-content limitations, and acceptable-use rules.",
+    heading: "Terms of Website Use",
     intro: "Terms governing use of the Asheville Water Specialists website and services.",
+  },
+  "/cookie-policy": {
+    title: "Cookie Policy | Asheville Water Specialists",
+    description: "Review necessary and optional website storage, functional services, and cookie preference controls.",
+    heading: "Cookie Policy",
+    intro: "Understand and control cookies, local storage, consultation forms, and translation services.",
+  },
+  "/accessibility": {
+    title: "Accessibility Statement | Asheville Water Specialists",
+    description: "Read our website accessibility commitment and learn how to request assistance or report a barrier.",
+    heading: "Accessibility Statement",
+    intro: "Our commitment to accessible information and alternative ways to reach our team.",
   },
   "/warranty": {
     title: "Water Treatment System Warranty | Asheville Water Specialists",

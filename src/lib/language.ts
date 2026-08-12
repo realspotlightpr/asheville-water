@@ -42,6 +42,19 @@ function cookieDomains(hostname: string) {
 export function changeLanguage(language: Language) {
   if (typeof window === "undefined" || typeof document === "undefined") return;
 
+  if (language === "es") {
+    try {
+      const consent = JSON.parse(window.localStorage.getItem("aws_cookie_consent_v1") || "null");
+      if (!consent?.functional) {
+        window.dispatchEvent(new Event("aws:open-cookie-settings"));
+        return;
+      }
+    } catch {
+      window.dispatchEvent(new Event("aws:open-cookie-settings"));
+      return;
+    }
+  }
+
   const hostname = window.location.hostname;
   const expired = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
   const deleted = `${expired};max-age=0;SameSite=Lax`;
