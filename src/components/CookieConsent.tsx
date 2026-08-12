@@ -45,9 +45,9 @@ export function CookieConsent() {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[100] p-3 sm:p-5" role="region" aria-label="Cookie preferences">
-      <div className="mx-auto max-w-5xl rounded-2xl border border-white/10 bg-ink p-5 text-white shadow-2xl sm:p-6">
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+    <div className="fixed inset-x-0 bottom-0 z-[100]" role="region" aria-label="Cookie preferences">
+      <div className="max-h-[85svh] overflow-y-auto border-t border-white/15 bg-ink px-4 py-5 text-white shadow-[0_-18px_50px_rgba(6,28,35,0.28)] sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-2xl">
             <p className="font-heading text-lg font-bold">Your privacy choices</p>
             <p className="mt-2 font-body text-sm leading-6 text-white/70">
@@ -60,11 +60,11 @@ export function CookieConsent() {
           <div className="flex shrink-0 flex-wrap gap-2">
             <button className="rounded-full border border-white/30 px-4 py-2.5 font-body text-sm font-semibold hover:bg-white/10" onClick={() => commit(false, false)}>Necessary only</button>
             <button className="rounded-full border border-white/30 px-4 py-2.5 font-body text-sm font-semibold hover:bg-white/10" onClick={() => setDetails((value) => !value)}>Customize</button>
-            <button className="rounded-full bg-amber px-4 py-2.5 font-body text-sm font-bold text-ink hover:brightness-95" onClick={() => commit(true, true)}>Accept all</button>
+            <button className="rounded-full bg-amber px-4 py-2.5 font-body text-sm font-bold text-ink hover:brightness-95" onClick={() => commit(true, true)}>Accept cookies</button>
           </div>
         </div>
         {details && (
-          <div className="mt-5 grid gap-3 border-t border-white/15 pt-5 sm:grid-cols-3">
+          <div className="mx-auto mt-5 grid max-w-6xl gap-3 border-t border-white/15 pt-5 sm:grid-cols-3">
             <ConsentToggle title="Necessary" description="Stores your consent and language choice." checked disabled onChange={() => undefined} />
             <ConsentToggle title="Functional" description="Loads HighLevel forms and Spanish translation." checked={functional} onChange={setFunctional} />
             <ConsentToggle title="Analytics" description="Loads Meta Pixel to measure page views and advertising performance." checked={analytics} onChange={setAnalytics} />
