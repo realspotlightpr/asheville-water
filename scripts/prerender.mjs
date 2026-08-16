@@ -56,15 +56,24 @@ const routes = {
   },
   "/privacy-policy": {
     title: "Privacy Policy | Asheville Water Specialists",
-    description: "Read the Asheville Water Specialists privacy policy.",
+    description: "Review how Asheville Water Specialists collects, uses, secures, and limits sharing of personal and SMS opt-in information.",
     heading: "Privacy Policy",
     intro: "How Asheville Water Specialists collects, uses, and protects information.",
+    sections: [
+      { heading: "Information collected and how it is used", paragraphs: ["We collect information you provide, including your name, email address, mobile number, service location, water concerns, messages, appointment details, and consent preferences. We use it to respond to inquiries, prepare quotes, schedule appointments, provide services, send requested communications, maintain records, secure the website, and comply with law."] },
+      { heading: "SMS opt-in and mobile information — no sharing", paragraphs: ["If you opt in to SMS, we may send messages about your inquiry, quotes, appointments, reminders, service updates, support, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance.", "We do not sell, rent, share, or disclose mobile numbers, SMS opt-in data, or SMS consent records to third parties or affiliates for their marketing or promotional purposes. SMS opt-in data and consent are not shared with third parties for marketing. Limited information may be provided to service providers solely to deliver and support the messaging program."] },
+      { heading: "Cookies, security, and your rights", paragraphs: ["The site uses necessary storage for privacy choices, optional GTranslate with functional consent, and Meta Pixel with analytics consent. We use reasonable administrative, technical, and organizational safeguards, but no electronic system is completely secure.", "You may request access, correction, or deletion where applicable, update your contact information, withdraw SMS consent by replying STOP, or change cookie choices through Cookie Settings. Contact contact@ashevillewaterspecialists.com or (828) 903-8433 for assistance."] },
+    ],
   },
   "/terms-of-service": {
-    title: "Terms of Website Use | Asheville Water Specialists",
-    description: "Read the Asheville Water Specialists website terms, educational-content limitations, and acceptable-use rules.",
-    heading: "Terms of Website Use",
-    intro: "Terms governing use of the Asheville Water Specialists website and services.",
+    title: "Terms of Service | Asheville Water Specialists",
+    description: "Review website and SMS terms for Asheville Water Specialists, including message frequency, rates, STOP and HELP instructions, and support contacts.",
+    heading: "Terms of Service",
+    intro: "Terms for using this website, requesting service, and participating in our SMS program.",
+    sections: [
+      { heading: "SMS Terms of Service", paragraphs: ["The Asheville Water Specialists SMS program sends informational and transactional messages about consultation requests, quotes, scheduling, appointment reminders, service or installation updates, customer support, and follow-up. Message frequency varies. SMS consent is not a condition of purchase.", "You must be at least 18 years old and authorized to use the mobile number you provide. Message and data rates may apply. Carriers are not liable for delayed or undelivered messages.", "Reply STOP to any message to opt out. We may send one final opt-out confirmation. Reply HELP for assistance, email contact@ashevillewaterspecialists.com, or call (828) 903-8433. See our Privacy Policy at https://ashevillewaterspecialists.com/privacy-policy."] },
+      { heading: "Website and service requests", paragraphs: ["Website content is general educational information and is not medical, laboratory, engineering, legal, code, or property-specific plumbing advice. A website request is not a final quote, guaranteed appointment, or service contract. Separate written project documents govern estimates, installations, warranties, maintenance, and payment terms."] },
+    ],
   },
   "/cookie-policy": {
     title: "Cookie Policy | Asheville Water Specialists",
@@ -146,6 +155,8 @@ function escapeHtml(value) {
 }
 
 for (const [route, page] of Object.entries(routes)) {
+  const staticSections = page.sections?.map((section) => `<section><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</section>`).join("") || "";
+  const staticBody = `<div id="root"><main><h1>${escapeHtml(page.heading)}</h1><p>${escapeHtml(page.intro)}</p>${staticSections}<p>Asheville Water Specialists serves homeowners throughout Western North Carolina with water filtration, softening, reverse osmosis, and well-water treatment.</p></main></div>`;
   const html = template
     .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(page.title)}</title>`)
     .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escapeHtml(page.description)}" />`)
@@ -153,7 +164,7 @@ for (const [route, page] of Object.entries(routes)) {
     .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${escapeHtml(page.title)}" />`)
     .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${escapeHtml(page.description)}" />`)
     .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="https://ashevillewaterspecialists.com${route}" />`)
-    .replace('<div id="root"></div>', `<div id="root"><main><h1>${escapeHtml(page.heading)}</h1><p>${escapeHtml(page.intro)}</p><p>Asheville Water Specialists serves homeowners throughout Western North Carolina with water filtration, softening, reverse osmosis, and well-water treatment.</p></main></div>`);
+    .replace('<div id="root"></div>', staticBody);
   const target = path.join(dist, route === "/" ? "" : route.slice(1));
   fs.mkdirSync(target, { recursive: true });
   fs.writeFileSync(path.join(target, "index.html"), html);
