@@ -1,5 +1,6 @@
 import { business } from "../data/site";
 import { HighLevelForm } from "./HighLevelForm";
+import { SmsConsentDisclosure } from "./SmsConsentDisclosure";
 
 export function ContactForm() {
   return (
@@ -23,6 +24,9 @@ export function ContactForm() {
 
           <div className="overflow-hidden rounded-lg bg-white p-2">
             <HighLevelForm placement="contact" />
+            <div className="px-3 pb-4 text-center sm:px-5">
+              <SmsConsentDisclosure />
+            </div>
           </div>
         </div>
       </div>

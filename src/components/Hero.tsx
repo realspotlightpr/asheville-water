@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { HighLevelForm } from "./HighLevelForm";
 import { business, heroBadge } from "../data/site";
+import { SmsConsentDisclosure } from "./SmsConsentDisclosure";
 
 export function Hero() {
   return (
@@ -59,14 +60,9 @@ export function Hero() {
             <div className="mt-5 overflow-hidden rounded-2xl bg-white">
               <HighLevelForm placement="hero" />
             </div>
-            <p className="mx-auto mt-4 max-w-md text-center font-body text-[11px] leading-[1.35] text-white">
-              By pressing &apos;Get A Free Consultation&apos; you are agreeing to our{" "}
-              <Link className="underline underline-offset-2" to="/terms-of-service">terms and conditions</Link>
-              {" "}and{" "}
-              <Link className="underline underline-offset-2" to="/privacy-policy">privacy policy</Link>,
-              and consenting to receive text messages. To unsubscribe, text STOP to{" "}
-              <span className="notranslate whitespace-nowrap" translate="no">(984) 384-6991</span>.
-            </p>
+            <div className="mx-auto mt-4 max-w-md text-center">
+              <SmsConsentDisclosure dark />
+            </div>
             <img
               src="/hero-form-logos.png"
               alt="Google 5.0 rating, Facebook 5.0 rating, and BBB Rated A Trusted"

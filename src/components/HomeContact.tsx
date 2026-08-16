@@ -1,5 +1,6 @@
 import { business } from "../data/site";
 import { HighLevelForm } from "./HighLevelForm";
+import { SmsConsentDisclosure } from "./SmsConsentDisclosure";
 
 function InfoIcon({ type }: { type: "phone" | "email" | "area" }) {
   const paths = {
@@ -90,6 +91,9 @@ export function HomeContact() {
 
             <div className="overflow-hidden rounded-lg bg-white">
               <HighLevelForm placement="home" />
+            </div>
+            <div className="mt-4 text-center">
+              <SmsConsentDisclosure />
             </div>
           </div>
         </div>
