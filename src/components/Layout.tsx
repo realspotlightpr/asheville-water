@@ -6,6 +6,7 @@ import { TranslationNavigationGuard } from "./TranslationNavigationGuard";
 import { CookieConsent } from "./CookieConsent";
 import { GTranslateLoader } from "./GTranslateLoader";
 import { MetaPixel } from "./MetaPixel";
+import { GoogleAnalytics } from "./GoogleAnalytics";
 import { LeadConnectorChat } from "./LeadConnectorChat";
 
 export function Layout() {
@@ -15,6 +16,7 @@ export function Layout() {
       <TranslationNavigationGuard />
       <GTranslateLoader />
       <MetaPixel />
+      <GoogleAnalytics />
       <LeadConnectorChat />
       <Navbar />
       <main className="flex-1">
