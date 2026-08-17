@@ -146,7 +146,22 @@ for (const file of fs.readdirSync(rankingContentDir).filter((name) => name.endsW
     const title = block.match(/\*\*Title tag:\*\*\s*(.+)$/m)?.[1]?.trim() || `${draftTitle} | Asheville Water Specialists`;
     const firstParagraph = block.split(/\n\s*\n/).map((part) => part.trim()).find((part) => part && !part.startsWith("#") && !part.startsWith("**")) || `Practical guidance about ${draftTitle.toLowerCase()}.`;
     const description = block.match(/\*\*Meta description:\*\*\s*(.+)$/m)?.[1]?.trim() || `${firstParagraph.slice(0, 150).replace(/[.,;:]?$/, "")}…`;
-    routes[route] = { title, description, heading, intro: firstParagraph };
+    const body = block
+      .replace(/^## .+$/m, "")
+      .replace(/^\*\*(?:URL|Slug|Title tag|Meta description|H1|Primary query|Query|Schema|Internal links|CTA|Production note):\*\*.*$/gm, "")
+      .trim();
+    const sections = body
+      .split(/(?=^### )/m)
+      .map((chunk) => ({
+        heading: chunk.match(/^### (.+)$/m)?.[1]?.trim() || "Overview",
+        paragraphs: chunk
+          .replace(/^### .+$/m, "")
+          .split(/\n\s*\n/)
+          .map((paragraph) => paragraph.replace(/^[-*]\s+/gm, "").trim())
+          .filter((paragraph) => paragraph && paragraph !== "---"),
+      }))
+      .filter((section) => section.paragraphs.length);
+    routes[route] = { title, description, heading, intro: firstParagraph, sections };
   }
 }
 
@@ -155,15 +170,17 @@ function escapeHtml(value) {
 }
 
 for (const [route, page] of Object.entries(routes)) {
+  const canonicalPath = route === "/" ? "/" : `${route.replace(/\/$/, "")}/`;
+  const canonicalUrl = `https://ashevillewaterspecialists.com${canonicalPath}`;
   const staticSections = page.sections?.map((section) => `<section><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</section>`).join("") || "";
   const staticBody = `<div id="root"><main><h1>${escapeHtml(page.heading)}</h1><p>${escapeHtml(page.intro)}</p>${staticSections}<p>Asheville Water Specialists serves homeowners throughout Western North Carolina with water filtration, softening, reverse osmosis, and well-water treatment.</p></main></div>`;
   const html = template
     .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(page.title)}</title>`)
     .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escapeHtml(page.description)}" />`)
-    .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="https://ashevillewaterspecialists.com${route}" />`)
+    .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${canonicalUrl}" />`)
     .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${escapeHtml(page.title)}" />`)
     .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${escapeHtml(page.description)}" />`)
-    .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="https://ashevillewaterspecialists.com${route}" />`)
+    .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${canonicalUrl}" />`)
     .replace('<div id="root"></div>', staticBody);
   const target = path.join(dist, route === "/" ? "" : route.slice(1));
   fs.mkdirSync(target, { recursive: true });
@@ -184,7 +201,8 @@ const sitemapUrls = [...new Set(Object.keys(routes))]
   .sort((a, b) => a.localeCompare(b))
   .map((route) => {
     const priority = routePriorities[route] ?? (route.startsWith("/service-areas/") ? "0.8" : "0.7");
-    return `  <url><loc>https://ashevillewaterspecialists.com${route}</loc><lastmod>${lastModified}</lastmod><priority>${priority}</priority></url>`;
+    const sitemapPath = route === "/" ? "/" : `${route.replace(/\/$/, "")}/`;
+    return `  <url><loc>https://ashevillewaterspecialists.com${sitemapPath}</loc><lastmod>${lastModified}</lastmod><priority>${priority}</priority></url>`;
   })
   .join("\n");
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls}\n</urlset>\n`;

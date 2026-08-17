@@ -20,12 +20,14 @@ function setMeta(selector: string, attribute: "name" | "property", key: string, 
 
 export function Seo({ title, description, path, schema }: SeoProps) {
   useEffect(() => {
+    const canonicalPath = path === "/" ? "/" : `/${path.replace(/^\/+|\/+$/g, "")}/`;
+    const canonicalUrl = `${siteUrl}${canonicalPath}`;
     document.title = title;
     setMeta('meta[name="description"]', "name", "description", description);
     setMeta('meta[property="og:title"]', "property", "og:title", title);
     setMeta('meta[property="og:description"]', "property", "og:description", description);
     setMeta('meta[property="og:type"]', "property", "og:type", "website");
-    setMeta('meta[property="og:url"]', "property", "og:url", `${siteUrl}${path}`);
+    setMeta('meta[property="og:url"]', "property", "og:url", canonicalUrl);
     setMeta('meta[property="og:image"]', "property", "og:image", `${siteUrl}/assets/asheville-water-logo.png`);
     setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
     setMeta('meta[name="twitter:title"]', "name", "twitter:title", title);
@@ -39,7 +41,7 @@ export function Seo({ title, description, path, schema }: SeoProps) {
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = `${siteUrl}${path}`;
+    canonical.href = canonicalUrl;
 
     const scriptId = "page-structured-data";
     document.getElementById(scriptId)?.remove();
