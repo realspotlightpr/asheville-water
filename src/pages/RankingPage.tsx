@@ -22,8 +22,8 @@ export function RankingPage() {
       "@type": "Article",
       headline: page.title,
       description: page.description,
-      datePublished: "2026-08-04",
-      dateModified: "2026-08-04",
+      datePublished: page.number >= 491 ? "2026-08-17" : "2026-08-04",
+      dateModified: page.number >= 491 ? "2026-08-17" : "2026-08-04",
       author: {
         "@type": "Organization",
         name: "Asheville Water Specialists",
