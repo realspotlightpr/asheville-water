@@ -109,7 +109,8 @@ for (const slug of citySlugs) {
   };
 }
 const siteSource = fs.readFileSync(path.join(root, "src/data/site.ts"), "utf8");
-for (const slug of [...siteSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1])) {
+const productsSource = siteSource.match(/export const products[^=]*= \[([\s\S]*?)\n\];/)?.[1] || "";
+for (const slug of [...productsSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1])) {
   if (slug === "" || citySlugs.includes(slug)) continue;
   routes[`/products/${slug}`] = {
     title: `${slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase())} | Asheville Water Specialists`,
