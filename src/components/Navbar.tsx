@@ -10,7 +10,7 @@ const plainLinks = [
   { label: "About", to: "/about" },
 ];
 
-const testKitUrl = "https://gosimpleelab.comstore/AWSPE";
+const testKitUrl = "https://gosimplelab.com/store/AWSPE";
 
 function Chevron() {
   return (
