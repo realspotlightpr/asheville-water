@@ -89,7 +89,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="font-body text-sm font-semibold text-specialist transition hover:text-navy"
           >
-            Order a Test Kit
+            Water Testing
           </a>
         </nav>
 
@@ -183,7 +183,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="border-b border-mist/60 py-3 font-body text-sm font-semibold text-specialist"
             >
-              Order a Test Kit
+              Water Testing
             </a>
             <a href={business.phoneHref} className="notranslate py-3 font-body text-sm font-semibold text-navy" translate="no">
               {business.phone}
