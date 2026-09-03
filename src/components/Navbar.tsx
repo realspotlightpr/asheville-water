@@ -10,6 +10,8 @@ const plainLinks = [
   { label: "About", to: "/about" },
 ];
 
+const testKitUrl = "https://gosimpleelab.comstore/AWSPE";
+
 function Chevron() {
   return (
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -81,6 +83,14 @@ export function Navbar() {
               {link.label}
             </NavLink>
           ))}
+          <a
+            href={testKitUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body text-sm font-semibold text-specialist transition hover:text-navy"
+          >
+            Order a Test Kit
+          </a>
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -93,7 +103,7 @@ export function Navbar() {
           </a>
           <LanguageToggle />
           <Link
-            to="/contact"
+            to="/contact#contact"
             className="rounded-full bg-amber px-5 py-2.5 font-body text-sm font-semibold text-ink shadow-sm transition hover:brightness-95"
           >
             Get a Free Consultation
@@ -102,7 +112,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2 lg:hidden">
           <Link
-            to="/contact"
+            to="/contact#contact"
             onClick={() => setMobileOpen(false)}
             className="rounded-full bg-amber px-3.5 py-2 font-body text-xs font-bold text-ink shadow-sm transition hover:brightness-95 sm:px-5 sm:text-sm"
           >
@@ -167,6 +177,14 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={testKitUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-b border-mist/60 py-3 font-body text-sm font-semibold text-specialist"
+            >
+              Order a Test Kit
+            </a>
             <a href={business.phoneHref} className="notranslate py-3 font-body text-sm font-semibold text-navy" translate="no">
               {business.phone}
             </a>
@@ -176,7 +194,7 @@ export function Navbar() {
             </div>
             <div className="mt-2 flex gap-3">
               <Link
-                to="/contact"
+                to="/contact#contact"
                 onClick={() => setMobileOpen(false)}
                 className="flex-1 rounded-full bg-amber px-5 py-2.5 text-center font-body text-sm font-semibold text-ink"
               >
