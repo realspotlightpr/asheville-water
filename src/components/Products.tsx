@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { products } from "../data/site";
+import { products, showPricing } from "../data/site";
 
 type ProductsProps = {
   limit?: number;
@@ -20,7 +20,7 @@ export function Products({ limit, showViewAll, heading }: ProductsProps) {
           {heading ?? "Systems Built for Your Home's Water"}
         </h2>
         <p className="mt-4 font-body text-ink/70">
-          Flat-rate pricing, quoted up front. We only recommend what your water
+          We test first, explain the options clearly, and only recommend what your water
           actually needs — nothing more.
         </p>
       </div>
@@ -52,9 +52,7 @@ export function Products({ limit, showViewAll, heading }: ProductsProps) {
                 {product.name}
               </Link>
             </h3>
-            <p className="mt-2 font-heading text-2xl font-bold text-specialist">
-              {product.price}
-            </p>
+            {showPricing && <p className="mt-2 font-heading text-2xl font-bold text-specialist">{product.price}</p>}
             <p className="mt-3 flex-1 font-body text-sm text-ink/70">
               {product.blurb}
             </p>
@@ -66,7 +64,7 @@ export function Products({ limit, showViewAll, heading }: ProductsProps) {
                 Learn More
               </Link>
               <Link
-                to="/contact"
+                to="/contact#contact"
                 className="flex-1 rounded-full bg-amber px-4 py-2 text-center font-body text-sm font-semibold text-ink transition hover:brightness-95"
               >
                 Free Consultation

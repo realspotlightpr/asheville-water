@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { comparison } from "../data/site";
+import { showPricing } from "../data/site";
 
 function Value({ value, highlighted = false }: { value: string | boolean; highlighted?: boolean }) {
   if (value === true) {
@@ -24,6 +25,7 @@ function Value({ value, highlighted = false }: { value: string | boolean; highli
 }
 
 export function Comparison() {
+  if (!showPricing) return null;
   return (
     <section className="bg-slate-50 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -83,7 +85,7 @@ export function Comparison() {
 
         <div className="mt-9 text-center">
           <Link
-            to="/contact"
+            to="/contact#contact"
             className="inline-flex items-center gap-3 rounded-lg bg-sky px-8 py-4 font-body text-base font-semibold text-navy shadow-md transition hover:-translate-y-0.5 hover:brightness-105"
           >
             See Our Published Prices — No Obligation

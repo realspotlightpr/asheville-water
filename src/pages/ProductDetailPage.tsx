@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
 import { NotFound } from "./NotFound";
-import { products, business } from "../data/site";
+import { products, business, showPricing } from "../data/site";
 
 export function ProductDetailPage() {
   const { slug } = useParams();
@@ -24,15 +24,12 @@ export function ProductDetailPage() {
             />
           </div>
           <div>
-            <p className="font-heading text-3xl font-extrabold text-specialist">
-              {product.price}
-            </p>
-            <p className="mt-1 font-body text-sm text-ink/50">Flat-rate, installed</p>
+            {showPricing && <><p className="font-heading text-3xl font-extrabold text-specialist">{product.price}</p><p className="mt-1 font-body text-sm text-ink/50">Flat-rate, installed</p></>}
             <p className="mt-5 font-body text-ink/70">{product.blurb}</p>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                to="/contact"
+                to="/contact#contact"
                 className="rounded-full bg-amber px-6 py-3 font-body text-sm font-semibold text-ink shadow-md transition hover:brightness-95"
               >
                 Get a Free Consultation

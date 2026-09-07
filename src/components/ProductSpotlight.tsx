@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { business, featured } from "../data/site";
+import { featured, showPricing } from "../data/site";
 
 export function ProductSpotlight() {
   const [index, setIndex] = useState(0);
@@ -45,17 +45,14 @@ export function ProductSpotlight() {
                 {item.name}
               </h3>
               <p className="mt-4 font-body text-base leading-7 text-white/75">{item.spec}</p>
-              <div className="mt-7 flex items-end gap-3 border-y border-white/15 py-5">
-                <span className="pb-1 font-body text-sm text-white/60">Starting at</span>
-                <span className="font-heading text-3xl font-extrabold text-amber">{item.price}</span>
-              </div>
+              {showPricing && <div className="mt-7 flex items-end gap-3 border-y border-white/15 py-5"><span className="pb-1 font-body text-sm text-white/60">Starting at</span><span className="font-heading text-3xl font-extrabold text-amber">{item.price}</span></div>}
               <div className="mt-7 flex flex-wrap gap-3">
-                <a
-                  href={business.phoneHref}
+                <Link
+                  to="/contact#contact"
                   className="rounded-full bg-amber px-6 py-3 font-body text-sm font-bold text-ink transition hover:brightness-95"
                 >
                   Get a Free Consultation
-                </a>
+                </Link>
                 <Link
                   to={`/products/${item.slug}`}
                   className="rounded-full border border-white/35 px-6 py-3 font-body text-sm font-bold text-white transition hover:bg-white hover:text-navy"

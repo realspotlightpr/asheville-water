@@ -31,6 +31,10 @@ export const business = {
   ],
 };
 
+// Campaign switch: keep pricing in the data model so it can be restored without
+// rewriting product content, while temporarily removing it from public pages.
+export const showPricing = false;
+
 export type Product = {
   slug: string;
   name: string;

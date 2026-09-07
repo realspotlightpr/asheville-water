@@ -8,9 +8,9 @@ export function ProductsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Products & Pricing"
+        eyebrow="Water Treatment Systems"
         title="Systems Built for Your Home's Water"
-        subtitle="See published starting prices for whole-home filtration, softening, well-water treatment, and drinking-water RO. We test first, size the system to your water, and explain exactly what it does and does not treat."
+        subtitle="Explore whole-home filtration, softening, well-water treatment, and drinking-water RO. We test first, size the system to your water, and explain exactly what it does and does not treat."
       />
       <Products heading="Whole-Home & Point-of-Use Systems" />
 
@@ -31,9 +31,6 @@ export function ProductsPage() {
                 <h3 className="font-heading text-base font-semibold text-navy">
                   {addOn.name}
                 </h3>
-                <p className="mt-2 font-heading text-xl font-bold text-specialist">
-                  {addOn.price}
-                </p>
                 <p className="mt-3 font-body text-sm text-ink/70">{addOn.blurb}</p>
               </div>
             ))}
@@ -41,7 +38,7 @@ export function ProductsPage() {
 
           <p className="mx-auto mt-8 max-w-2xl text-center font-body text-sm text-ink/60">
             Not sure which system fits your home?{" "}
-            <Link to="/contact" className="font-semibold text-specialist underline">
+            <Link to="/contact#contact" className="font-semibold text-specialist underline">
               Get a free consultation
             </Link>{" "}
             and we'll recommend only what your water actually needs.

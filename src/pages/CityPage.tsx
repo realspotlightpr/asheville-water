@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { CtaBand } from "../components/CtaBand";
 import { Icon } from "../components/Icon";
 import { Seo } from "../components/Seo";
-import { business, products } from "../data/site";
+import { business } from "../data/site";
 import { cityProfiles } from "../data/cities";
 import { NotFound } from "./NotFound";
 import { siteUrl } from "../data/seo";
@@ -52,10 +52,9 @@ export function CityPage() {
   if (!city) return <NotFound />;
 
   const title = `Water Filtration & Softening in ${city.name}, NC | Asheville Water Specialists`;
-  const description = `Water filtration, softeners, reverse osmosis, and private-well treatment in ${city.name}, NC. Licensed installation, transparent pricing, and a free consultation.`;
+  const description = `Water filtration, softeners, reverse osmosis, and private-well treatment in ${city.name}, NC. Licensed installation and a free consultation.`;
   const path = `/service-areas/${city.slug}`;
   const nearbyCities = city.nearby.map((nearbySlug) => cityProfiles.find((profile) => profile.slug === nearbySlug)).filter(Boolean);
-  const startingPrice = products.find((product) => product.slug === "complete-home-system")?.price ?? "$2,699";
 
   const faqs = [
     {
@@ -72,11 +71,11 @@ export function CityPage() {
     },
     {
       question: `How much does a whole-home water system cost in ${city.name}?`,
-      answer: `Our published whole-home systems currently start at ${startingPrice}, with flat-rate product pricing shown on the website. The appropriate equipment and final scope depend on your water, plumbing, flow requirements, and installation conditions.`,
+      answer: `We provide a clear consultation after reviewing your water, plumbing, flow requirements, and installation conditions. The appropriate equipment and final scope depend on what your home actually needs.`,
     },
     {
       question: `How do I choose a water filtration company in ${city.name}?`,
-      answer: `Look for clear testing, published or transparent pricing, licensed installation, written warranty terms, and a recommendation tied to your home’s actual water. Ask what each component treats and why it is included.`,
+      answer: `Look for clear testing, licensed installation, written warranty terms, and a recommendation tied to your home’s actual water. Ask what each component treats and why it is included.`,
     },
   ];
 
@@ -132,7 +131,7 @@ export function CityPage() {
               </h1>
               <p className="mt-6 max-w-3xl font-body text-lg leading-relaxed text-white/75">{city.tagline}</p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link to="/contact" className="rounded-full bg-amber px-7 py-3.5 font-body text-sm font-semibold text-ink shadow-lg transition hover:-translate-y-0.5 hover:brightness-105">Get a Free Consultation</Link>
+                <Link to="/contact#contact" className="rounded-full bg-amber px-7 py-3.5 font-body text-sm font-semibold text-ink shadow-lg transition hover:-translate-y-0.5 hover:brightness-105">Get a Free Consultation</Link>
                 <a href={business.phoneHref} className="rounded-full border-2 border-white/40 px-7 py-3.5 font-body text-sm font-semibold text-white transition hover:bg-white hover:text-navy">Call <span className="notranslate" translate="no">{business.phone}</span></a>
               </div>
             </div>
