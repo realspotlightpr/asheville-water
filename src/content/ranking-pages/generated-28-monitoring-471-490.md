@@ -233,8 +233,9 @@ These references provide general guidance. Property-specific instructions from a
 
 ## 478. Understanding Non-Detect Water Results
 **Slug:** `/non-detect-water-test/`
-**Title tag:** Understanding Non-Detect Water Results | Asheville Water Specialists
-**Meta description:** Understanding Non-Detect Water Results: what to document, how to compare safe options, and how to verify the result for a Western North Carolina home.
+**Title tag:** “Non-Detect” on a Water Test: What It Really Means
+**Meta description:** A non-detect water test result does not always mean zero. Learn how reporting limits, detection limits, sampling, and analyte-specific results affect interpretation.
+**H1:** What Does “Non-Detect” Mean on a Water Test Report?
 **Query:** non detect on water test report
 
 A non-detect means the analyte was not reported above a method limit; it does not necessarily prove absolute absence. A responsible decision starts by defining the exact symptom or objective, its location and timing, the water source, and whether an official advisory or urgent health concern changes the next step.

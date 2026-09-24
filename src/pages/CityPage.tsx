@@ -51,8 +51,8 @@ export function CityPage() {
 
   if (!city) return <NotFound />;
 
-  const title = `Water Filtration & Softening in ${city.name}, NC | Asheville Water Specialists`;
-  const description = `Water filtration, softeners, reverse osmosis, and private-well treatment in ${city.name}, NC. Licensed installation and a free consultation.`;
+  const title = city.seoTitle ?? `Water Filtration & Softening in ${city.name}, NC | Asheville Water Specialists`;
+  const description = city.seoDescription ?? `Water filtration, softeners, reverse osmosis, and private-well treatment in ${city.name}, NC. Licensed installation and a free consultation.`;
   const path = `/service-areas/${city.slug}`;
   const nearbyCities = city.nearby.map((nearbySlug) => cityProfiles.find((profile) => profile.slug === nearbySlug)).filter(Boolean);
 
@@ -83,7 +83,7 @@ export function CityPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: `Water Filtration and Softening in ${city.name}, NC`,
+      name: city.primaryKeyword ?? `Water Filtration and Softening in ${city.name}, NC`,
       description,
       serviceType: ["Water filtration", "Water softening", "Reverse osmosis", "Private well water treatment"],
       areaServed: { "@type": "City", name: `${city.name}, North Carolina` },
@@ -107,6 +107,15 @@ export function CityPage() {
         { "@type": "ListItem", position: 3, name: `${city.name}, NC`, item: `${siteUrl}${path}` },
       ],
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
   ];
 
   return (
@@ -127,9 +136,12 @@ export function CityPage() {
             <div>
               <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-sky">{city.county} Service Area</p>
               <h1 className="mt-4 max-w-4xl font-heading text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-                Water Filtration &amp; Softening in {city.name}, NC
+                {city.seoHeading ?? `Water Filtration & Softening in ${city.name}, NC`}
               </h1>
               <p className="mt-6 max-w-3xl font-body text-lg leading-relaxed text-white/75">{city.tagline}</p>
+              <p className="mt-4 max-w-3xl font-body text-sm leading-7 text-white/65">
+                Local help for whole-home filtration, water softeners, reverse osmosis, and private-well treatment—selected for your source water, test results, and household demand.
+              </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link to="/contact#contact" className="rounded-full bg-amber px-7 py-3.5 font-body text-sm font-semibold text-ink shadow-lg transition hover:-translate-y-0.5 hover:brightness-105">Get a Free Consultation</Link>
                 <a href={business.phoneHref} className="rounded-full border-2 border-white/40 px-7 py-3.5 font-body text-sm font-semibold text-white transition hover:bg-white hover:text-navy">Call <span className="notranslate" translate="no">{business.phone}</span></a>
@@ -190,6 +202,9 @@ export function CityPage() {
               </Link>
             ))}
           </div>
+          <p className="mt-8 text-center font-body text-sm text-ink/60">
+            Not sure where to start? Compare our <Link to="/products" className="font-semibold text-specialist hover:underline">whole-home water treatment systems</Link> or request a recommendation based on your water.
+          </p>
         </div>
       </section>
 

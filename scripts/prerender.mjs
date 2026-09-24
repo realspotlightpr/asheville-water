@@ -13,10 +13,10 @@ const routes = {
     intro: "Know what is in your water before you buy a system. Get a free personalized water report, clear recommendations, and licensed North Carolina plumber installation.",
   },
   "/products": {
-    title: "Water Filtration Systems & Pricing | Asheville Water Specialists",
-    description: "See published starting prices for whole-home filtration, softening, well-water treatment, and drinking-water reverse osmosis in Western North Carolina.",
+    title: "Home Water Filtration Systems | Asheville Water Specialists",
+    description: "Compare whole-home filtration, softening, well-water treatment, and drinking-water reverse osmosis systems for Western North Carolina homes.",
     heading: "Systems Built for Your Home's Water",
-    intro: "Published starting prices, licensed installation, and recommendations based on your city or well water.",
+    intro: "Licensed installation and clear recommendations based on your city or well water.",
   },
   "/services": {
     title: "Water Filtration Services in Asheville, NC | Asheville Water Specialists",
@@ -43,10 +43,10 @@ const routes = {
     intro: "See real residential water filtration and treatment projects completed by Asheville Water Specialists.",
   },
   "/resources": {
-    title: "Water Treatment Resources | Asheville Water Specialists",
-    description: "Helpful guides about hard water, chlorine, well-water problems, reverse osmosis, iron, sulfur, and water filtration in Western North Carolina.",
-    heading: "Water Treatment Resources",
-    intro: "Clear answers to common Asheville-area water questions, from hard-water scale to private-well treatment.",
+    title: "Water Testing & Filtration Guides | Asheville, NC",
+    description: "Get clear answers about Asheville water testing, filtration, softeners, PFAS, reverse osmosis, private wells, system costs, and maintenance.",
+    heading: "Asheville Water Testing & Filtration Guides",
+    intro: "Straight answers about city water, private wells, filtration, softeners, and reverse osmosis in Western North Carolina.",
   },
   "/contact": {
     title: "Free Water Treatment Consultation | Asheville Water Specialists",
@@ -99,12 +99,35 @@ const routes = {
 // receives a route-specific HTML fallback during the static build.
 const citySource = fs.readFileSync(path.join(root, "src/data/cities.ts"), "utf8");
 const citySlugs = [...citySource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1]);
+const citySeoOverrides = {
+  asheville: {
+    title: "Asheville Water Treatment & Filtration | Local Experts",
+    description: "Asheville water treatment, filtration, softeners, reverse osmosis, and well-water solutions. Get a testing-first plan and licensed NC installation.",
+    heading: "Asheville Water Treatment & Filtration",
+  },
+  hendersonville: {
+    title: "Water Filtration & Softeners in Hendersonville, NC",
+    description: "Water filtration and water softeners for Hendersonville, NC homes. Compare testing-first city and well-water solutions with licensed installation.",
+    heading: "Water Filtration & Softeners in Hendersonville, NC",
+  },
+  weaverville: {
+    title: "Water Filtration & Softeners in Weaverville, NC",
+    description: "Water filtration, softeners, reverse osmosis, and private-well treatment in Weaverville, NC. Start with a local, testing-first water plan.",
+    heading: "Water Filtration & Softeners in Weaverville, NC",
+  },
+  arden: {
+    title: "Arden Water Filtration & Softener Installation | NC",
+    description: "Arden water filtration, water softeners, reverse osmosis, and well-water treatment sized for your home. Get a local testing-first recommendation.",
+    heading: "Arden Water Filtration & Softener Installation",
+  },
+};
 for (const slug of citySlugs) {
   const city = slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  const override = citySeoOverrides[slug];
   routes[`/service-areas/${slug}`] = {
-    title: `Water Filtration & Softening in ${city}, NC | Asheville Water Specialists`,
-    description: `Water filtration, softener, reverse osmosis, and well-water treatment for ${city}, NC homes. Free personalized water report.`,
-    heading: `Water Filtration & Softening in ${city}, NC`,
+    title: override?.title ?? `Water Filtration & Softening in ${city}, NC | Asheville Water Specialists`,
+    description: override?.description ?? `Water filtration, softener, reverse osmosis, and well-water treatment for ${city}, NC homes. Free personalized water report.`,
+    heading: override?.heading ?? `Water Filtration & Softening in ${city}, NC`,
     intro: `Get a free water report for your ${city} home. We test city or well water, explain the results, and recommend only the treatment your home needs.`,
   };
 }
@@ -114,7 +137,7 @@ for (const slug of [...productsSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match
   if (slug === "" || citySlugs.includes(slug)) continue;
   routes[`/products/${slug}`] = {
     title: `${slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase())} | Asheville Water Specialists`,
-    description: "Explore a water treatment system with published pricing, clear specifications, and licensed Asheville-area installation.",
+    description: "Explore a water treatment system with clear specifications and licensed Asheville-area installation.",
     heading: slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
     intro: "See what this system treats, who it is for, what installation includes, and whether it fits your home's water.",
   };

@@ -9,6 +9,16 @@ export function RankingPage() {
   const { slug } = useParams(),
     page = newRankingPages.find((candidate) => candidate.slug === `/${slug}/`);
   if (!page) return <NotFound />;
+  const recentlyUpdated = new Set([
+    "/acid-neutralizer-vs-water-softener/",
+    "/filter-before-or-after-water-softener/",
+    "/outdoor-faucets-filtered-water/",
+    "/reverse-osmosis-tds-reading/",
+    "/reverse-osmosis-air-gap-faucet/",
+    "/nsf-58-reverse-osmosis/",
+    "/non-detect-water-test/",
+  ]).has(page.slug);
+  const dateModified = recentlyUpdated ? "2026-09-24" : page.number >= 491 ? "2026-08-17" : "2026-08-04";
   const related = newRankingPages
     .filter(
       (candidate) =>
@@ -23,7 +33,7 @@ export function RankingPage() {
       headline: page.title,
       description: page.description,
       datePublished: page.number >= 491 ? "2026-08-17" : "2026-08-04",
-      dateModified: page.number >= 491 ? "2026-08-17" : "2026-08-04",
+      dateModified,
       author: {
         "@type": "Organization",
         name: "Asheville Water Specialists",
@@ -88,7 +98,7 @@ export function RankingPage() {
             {page.intro}
           </p>
           <p className="mt-7 font-body text-xs text-white/55">
-            Reviewed August 2026 · Testing-first guidance · Licensed NC plumber
+            Reviewed {recentlyUpdated ? "September" : "August"} 2026 · Testing-first guidance · Licensed NC plumber
             installation
           </p>
         </div>

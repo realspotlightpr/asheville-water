@@ -7,6 +7,10 @@ export type CityProfile = {
   localContext: string;
   homeownerNote: string;
   nearby: string[];
+  seoTitle?: string;
+  seoDescription?: string;
+  primaryKeyword?: string;
+  seoHeading?: string;
 };
 
 export const cityProfiles: CityProfile[] = [
@@ -19,6 +23,10 @@ export const cityProfiles: CityProfile[] = [
     localContext: "Asheville combines older homes, renovated properties, new construction, municipal service, and private wells around the city’s edges. Plumbing material, home age, elevation, and the property’s water source can all change what arrives at the tap.",
     homeownerNote: "For Asheville homeowners, the right starting point is identifying whether the concern is hardness, disinfectant taste and odor, sediment, iron, sulfur, or drinking-water quality.",
     nearby: ["weaverville", "arden", "candler", "black-mountain"],
+    seoTitle: "Asheville Water Treatment & Filtration | Local Experts",
+    seoDescription: "Asheville water treatment, filtration, softeners, reverse osmosis, and well-water solutions. Get a testing-first plan and licensed NC installation.",
+    primaryKeyword: "Asheville water treatment and filtration",
+    seoHeading: "Asheville Water Treatment & Filtration",
   },
   {
     slug: "hendersonville",
@@ -29,6 +37,10 @@ export const cityProfiles: CityProfile[] = [
     localContext: "Hendersonville’s service area includes established neighborhoods, newer subdivisions, and rural properties beyond the city core. That mix means one home may use municipal water while another nearby property relies on a private well.",
     homeownerNote: "A Hendersonville water assessment should separate aesthetic concerns—like scale, staining, taste, or odor—from treatment needs that depend on measured water conditions.",
     nearby: ["fletcher", "mills-river", "brevard", "arden"],
+    seoTitle: "Water Filtration & Softeners in Hendersonville, NC",
+    seoDescription: "Water filtration and water softeners for Hendersonville, NC homes. Compare testing-first city and well-water solutions with licensed installation.",
+    primaryKeyword: "water filtration and water softeners in Hendersonville, NC",
+    seoHeading: "Water Filtration & Softeners in Hendersonville, NC",
   },
   {
     slug: "weaverville",
@@ -39,6 +51,10 @@ export const cityProfiles: CityProfile[] = [
     localContext: "Weaverville blends a compact town center with hillside neighborhoods and rural northern Buncombe County properties. Water source and well conditions can change considerably as homes move away from municipal infrastructure.",
     homeownerNote: "Weaverville homeowners commonly need help distinguishing mineral hardness from iron staining, sediment, sulfur odor, or a drinking-water concern at the kitchen sink.",
     nearby: ["asheville", "candler", "black-mountain", "arden"],
+    seoTitle: "Water Filtration & Softeners in Weaverville, NC",
+    seoDescription: "Water filtration, softeners, reverse osmosis, and private-well treatment in Weaverville, NC. Start with a local, testing-first water plan.",
+    primaryKeyword: "water filtration in Weaverville, NC",
+    seoHeading: "Water Filtration & Softeners in Weaverville, NC",
   },
   {
     slug: "arden",
@@ -49,6 +65,10 @@ export const cityProfiles: CityProfile[] = [
     localContext: "Arden includes established homes, fast-growing residential areas, and properties stretching toward more rural parts of southern Buncombe County. Households may encounter different plumbing histories and water sources within a relatively small area.",
     homeownerNote: "For Arden homes, household demand matters as much as water chemistry. Flow rate, bathroom count, and family size help determine the appropriate system after the water concern is identified.",
     nearby: ["fletcher", "mills-river", "asheville", "hendersonville"],
+    seoTitle: "Arden Water Filtration & Softener Installation | NC",
+    seoDescription: "Arden water filtration, water softeners, reverse osmosis, and well-water treatment sized for your home. Get a local testing-first recommendation.",
+    primaryKeyword: "Arden water filtration and water softeners",
+    seoHeading: "Arden Water Filtration & Softener Installation",
   },
   {
     slug: "fletcher",

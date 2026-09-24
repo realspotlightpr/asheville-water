@@ -2,8 +2,9 @@
 
 ## 81. Acid Neutralizer vs. Water Softener
 **Slug:** `/acid-neutralizer-vs-water-softener/`
-**Title tag:** Acid Neutralizer vs Water Softener | Asheville, NC
-**Meta description:** Learn the different jobs of acid neutralizers and water softeners, what test results point to each, and when a Western North Carolina home may need both.
+**Title tag:** Acid Neutralizer vs Water Softener: Which Do You Need?
+**Meta description:** Compare an acid neutralizer vs water softener, the test results each addresses, correct system order, and when a well-water home may need both.
+**H1:** Acid Neutralizer vs. Water Softener: Key Differences
 **Query:** acid neutralizer vs water softener
 
 An acid neutralizer and a water softener solve different water-chemistry problems. A neutralizer raises low pH to reduce corrosive conditions, while a softener reduces calcium and magnesium hardness. Choosing from symptoms alone can miss the underlying issue, so begin with a representative water test.

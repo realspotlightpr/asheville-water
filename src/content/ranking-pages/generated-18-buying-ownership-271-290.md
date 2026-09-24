@@ -68,8 +68,9 @@ These references provide general guidance. Property-specific instructions from a
 
 ## 273. NSF 58 Reverse Osmosis Standard
 **Slug:** `/nsf-58-reverse-osmosis/`
-**Title tag:** NSF 58 Reverse Osmosis Standard | Asheville Water Specialists
-**Meta description:** NSF 58 Reverse Osmosis Standard: what to measure, what the evidence can show, and how to choose a practical next step for a Western North Carolina home.
+**Title tag:** NSF/ANSI 58 Reverse Osmosis Certification Explained
+**Meta description:** Learn what NSF/ANSI 58 certification means for reverse osmosis systems, which reduction claims it verifies, and how to check a certified product listing.
+**H1:** What NSF/ANSI 58 Means for a Reverse Osmosis System
 **Query:** NSF 58 reverse osmosis certification
 
 NSF/ANSI 58 applies to reverse-osmosis systems and can include structural, material, efficiency, recovery, and named reduction claims. A useful decision separates symptoms from diagnosis, confirms the scope of the concern, and assigns every proposed treatment stage a specific, verifiable job.

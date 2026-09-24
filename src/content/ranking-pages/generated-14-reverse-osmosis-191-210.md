@@ -134,8 +134,9 @@ These references provide general guidance. Property-specific instructions from a
 
 ## 195. Reverse Osmosis TDS Readings Explained
 **Slug:** `/reverse-osmosis-tds-reading/`
-**Title tag:** Reverse Osmosis TDS Readings Explained | Asheville Water Specialists
-**Meta description:** Reverse Osmosis TDS Readings Explained: what to measure, what the evidence can show, and how to choose a practical next step for a Western North Carolina h
+**Title tag:** Reverse Osmosis TDS Readings: What Is Normal?
+**Meta description:** Understand reverse osmosis TDS readings, calculate membrane rejection rate, and learn why a TDS meter cannot confirm individual contaminants or safety.
+**H1:** Reverse Osmosis TDS Readings and Rejection Rate Explained
 **Query:** reverse osmosis TDS reading
 
 A conductivity-based TDS meter estimates dissolved ionic content but does not identify individual contaminants or establish microbiological safety. A useful decision separates symptoms from diagnosis, confirms the scope of the concern, and assigns every proposed treatment stage a specific, verifiable job.
@@ -530,8 +531,9 @@ These references provide general guidance. Property-specific instructions from a
 
 ## 207. RO Faucet Air Gap Explained
 **Slug:** `/reverse-osmosis-air-gap-faucet/`
-**Title tag:** RO Faucet Air Gap Explained | Asheville Water Specialists
-**Meta description:** RO Faucet Air Gap Explained: what to measure, what the evidence can show, and how to choose a practical next step for a Western North Carolina home.
+**Title tag:** Reverse Osmosis Air Gap Faucet: Leaks, Noise & Fixes
+**Meta description:** Learn how a reverse osmosis air gap faucet works, why it may leak or gurgle, and what to inspect before changing the drain connection.
+**H1:** Reverse Osmosis Air Gap Faucets: How They Work and What Goes Wrong
 **Query:** reverse osmosis air gap faucet
 
 An air-gap faucet provides a physical separation in the drain path but can make noise or leak onto the counter when tubing or drains are restricted. A useful decision separates symptoms from diagnosis, confirms the scope of the concern, and assigns every proposed treatment stage a specific, verifiable job.

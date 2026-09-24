@@ -11,11 +11,11 @@ import { newRankingPages } from "../data/rankingPages";
 export function ResourcesPage() {
   return (
     <>
-      <Seo title="Water Filtration Guides for Western NC | Asheville Water Specialists" description="Source-backed guides to water softeners, PFAS, lead, reverse osmosis, private-well testing, costs, maintenance, and water treatment in Western North Carolina." path="/resources" />
+      <Seo title="Water Testing & Filtration Guides | Asheville, NC" description="Get clear answers about Asheville water testing, filtration, softeners, PFAS, reverse osmosis, private wells, system costs, and maintenance." path="/resources" />
       <PageHeader
         eyebrow="Resources"
-        title="Know What's In Your Water"
-        subtitle="Straight answers about water quality in Western North Carolina — no scare tactics, just education."
+        title="Asheville Water Testing & Filtration Guides"
+        subtitle="Straight answers about city water, private wells, filtration, softeners, and reverse osmosis in Western North Carolina—no scare tactics, just education."
       />
       <WaterEducation />
 

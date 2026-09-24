@@ -70,8 +70,9 @@ These references provide general public guidance. A laboratory, local health dep
 
 ## 118. Whole-House Filter Before or After Water Softener?
 **Slug:** `/filter-before-or-after-water-softener/`
-**Title tag:** Whole-House Filter Before or After Water Softener? | Asheville Water Specialists
-**Meta description:** Whole-House Filter Before or After Water Softener?: what to check, what to measure, and how to choose a defensible next step for a Western North…
+**Title tag:** Filter Before or After a Water Softener? Correct Order
+**Meta description:** Should a whole-house filter go before or after a water softener? Learn the correct order for sediment, carbon, iron, and hardness treatment.
+**H1:** Should a Whole-House Filter Go Before or After a Water Softener?
 **Query:** whole house filter before or after softener
 
 System order depends on what each stage removes, its operating limits, and which device needs protection; there is no universal filter-first rule. The practical goal is to separate an observation from a diagnosis, use the right evidence, and avoid adding equipment that has no defined job.
@@ -376,8 +377,9 @@ These references provide general public guidance. A laboratory, local health dep
 
 ## 127. Should Outdoor Faucets Use Filtered Water?
 **Slug:** `/outdoor-faucets-filtered-water/`
-**Title tag:** Should Outdoor Faucets Use Filtered Water? | Asheville Water Specialists
-**Meta description:** Should Outdoor Faucets Use Filtered Water?: what to check, what to measure, and how to choose a defensible next step for a Western North Carolina home.
+**Title tag:** Should Outdoor Faucets Bypass a Water Filter?
+**Meta description:** Learn when outdoor faucets should bypass a whole-house water filter and when filtered hose water makes sense for drinking, washing, pools, or livestock.
+**H1:** Should Outdoor Faucets Use Filtered Water or Bypass the Filter?
 **Query:** should outdoor faucets bypass water filter
 
 Treating irrigation or hose water can consume capacity and reduce available indoor flow, while some outdoor uses may benefit from treatment depending on the goal. The practical goal is to separate an observation from a diagnosis, use the right evidence, and avoid adding equipment that has no defined job.
