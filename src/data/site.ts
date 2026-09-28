@@ -14,7 +14,7 @@ export const business = {
   name: "Asheville Water Specialists",
   phone: "(828) 903-8433",
   phoneHref: "tel:+18289038433",
-  email: "contact@ashevillewaterspecialists.com",
+  email: "contact@avlwaterspecialists.com",
   serviceRadius: "35-mile radius of downtown Asheville",
   serviceAreas: [
     "Asheville",
