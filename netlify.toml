@@ -17,6 +17,12 @@
   force = true
 
 [[redirects]]
+  from = "https://asheville-water-specialists-432.netlify.app/*"
+  to = "https://avlwaterspecialists.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
