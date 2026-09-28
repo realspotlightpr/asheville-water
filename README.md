@@ -106,7 +106,7 @@ Everything below is intentionally stubbed and safe to build out:
 
 ## Business facts (source of truth: `src/data/site.ts`)
 
-- Phone: (828) 903-8433 · Email: contact@ashevillewaterspecialists.com
+- Phone: (828) 903-8433 · Email: contact@avlwaterspecialists.com
 - Service area: 35-mile radius of downtown Asheville, NC
 - Pricing in `products` is the owner's real flat-rate menu.
 

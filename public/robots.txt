@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ashevillewaterspecialists.com/sitemap.xml
+Sitemap: https://avlwaterspecialists.com/sitemap.xml

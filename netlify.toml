@@ -2,6 +2,20 @@
   command = "npm run build"
   publish = "dist"
 
+# Keep the retired domain attached to this Netlify site so every legacy URL
+# transfers its authority to the matching path on the new primary domain.
+[[redirects]]
+  from = "https://ashevillewaterspecialists.com/*"
+  to = "https://avlwaterspecialists.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.ashevillewaterspecialists.com/*"
+  to = "https://avlwaterspecialists.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

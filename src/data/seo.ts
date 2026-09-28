@@ -1,4 +1,4 @@
-export const siteUrl = "https://ashevillewaterspecialists.com";
+export const siteUrl = "https://avlwaterspecialists.com";
 
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -8,7 +8,7 @@ export const organizationSchema = {
   logo: `${siteUrl}/assets/asheville-water-logo.png`,
   image: `${siteUrl}/assets/asheville-water-logo.png`,
   telephone: "+1-828-903-8433",
-  email: "contact@ashevillewaterspecialists.com",
+  email: "contact@avlwaterspecialists.com",
   priceRange: "$$",
   description: "Whole-home water filtration, water softening, reverse osmosis, and private-well treatment for Asheville and Western North Carolina.",
   areaServed: [
