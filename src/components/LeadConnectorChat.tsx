@@ -10,7 +10,7 @@ export function LeadConnectorChat() {
     script.id = scriptId;
     script.src = "https://widgets.leadconnectorhq.com/loader.js";
     script.dataset.resourcesUrl = "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
-    script.dataset.widgetId = "6a8099990d8ddea77b738675";
+    script.dataset.widgetId = "6abc3fb5cdeb03a6d502da42";
     script.dataset.source = "WEB_USER";
     script.async = true;
     document.body.appendChild(script);

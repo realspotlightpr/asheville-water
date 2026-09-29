@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { HighLevelForm } from "./HighLevelForm";
 import { business, heroBadge } from "../data/site";
-import { SmsConsentDisclosure } from "./SmsConsentDisclosure";
 
 export function Hero() {
   return (
@@ -11,8 +9,8 @@ export function Hero() {
       </video>
       <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-navy/80 to-ink/75" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-10 lg:py-16">
-        <div className="lg:pt-12">
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
+        <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/20 px-4 py-1.5 font-body text-sm font-medium text-white backdrop-blur">
             <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-400 text-navy">✓</span>
             {heroBadge}
@@ -42,33 +40,15 @@ export function Hero() {
 
           <div className="mt-7 flex flex-wrap gap-4">
             <Link to="/contact" className="rounded-full bg-amber px-7 py-3.5 font-body text-base font-semibold text-ink shadow-lg transition hover:brightness-95">
-              Book a Free Consultation →
+              Learn About Your Water →
             </Link>
             <a href={business.phoneHref} className="rounded-full border-2 border-white/50 px-7 py-3.5 font-body text-base font-semibold text-white transition hover:bg-white hover:text-navy">
               Call <span className="notranslate" translate="no">{business.phone}</span>
             </a>
           </div>
-        </div>
-
-        <div>
-          <div className="rounded-2xl border border-white/80 bg-[#0d1f50]/95 p-4 shadow-2xl backdrop-blur sm:p-7">
-            <p className="text-center font-heading text-2xl font-medium leading-tight text-white">
-              Request a <span className="font-bold underline decoration-2 underline-offset-4">FREE</span>
-              <br />
-              Consultation Today!
-            </p>
-            <div className="mt-5 overflow-hidden rounded-2xl bg-white">
-              <HighLevelForm placement="hero" />
-            </div>
-            <div className="mx-auto mt-4 max-w-md text-center">
-              <SmsConsentDisclosure dark />
-            </div>
-            <img
-              src="/hero-form-logos.png"
-              alt="Google 5.0 rating, Facebook 5.0 rating, and BBB Rated A Trusted"
-              className="mx-auto mt-5 h-auto w-full max-w-md"
-            />
-          </div>
+          <p className="mt-5 max-w-xl font-body text-sm leading-6 text-white/75">
+            Have a quick question? Use the chat button in the lower corner to speak with our team.
+          </p>
         </div>
       </div>
     </section>
