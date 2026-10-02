@@ -26,6 +26,16 @@ export function ProductDetailPage() {
           <div>
             {showPricing && <><p className="font-heading text-3xl font-extrabold text-specialist">{product.price}</p><p className="mt-1 font-body text-sm text-ink/50">Flat-rate, installed</p></>}
             <p className="mt-5 font-body text-ink/70">{product.blurb}</p>
+            {product.features && (
+              <ul className="mt-5 space-y-2 font-body text-sm leading-6 text-ink/70">
+                {product.features.map((feature) => (
+                  <li key={feature} className="flex gap-2.5">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-specialist" aria-hidden="true" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
 
             <div className="mt-8 flex flex-wrap gap-4">
               <Link

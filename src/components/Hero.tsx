@@ -4,9 +4,15 @@ import { business, heroBadge } from "../data/site";
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-navy">
-      <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline>
-        <source src="/hero.mp4" type="video/mp4" />
-      </video>
+      <img
+        src="/assets/hero-running-water.webp"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
+        width="1920"
+        height="1080"
+        fetchPriority="high"
+        aria-hidden="true"
+      />
       <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-navy/80 to-ink/75" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">

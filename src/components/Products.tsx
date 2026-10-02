@@ -5,9 +5,10 @@ type ProductsProps = {
   limit?: number;
   showViewAll?: boolean;
   heading?: string;
+  consultationOnly?: boolean;
 };
 
-export function Products({ limit, showViewAll, heading }: ProductsProps) {
+export function Products({ limit, showViewAll, heading, consultationOnly = false }: ProductsProps) {
   const shown = limit ? products.slice(0, limit) : products;
 
   return (
@@ -36,38 +37,36 @@ export function Products({ limit, showViewAll, heading }: ProductsProps) {
                 {product.tag}
               </span>
             )}
-            <Link
-              to={`/products/${product.slug}`}
-              className="mb-5 flex h-52 items-center justify-center overflow-hidden rounded-xl bg-mist p-4"
-            >
+            <div className="mb-5 flex h-52 items-center justify-center overflow-hidden rounded-xl bg-mist p-4">
               <img
                 src={product.image}
                 alt={product.name}
                 className="h-full w-full object-contain transition duration-300 hover:scale-105"
                 loading="lazy"
               />
-            </Link>
+            </div>
             <h3 className="font-heading text-lg font-semibold text-navy">
-              <Link to={`/products/${product.slug}`} className="hover:text-specialist">
-                {product.name}
-              </Link>
+              {product.name}
             </h3>
             {showPricing && <p className="mt-2 font-heading text-2xl font-bold text-specialist">{product.price}</p>}
-            <p className="mt-3 flex-1 font-body text-sm text-ink/70">
-              {product.blurb}
-            </p>
-            <div className="mt-5 flex gap-3">
-              <Link
-                to={`/products/${product.slug}`}
-                className="flex-1 rounded-full border border-navy px-4 py-2 text-center font-body text-sm font-semibold text-navy transition hover:bg-navy hover:text-white"
-              >
-                Learn More
-              </Link>
+            {product.features ? (
+              <ul className="mt-3 flex-1 space-y-2 font-body text-sm leading-6 text-ink/70">
+                {product.features.map((feature) => (
+                  <li key={feature} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-specialist" aria-hidden="true" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-3 flex-1 font-body text-sm text-ink/70">{product.blurb}</p>
+            )}
+            <div className="mt-5">
               <Link
                 to="/contact#contact"
-                className="flex-1 rounded-full bg-amber px-4 py-2 text-center font-body text-sm font-semibold text-ink transition hover:brightness-95"
+                className="block w-full rounded-full bg-amber px-4 py-2 text-center font-body text-sm font-semibold text-ink transition hover:brightness-95"
               >
-                Free Consultation
+                {consultationOnly ? "Free Consultation" : "Get a Free Consultation"}
               </Link>
             </div>
           </div>

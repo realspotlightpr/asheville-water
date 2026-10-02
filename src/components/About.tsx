@@ -9,8 +9,8 @@ export function About() {
         <figure className="relative mx-auto w-full max-w-md">
           <div className="absolute -inset-3 -rotate-2 rounded-[2rem] bg-gradient-to-br from-sky/35 to-specialist/10" />
           <img
-            src="/assets/doug-makenna-founders.webp"
-            alt="Doug and Makenna, founders of Asheville Water Specialists"
+            src="/assets/asheville-water-specialists-family.webp"
+            alt="Doug and Makenna with their family, founders of Asheville Water Specialists"
             className="relative aspect-[3/4] w-full rounded-[1.75rem] object-cover shadow-2xl"
             width="1200"
             height="1600"
@@ -28,6 +28,10 @@ export function About() {
             Doug &amp; Makenna
           </h2>
 
+          <blockquote className="mt-7 border-l-4 border-amber pl-5 font-body text-base leading-7 text-navy">
+            When you call <span className="notranslate" translate="no">Asheville Water Specialists</span>, you&apos;re not getting a faceless corporation or a high-pressure sales pitch. You&apos;re working with a local family that genuinely cares about the water your family drinks, cooks with, and bathes in every day. Clean water is one of the foundations of a healthy home, and helping families across Western North Carolina build that foundation is exactly why <span className="notranslate" translate="no">Asheville Water Specialists</span> exists.
+          </blockquote>
+
           <div className="mt-7 space-y-6 font-body text-[15px] leading-7 text-ink/70">
             <div className="rounded-2xl border border-mist bg-slate-50/80 p-5 sm:p-6">
               <h3 className="notranslate font-heading text-base font-bold text-navy" translate="no">Doug</h3>
@@ -44,9 +48,6 @@ export function About() {
             </div>
           </div>
 
-          <blockquote className="mt-7 border-l-4 border-amber pl-5 font-body text-base leading-7 text-navy">
-            When you call <span className="notranslate" translate="no">Asheville Water Specialists</span>, you're not getting a faceless corporation or a high-pressure sales pitch. You're working with a local family that genuinely cares about the water your family drinks, cooks with, and bathes in every day. Clean water is one of the foundations of a healthy home, and helping families across Western North Carolina build that foundation is exactly why <span className="notranslate" translate="no">Asheville Water Specialists</span> exists.
-          </blockquote>
         </div>
       </div>
     </section>

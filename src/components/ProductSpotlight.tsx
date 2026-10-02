@@ -44,7 +44,14 @@ export function ProductSpotlight() {
               <h3 className="mt-3 font-heading text-3xl font-extrabold text-white sm:text-4xl">
                 {item.name}
               </h3>
-              <p className="mt-4 font-body text-base leading-7 text-white/75">{item.spec}</p>
+              <ul className="mt-5 space-y-2 font-body text-sm leading-6 text-white/80 sm:text-base">
+                {item.features.map((feature) => (
+                  <li key={feature} className="flex gap-2.5">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky" aria-hidden="true" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
               {showPricing && <div className="mt-7 flex items-end gap-3 border-y border-white/15 py-5"><span className="pb-1 font-body text-sm text-white/60">Starting at</span><span className="font-heading text-3xl font-extrabold text-amber">{item.price}</span></div>}
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
@@ -52,12 +59,6 @@ export function ProductSpotlight() {
                   className="rounded-full bg-amber px-6 py-3 font-body text-sm font-bold text-ink transition hover:brightness-95"
                 >
                   Get a Free Consultation
-                </Link>
-                <Link
-                  to={`/products/${item.slug}`}
-                  className="rounded-full border border-white/35 px-6 py-3 font-body text-sm font-bold text-white transition hover:bg-white hover:text-navy"
-                >
-                  Learn More →
                 </Link>
               </div>
             </div>

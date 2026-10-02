@@ -19,7 +19,7 @@ export function Home() {
       <TrustBar />
       <ProductSpotlight />
       <WhyUs />
-      <Products limit={3} showViewAll heading="Popular Systems" />
+      <Products limit={3} showViewAll heading="Popular Systems" consultationOnly />
       <Comparison />
       <WaterSourceTabs />
       <WaterHealth />

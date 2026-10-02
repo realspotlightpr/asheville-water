@@ -7,6 +7,16 @@ import { siteUrl } from "../data/seo";
 type Category = "All" | "Whole-Home" | "Dual-Tank" | "Reverse Osmosis" | "Specialty";
 
 const photos: { src: string; title: string; alt: string; category: Exclude<Category, "All"> }[] = [
+  { src: "/gallery/complete-multi-tank-well-water-system.webp", title: "Complete Multi-Tank Well System", alt: "Three-tank whole-home well-water treatment system with brine tank and sediment filtration installed in a Western North Carolina basement", category: "Dual-Tank" },
+  { src: "/gallery/dual-tank-water-treatment-installation.webp", title: "Dual-Tank Water Treatment System", alt: "Dual-tank residential water treatment system with electronic controls and a brine cabinet", category: "Dual-Tank" },
+  { src: "/gallery/compact-water-softener-installation.webp", title: "Compact Water Softener", alt: "Compact whole-home water softener and brine cabinet installed neatly against a garage wall", category: "Whole-Home" },
+  { src: "/gallery/under-sink-reverse-osmosis-system.webp", title: "Under-Sink Reverse Osmosis", alt: "Reverse-osmosis drinking-water system with storage tank and dedicated filtration installed beneath a kitchen sink", category: "Reverse Osmosis" },
+  { src: "/gallery/basement-whole-home-water-filter.webp", title: "Basement Whole-Home Filter", alt: "Single-tank whole-home water filtration system professionally plumbed into basement water lines", category: "Whole-Home" },
+  { src: "/gallery/under-sink-ro-system-cabinet.webp", title: "Complete Under-Sink RO System", alt: "Multi-stage reverse-osmosis drinking-water system and storage tank arranged inside a kitchen sink cabinet", category: "Reverse Osmosis" },
+  { src: "/gallery/tankless-ro-system-installation.webp", title: "Tankless RO Installation", alt: "Compact tankless reverse-osmosis system installed beneath a modern kitchen sink", category: "Reverse Osmosis" },
+  { src: "/gallery/wall-mounted-water-filtration-system.webp", title: "Wall-Mounted Filtration System", alt: "Professional wall-mounted cartridge filtration and ultraviolet water treatment installation", category: "Specialty" },
+  { src: "/gallery/well-water-softener-sediment-filter.webp", title: "Well-Water Softener and Sediment Filter", alt: "Whole-home well-water softener with brine cabinet and blue sediment prefilter installed in a basement", category: "Whole-Home" },
+  { src: "/gallery/dual-cartridge-water-filter-installation.webp", title: "Dual-Cartridge Water Filter", alt: "Two-stage cartridge water filtration system installed on basement plumbing", category: "Specialty" },
   { src: "/gallery/dual-tank-whole-home-water-system.webp", title: "Dual-Tank Whole-Home System", alt: "Dual-tank whole-home water filtration and softener installation with brine tank in a Western North Carolina garage", category: "Dual-Tank" },
   { src: "/gallery/tankless-reverse-osmosis-under-sink.webp", title: "Tankless Reverse Osmosis", alt: "Compact tankless reverse osmosis drinking-water system installed beneath a kitchen sink", category: "Reverse Osmosis" },
   { src: "/gallery/finished-dual-tank-water-treatment.webp", title: "Finished Dual-Tank Installation", alt: "Finished dual-tank water treatment system with electronic valve and brine cabinet", category: "Dual-Tank" },

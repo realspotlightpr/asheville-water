@@ -1,14 +1,8 @@
-import completeHomeSystemImage from "../../images/complete-home-system-ro.png";
 import extraLargeSoftenerImage from "../../images/WATER SOFTENER WITH CHLORINE FILTRATION.png";
 import cityWaterDualTankImage from "../../images/CITY WATER DUAL TANK.png";
 import carbonFilterImage from "../../images/WHOLE HOME WATER FILER CARBON ONLY TANK.webp";
 import saltFreeConditionerImage from "../../images/WHOLE HOME SALT-FREE CONDITIONER.webp";
-import wellWaterDualTankImage from "../../images/WELL WATER DUAL TANK.png";
 import ironSulfurRemovalImage from "../../images/PREMIUM HOME IRON AND SULFUR REMOVAL SYSTEM.png";
-import sevenStageRoImage from "../../images/HW800 AlkaPro 7 STAGE REVERSE OSMOSIS.png";
-import fiveStageRoImage from "../../images/5STAGE REVERSE OSMOSIS SYS.webp";
-import uvSterilizerImage from "../../images/uv-sterilizer.webp";
-import preSedimentFilterImage from "../../images/pre-sediment-filter.webp";
 
 export const business = {
   name: "Asheville Water Specialists",
@@ -41,20 +35,90 @@ export type Product = {
   category: string;
   price: string;
   blurb: string;
+  features?: string[];
   image: string;
   tag?: string;
 };
 
 export const products: Product[] = [
   {
+    slug: "7-stage-ro",
+    image: "/products/tankless-under-sink-reverse-osmosis.webp",
+    name: "Tankless Under-Sink Reverse Osmosis",
+    category: "Point-of-Use · Drinking Water",
+    price: "$699",
+    blurb: "Compact purified drinking-water system with remineralization and balanced pH.",
+    features: [
+      "Purified water with remineralization",
+      "Compact, easy-to-maintain system",
+      "pH-balanced water on demand",
+    ],
+    tag: "Popular",
+  },
+  {
+    slug: "5-stage-ro",
+    image: "/products/six-stage-reverse-osmosis.webp",
+    name: "6 Stage Reverse Osmosis",
+    category: "Point-of-Use · Drinking Water",
+    price: "$599",
+    blurb: "Advanced six-stage drinking-water filtration with remineralization.",
+    features: [
+      "Advanced clean, healthy drinking water with remineralization",
+      "Eliminates chlorine, PFAS, and additional pollutants",
+      "Made in the USA",
+    ],
+  },
+  {
     slug: "complete-home-system",
-    image: completeHomeSystemImage,
-    name: "Complete Home Softener & Filtration — Large",
+    image: "/products/whole-home-city-water-system.webp",
+    name: "Whole-Home City Water System",
     category: "Whole-Home · City Water",
     price: "$2,699",
-    blurb:
-      "Made in the USA. Single-tank mixed-bed system for standard city water. Removes hardness and chlorine. Lifetime warranty, 5-year media, 1-year RO.",
-    tag: "Most popular",
+    blurb: "Whole-home chemical filtration paired with purified drinking water and remineralization.",
+    features: [
+      "Whole-home chemical filtration",
+      "Removes chlorine, disinfection byproducts, and other contaminants",
+      "Reverse osmosis purified drinking water with remineralization",
+      "Made in the USA",
+    ],
+  },
+  {
+    slug: "well-water-system",
+    image: "/products/whole-home-well-water-system.webp",
+    name: "Whole-Home Well Water Systems",
+    category: "Whole-Home · Private Well",
+    price: "$3,999",
+    blurb: "Custom whole-home treatment designed around the results of your well-water testing.",
+    features: [
+      "Custom solutions for sediment, excess iron, sulfur, manganese, hardness, pH imbalance, bacteria, and more",
+      "Made in the USA",
+    ],
+  },
+  {
+    slug: "uv-sterilizer",
+    image: "/products/uv-disinfection-system.webp",
+    name: "UV Disinfection System",
+    category: "Add-On · Well Water",
+    price: "$699",
+    blurb: "Ultraviolet water disinfection for private-well protection.",
+    features: [
+      "An effective solution for disinfecting water",
+      "Kills bacteria, viruses, and microorganisms",
+      "Easy to install and maintain",
+    ],
+  },
+  {
+    slug: "pre-sediment-filter",
+    image: "/products/dual-filter-system.webp",
+    name: "Dual Filter System — 4.5\" × 20\"",
+    category: "Whole-Home · Compact Filtration",
+    price: "$399",
+    blurb: "Space-conscious sediment and carbon filtration for smaller homes and budgets.",
+    features: [
+      "5-micron sediment filter and carbon filter",
+      "Great for smaller spaces or smaller budgets",
+      "Made in the USA",
+    ],
   },
   {
     slug: "single-tank-softener",
@@ -93,15 +157,6 @@ export const products: Product[] = [
       "No salt, no brine tank, no electricity. Reduces scale on appliances. Honest note: does not produce truly soft water.",
   },
   {
-    slug: "well-water-system",
-    image: wellWaterDualTankImage,
-    name: "Dual-Tank Well Water System",
-    category: "Whole-Home · Private Well",
-    price: "$3,999",
-    blurb:
-      "Air-injection system for private wells with iron up to 7 ppm — removes iron, minor sulfur, and manganese.",
-  },
-  {
     slug: "iron-sulfur-removal",
     image: ironSulfurRemovalImage,
     name: "Complete Home Iron & Sulfur Removal System",
@@ -109,42 +164,6 @@ export const products: Product[] = [
     price: "$5,499",
     blurb:
       "For heavy iron (>7 ppm) or strong sulfur odor. Peroxide injection plus carbon, softening, and RO.",
-  },
-  {
-    slug: "7-stage-ro",
-    image: sevenStageRoImage,
-    name: "Tankless Under-Sink RO",
-    category: "Point-of-Use · Drinking Water",
-    price: "$699",
-    blurb:
-      "Point-of-use drinking water, compact design, built-in remineralization. Near-automatic add-on to any whole-home system.",
-  },
-  {
-    slug: "5-stage-ro",
-    image: fiveStageRoImage,
-    name: "Tank Under-Sink RO",
-    category: "Point-of-Use · Drinking Water",
-    price: "$599",
-    blurb:
-      "Point-of-use drinking water built for well water — handles higher TDS and lower pressure.",
-  },
-  {
-    slug: "uv-sterilizer",
-    image: uvSterilizerImage,
-    name: "UV Sterilizer",
-    category: "Add-On · Well Water",
-    price: "$699",
-    blurb:
-      "Bacteria control for private wells. City water's chlorine already covers this.",
-  },
-  {
-    slug: "pre-sediment-filter",
-    image: preSedimentFilterImage,
-    name: "Pre-Sediment Filter",
-    category: "Add-On · Well Water",
-    price: "$399",
-    blurb:
-      "5-micron filter protects your system from sand and debris, with scheduled swaps.",
   },
 ];
 
@@ -179,27 +198,76 @@ export const heroPains = [
 export const featured = [
   {
     slug: "complete-home-system",
-    image: completeHomeSystemImage,
+    image: "/products/whole-home-city-water-system.webp",
     eyebrow: "Whole-Home · City Water",
-    name: "Complete Softener & Filtration",
-    spec: "Made in USA · removes hardness & chlorine · lifetime warranty",
+    name: "Whole-Home City Water System",
+    features: [
+      "Whole-home chemical filtration removes chlorine, disinfection byproducts, and other contaminants",
+      "Reverse osmosis purified drinking water with remineralization removes PFAS",
+      "Made in the USA",
+    ],
     price: "$2,699",
   },
   {
+    slug: "well-water-system",
+    image: "/products/whole-home-well-water-system.webp",
+    eyebrow: "Whole-Home · Private Well",
+    name: "Whole-Home Well Water Systems",
+    features: [
+      "Custom solutions for sediment, excess iron, sulfur, manganese, hardness, pH imbalance, bacteria, and more",
+      "Made in the USA",
+    ],
+    price: "$3,999",
+  },
+  {
     slug: "7-stage-ro",
-    image: sevenStageRoImage,
+    image: "/products/tankless-under-sink-reverse-osmosis.webp",
     eyebrow: "Point-of-Use · Drinking Water",
-    name: "Tankless Under-Sink RO",
-    spec: "Compact, remineralized, pH-balanced water on demand",
+    name: "Tankless Under-Sink Reverse Osmosis",
+    features: [
+      "Under the kitchen sink with a point-of-use faucet",
+      "Purified water with remineralization",
+      "pH-balanced water on demand",
+      "Compact, easy-to-maintain system",
+    ],
     price: "$699",
   },
   {
-    slug: "well-water-system",
-    image: wellWaterDualTankImage,
-    eyebrow: "Whole-Home · Private Well",
-    name: "Dual-Tank Well Water System",
-    spec: "Air-injection removal of iron, sulfur & manganese",
-    price: "$3,999",
+    slug: "5-stage-ro",
+    image: "/products/six-stage-reverse-osmosis.webp",
+    eyebrow: "Point-of-Use · Drinking Water",
+    name: "6 Stage Reverse Osmosis",
+    features: [
+      "Under the kitchen sink with a point-of-use faucet",
+      "Advanced clean, healthy drinking water with remineralization",
+      "Eliminates chlorine, PFAS, and additional pollutants",
+      "Made in the USA",
+    ],
+    price: "$599",
+  },
+  {
+    slug: "uv-sterilizer",
+    image: "/products/uv-disinfection-system.webp",
+    eyebrow: "Well Water · Disinfection",
+    name: "UV Disinfection System",
+    features: [
+      "An effective solution for disinfecting water",
+      "Kills bacteria, viruses, and microorganisms",
+      "Easy to install and maintain",
+    ],
+    price: "$699",
+  },
+  {
+    slug: "pre-sediment-filter",
+    image: "/products/dual-filter-system.webp",
+    eyebrow: "Compact · Whole-Home Filtration",
+    name: "Dual Filter System — 4.5\" × 20\"",
+    features: [
+      "5-micron sediment filter and carbon filter",
+      "Great for smaller spaces or smaller budgets",
+      "Made in the USA",
+    ],
+    price: "$399",
   },
 ];
 

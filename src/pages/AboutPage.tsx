@@ -15,7 +15,7 @@ const aboutSchema = {
     "@type": "LocalBusiness",
     name: "Asheville Water Specialists",
     image:
-      `${siteUrl}/assets/doug-makenna-founders.webp`,
+      `${siteUrl}/assets/asheville-water-specialists-family.webp`,
     telephone: "+1-828-551-0885",
     areaServed: "Western North Carolina",
     founder: [
