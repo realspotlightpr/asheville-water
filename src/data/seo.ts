@@ -7,7 +7,7 @@ export const organizationSchema = {
   url: siteUrl,
   logo: `${siteUrl}/assets/asheville-water-logo.png`,
   image: `${siteUrl}/assets/asheville-water-logo.png`,
-  telephone: "+1-828-903-8433",
+  telephone: "+1-828-551-0885",
   email: "contact@avlwaterspecialists.com",
   priceRange: "$$",
   description: "Whole-home water filtration, water softening, reverse osmosis, and private-well treatment for Asheville and Western North Carolina.",

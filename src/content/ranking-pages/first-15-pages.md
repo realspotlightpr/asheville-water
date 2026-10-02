@@ -1,6 +1,6 @@
 # First 15 SEO Page Drafts
 
-Business facts used throughout: Asheville Water Specialists is a service-area business; no public address is displayed. Phone: (828) 903-8433. The company provides whole-home filtration, reverse osmosis, water softening, carbon filtration, well-water treatment, and city-water treatment, with installation by a licensed North Carolina plumber. The offer is a complimentary personalized water quality report with no in-home visit required.
+Business facts used throughout: Asheville Water Specialists is a service-area business; no public address is displayed. Phone: (828) 551-0885. The company provides whole-home filtration, reverse osmosis, water softening, carbon filtration, well-water treatment, and city-water treatment, with installation by a licensed North Carolina plumber. The offer is a complimentary personalized water quality report with no in-home visit required.
 
 These are publication-ready writing packages pending owner fact review and production-site integration.
 
@@ -29,7 +29,7 @@ Whole-home treatment works at the point where water enters the house and can add
 
 The goal is not the largest system. It is a correctly sized system that matches the water and is practical to maintain.
 
-**CTA:** Request your complimentary personalized water quality report or call (828) 903-8433.  
+**CTA:** Request your complimentary personalized water quality report or call (828) 551-0885.  
 **Internal links:** Whole-home filtration; well-water treatment; reverse osmosis; cost guide; service areas.
 
 ---
@@ -355,7 +355,7 @@ Because travel, project scope, and coverage can vary, homeowners should confirm 
 
 To begin, provide your location, whether the home uses city water or a private well, and the concerns you want to address. Asheville Water Specialists can prepare the personalized report without an in-home visit.
 
-**CTA:** Request your complimentary report or call (828) 903-8433 to confirm service.  
+**CTA:** Request your complimentary report or call (828) 551-0885 to confirm service.  
 **Internal links:** Asheville filtration; softener installation; whole-home filtration; well treatment; RO installation.
 
 **Production note:** Add only owner-verified towns/counties to the visible service-area list. Do not show a street address. Use `areaServed` in structured data only for confirmed coverage.

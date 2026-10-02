@@ -12,8 +12,8 @@ import preSedimentFilterImage from "../../images/pre-sediment-filter.webp";
 
 export const business = {
   name: "Asheville Water Specialists",
-  phone: "(828) 903-8433",
-  phoneHref: "tel:+18289038433",
+  phone: "(828) 551-0885",
+  phoneHref: "tel:+18285510885",
   email: "contact@avlwaterspecialists.com",
   serviceRadius: "35-mile radius of downtown Asheville",
   serviceAreas: [

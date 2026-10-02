@@ -81,7 +81,7 @@ const serviceSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: business.name,
-    telephone: "+1-828-903-8433",
+    telephone: "+1-828-551-0885",
     url: siteUrl,
   },
   areaServed: organizationSchema.areaServed,
