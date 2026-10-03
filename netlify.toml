@@ -2,6 +2,13 @@
   command = "npm run build"
   publish = "dist"
 
+# Advertise machine-readable resources in every response so AI agents can
+# discover the site summary and sitemap without first parsing page HTML.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Link = "</llms.txt>; rel=\"describedby\"; type=\"text/markdown\"; title=\"Asheville Water Specialists AI site index\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+
 # Keep the retired domain attached to this Netlify site so every legacy URL
 # transfers its authority to the matching path on the new primary domain.
 [[redirects]]
