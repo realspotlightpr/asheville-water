@@ -1,4 +1,5 @@
-import { serviceCities, resourceArticles } from "./site";
+import { serviceCities } from "./site";
+import { resourceTopics } from "./resourceTopics";
 
 export type NavLink = { label: string; to: string };
 export type NavMenu = { label: string; to: string; items: NavLink[] };
@@ -22,9 +23,9 @@ export const serviceMenu: NavLink[] = serviceCities.map((c) => ({
   to: `/service-areas/${c.slug}`,
 }));
 
-export const resourceMenu: NavLink[] = resourceArticles.map((a) => ({
-  label: a.title,
-  to: `/resources/${a.slug}`,
+export const resourceMenu: NavLink[] = resourceTopics.map((topic) => ({
+  label: topic.shortTitle,
+  to: `/resources/topics/${topic.slug}`,
 }));
 
 export const navMenus: NavMenu[] = [
@@ -48,6 +49,10 @@ export const navMenus: NavMenu[] = [
   {
     label: "Resources",
     to: "/resources",
-    items: [{ label: "All Resources", to: "/resources" }, ...resourceMenu],
+    items: [
+      { label: "Resource Hub", to: "/resources" },
+      ...resourceMenu,
+      { label: "Complete Guide Library", to: "/resources/library" },
+    ],
   },
 ];

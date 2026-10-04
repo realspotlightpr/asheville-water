@@ -169,6 +169,18 @@ export function CityPage() {
             <p className="mt-5 font-body text-base leading-8 text-ink/70">{city.summary}</p>
             <p className="mt-5 font-body text-base leading-8 text-ink/70">{city.localContext}</p>
             <p className="mt-5 font-body text-base leading-8 text-ink/70">{city.homeownerNote}</p>
+            {city.slug === "hendersonville" && (
+              <p className="mt-5 font-body text-base leading-8 text-ink/70">
+                Homeowners comparing hardness and scale solutions can review our detailed{" "}
+                <Link to="/water-softener-installation-asheville-nc/" className="font-semibold text-specialist hover:underline">
+                  professional water softener installation guide
+                </Link>
+                , while private-well properties can begin with the{" "}
+                <Link to="/resources/topics/well-water/" className="font-semibold text-specialist hover:underline">
+                  Western North Carolina well-water resource hub
+                </Link>.
+              </p>
+            )}
           </article>
 
           <aside className="rounded-3xl bg-mist p-7 sm:p-8">

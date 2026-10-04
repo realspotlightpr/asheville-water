@@ -154,9 +154,68 @@ for (const [, slug, title, description, answer] of articleSource.matchAll(articl
   };
 }
 
+const resourceTopicRoutes = {
+  "/resources/topics/well-water": {
+    title: "Well Water Guides | Asheville Water Specialists",
+    description: "Western North Carolina well-water guides covering testing, bacteria, iron, sulfur odor, sediment, source protection, and treatment planning.",
+    heading: "Private Well Water Testing and Treatment",
+    intro: "Start with source protection and representative testing, then match treatment to the measured condition and the home's flow requirements.",
+  },
+  "/resources/topics/water-softeners": {
+    title: "Water Softener Guides | Asheville Water Specialists",
+    description: "Learn about water-softener installation, hard-water treatment, sizing, salt, brine, regeneration, maintenance, and troubleshooting.",
+    heading: "Water Softeners and Hard-Water Solutions",
+    intro: "Correct softener sizing depends on measured hardness, household demand, peak flow, regeneration settings, and incoming iron or sediment.",
+  },
+  "/resources/topics/reverse-osmosis": {
+    title: "Reverse Osmosis Guides | Asheville Water Specialists",
+    description: "Reverse-osmosis guides covering installation, membranes, TDS, storage tanks, air-gap faucets, maintenance, and certification.",
+    heading: "Reverse Osmosis Drinking-Water Systems",
+    intro: "RO performance depends on feed-water quality, pressure, pretreatment, membrane condition, storage, drainage, and timely maintenance.",
+  },
+  "/resources/topics/sediment-iron-filtration": {
+    title: "Water Filtration Guides | Asheville Water Specialists",
+    description: "Compare sediment, iron, carbon, and whole-home filtration based on water chemistry, flow, pressure loss, and treatment goals.",
+    heading: "Sediment, Iron, Carbon, and Whole-Home Filtration",
+    intro: "Identify whether a concern is particulate, dissolved, aesthetic, microbiological, or health-related before selecting filtration.",
+  },
+  "/resources/topics/contaminants-testing": {
+    title: "Water Testing Guides | Asheville Water Specialists",
+    description: "Evidence-based guides to PFAS, lead, arsenic, nitrate, bacteria, certified laboratories, sample collection, and treatment verification.",
+    heading: "Water Contaminants, Laboratory Testing, and Certified Filters",
+    intro: "Use the right laboratory method, sampling procedure, certification claim, and follow-up test for the contaminant being evaluated.",
+  },
+  "/resources/topics/uv-disinfection": {
+    title: "UV Disinfection Guides | Asheville Water Specialists",
+    description: "UV water-disinfection guides covering bacteria testing, pretreatment, dose, lamp and sleeve maintenance, alarms, and verification.",
+    heading: "UV Disinfection and Microbiological Water Safety",
+    intro: "UV requires adequate pretreatment, validated flow and dose, scheduled maintenance, and appropriate water testing.",
+  },
+  "/resources/library": {
+    title: "All Water Treatment Guides | Asheville Water Specialists",
+    description: "Browse the complete Asheville Water Specialists library covering water testing, filtration, softeners, reverse osmosis, private wells, installation, and maintenance.",
+    heading: "Complete Water Guide Library",
+    intro: "Browse every published homeowner guide or begin with one of the focused water-education topic hubs.",
+  },
+};
+Object.assign(routes, resourceTopicRoutes);
+
 // Publish the reviewed ranking-page batch from versioned Markdown sources.
 // The service-area hub is already represented above, so it is not duplicated.
 const rankingContentDir = path.join(root, "src/content/ranking-pages");
+const consolidatedRankingRoutes = new Set([
+  "/diagnose-softener-salt-bridge",
+  "/softener-brine-tank-full",
+  "/water-softener-leak",
+  "/softener-discharge-septic",
+  "/organize-water-treatment-records",
+  "/crawlspace-water-treatment",
+  "/whole-house-filter-pressure-drop",
+  "/vacation-rental-water-treatment",
+  "/orange-brown-water-stains",
+  "/questions-water-treatment-installer",
+  "/point-entry-vs-point-use-treatment",
+]);
 for (const file of fs.readdirSync(rankingContentDir).filter((name) => name.endsWith(".md"))) {
   const source = fs.readFileSync(path.join(rankingContentDir, file), "utf8").replaceAll("\r", "");
   const blocks = source.split(/(?=^## \d+\. )/m).filter((block) => /^## \d+\./.test(block));
@@ -165,7 +224,7 @@ for (const file of fs.readdirSync(rankingContentDir).filter((name) => name.endsW
     const slug = block.match(/\*\*(?:URL|Slug):\*\*\s*`?([^`\s]+)`?/)?.[1]?.replace(/^\/+|\/+$/g, "");
     if (!draftTitle || !slug) continue;
     const route = `/${slug}`;
-    if (routes[route]) continue;
+    if (routes[route] || consolidatedRankingRoutes.has(route)) continue;
     const heading = block.match(/\*\*H1:\*\*\s*(.+)$/m)?.[1]?.trim() || draftTitle;
     const title = block.match(/\*\*Title tag:\*\*\s*(.+)$/m)?.[1]?.trim() || `${draftTitle} | Asheville Water Specialists`;
     const firstParagraph = block.split(/\n\s*\n/).map((part) => part.trim()).find((part) => part && !part.startsWith("#") && !part.startsWith("**")) || `Practical guidance about ${draftTitle.toLowerCase()}.`;
@@ -224,6 +283,15 @@ const routePriorities = {
 // A global build should not falsely tell crawlers that every article changed.
 const defaultLastModified = "2026-09-28";
 const updatedRoutes = new Set([
+  "/",
+  "/services",
+  "/resources",
+  "/service-areas/hendersonville",
+  "/water-filtration-systems-asheville-nc",
+  "/water-softener-installation-asheville-nc",
+  "/whole-home-water-filtration-asheville-nc",
+  "/well-water-treatment-asheville-nc",
+  "/reverse-osmosis-installation-asheville-nc",
   "/troubleshooting-uv-system-wnc",
   "/troubleshooting-spin-down-filter-wnc",
   "/reverse-osmosis-tds-reading",
@@ -231,6 +299,7 @@ const updatedRoutes = new Set([
   "/water-filter-before-tankless-heater",
   "/spring-vs-drilled-well-water",
   "/resources/pfas-in-wnc-water",
+  ...Object.keys(resourceTopicRoutes),
 ]);
 const refreshedOn = "2026-10-04";
 const sitemapUrls = [...new Set(Object.keys(routes))]

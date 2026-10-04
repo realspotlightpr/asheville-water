@@ -468,7 +468,7 @@ These references provide general guidance. Property-specific instructions from a
 **Meta description:** Compare spring water and drilled well water for a home: contamination risk, reliability, testing, treatment, maintenance, and Western NC property questions.
 **H1:** Spring Water vs. Drilled Well Water for a Home: Safety, Reliability and Testing
 **Query:** spring water vs well water
-**Internal links:** /resources/well-water-testing-wnc/; /well-water-treatment/; /contact/
+**Internal links:** /resources/well-water-testing-wnc/; /well-water-treatment-asheville-nc/; /contact/
 
 Neither spring water nor drilled well water is automatically safer. A protected drilled well is usually less directly influenced by surface runoff, while a spring can change quickly after rain, land disturbance or animal activity. The better source is the one with dependable yield, sound construction, protected surroundings and repeatable laboratory results.
 

@@ -6,7 +6,12 @@ import { CtaBand } from "../components/CtaBand";
 import { resourceArticles } from "../data/site";
 import { articleGuides } from "../data/articles";
 import { Seo } from "../components/Seo";
-import { newRankingPages } from "../data/rankingPages";
+import { resourceTopics } from "../data/resourceTopics";
+
+const popularGuides = resourceTopics
+  .flatMap((topic) => topic.links)
+  .filter((guide, index, guides) => guides.findIndex((candidate) => candidate.path === guide.path) === index)
+  .slice(0, 12);
 
 export function ResourcesPage() {
   return (
@@ -18,6 +23,25 @@ export function ResourcesPage() {
         subtitle="Straight answers about city water, private wells, filtration, softeners, and reverse osmosis in Western North Carolina—no scare tactics, just education."
       />
       <WaterEducation />
+
+      <section className="border-b border-mist bg-slate-50 py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="max-w-3xl">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-specialist">Explore by topic</p>
+            <h2 className="mt-3 font-heading text-3xl font-bold text-navy sm:text-4xl">Start With the Water Question You Need Answered</h2>
+            <p className="mt-4 font-body leading-7 text-ink/65">Each topic hub connects testing, treatment, troubleshooting, and service guidance so you can move from a symptom to an evidence-based next step.</p>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {resourceTopics.map((topic) => (
+              <Link key={topic.slug} to={`/resources/topics/${topic.slug}`} className="rounded-2xl border border-mist bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky/40 hover:shadow-md">
+                <h3 className="font-heading text-xl font-bold text-navy">{topic.shortTitle}</h3>
+                <p className="mt-3 font-body text-sm leading-7 text-ink/65">{topic.description}</p>
+                <span className="mt-5 block font-body text-sm font-semibold text-specialist">Explore topic →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
@@ -53,11 +77,12 @@ export function ResourcesPage() {
       <section className="border-t border-mist bg-slate-50 py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-specialist">More homeowner resources</p>
-          <h2 className="mt-3 font-heading text-3xl font-bold text-navy">Water Treatment Questions, Costs &amp; Comparisons</h2>
-          <p className="mt-3 max-w-3xl font-body text-sm leading-7 text-ink/65">Browse testing-first explanations for Asheville and Western North Carolina homeowners. These guides do not replace appropriate water testing or product-specific certification.</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold text-navy">Popular Water Treatment Questions</h2>
+          <p className="mt-3 max-w-3xl font-body text-sm leading-7 text-ink/65">These frequently searched guides connect practical homeowner questions with testing-first next steps.</p>
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {newRankingPages.map((page) => <Link key={page.slug} to={page.slug} className="rounded-xl border border-mist bg-white p-4 font-heading text-sm font-semibold text-navy transition hover:border-sky/40 hover:shadow-sm">{page.title}<span className="mt-2 block font-body text-xs font-semibold text-specialist">Read guide →</span></Link>)}
+            {popularGuides.map((guide) => <Link key={guide.path} to={guide.path} className="rounded-xl border border-mist bg-white p-4 font-heading text-sm font-semibold text-navy transition hover:border-sky/40 hover:shadow-sm">{guide.title}<span className="mt-2 block font-body text-xs font-semibold text-specialist">Read guide →</span></Link>)}
           </div>
+          <Link to="/resources/library" className="mt-8 inline-flex rounded-full bg-navy px-6 py-3 font-body text-sm font-semibold text-white transition hover:bg-specialist">Browse the complete guide library →</Link>
         </div>
       </section>
 

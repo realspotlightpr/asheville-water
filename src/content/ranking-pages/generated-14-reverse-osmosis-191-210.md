@@ -138,7 +138,7 @@ These references provide general guidance. Property-specific instructions from a
 **Meta description:** Calculate reverse osmosis rejection rate, understand normal RO TDS readings, and diagnose a sudden increase without confusing TDS with water safety.
 **H1:** Reverse Osmosis TDS Readings: What Is Normal and How to Calculate Rejection
 **Query:** reverse osmosis TDS reading
-**Internal links:** /products/reverse-osmosis-system/; /reverse-osmosis-air-gap-faucet/; /contact/
+**Internal links:** /products/7-stage-ro/; /reverse-osmosis-air-gap-faucet/; /contact/
 
 There is no single “normal” reverse osmosis TDS number because the result depends on the feed water. Judge performance by rejection rate: subtract RO-water TDS from feed-water TDS, divide by feed-water TDS, then multiply by 100. A TDS meter estimates dissolved ions; it cannot identify individual contaminants or prove that water is safe.
 
@@ -550,7 +550,7 @@ These references provide general guidance. Property-specific instructions from a
 **Meta description:** Is your reverse osmosis air gap faucet leaking or gurgling? Learn the common causes, safe checks, and why a blocked drain tube often sends water onto the sink.
 **H1:** Reverse Osmosis Air Gap Faucet Leaking or Making Noise? Start Here
 **Query:** reverse osmosis air gap faucet
-**Internal links:** /products/reverse-osmosis-system/; /reverse-osmosis-tds-reading/; /contact/
+**Internal links:** /products/7-stage-ro/; /reverse-osmosis-tds-reading/; /contact/
 
 A reverse osmosis air gap faucet usually leaks onto the sink when reject water cannot move freely through the drain tubing. The most common causes are a clogged drain tube, blocked drain saddle, kinked line, poor routing or a slow sink drain. Gurgling during RO production can be normal; continuous leaking is not.
 

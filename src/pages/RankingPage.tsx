@@ -45,6 +45,24 @@ export function RankingPage() {
         Math.abs(candidate.number - page.number) <= 3,
     )
     .slice(0, 3);
+  const topicText = `${page.title} ${page.primaryQuery}`.toLowerCase();
+  const topicPath = /reverse osmosis|\bro\b|membrane|tds/.test(topicText)
+    ? "/resources/topics/reverse-osmosis/"
+    : /softener|hard water|brine|salt bridge|conditioner|scale/.test(topicText)
+      ? "/resources/topics/water-softeners/"
+      : /\buv\b|ultraviolet|disinfection|sanitiz|bacteria/.test(topicText)
+        ? "/resources/topics/uv-disinfection/"
+        : /pfas|lead|arsenic|nitrate|laborator|water test|contaminant/.test(topicText)
+          ? "/resources/topics/contaminants-testing/"
+          : /well water|private well|spring water|well pump|pressure tank/.test(topicText)
+            ? "/resources/topics/well-water/"
+            : /filter|filtration|sediment|iron|carbon|media/.test(topicText)
+              ? "/resources/topics/sediment-iron-filtration/"
+              : undefined;
+  const helpfulLinks = [...new Set([
+    ...page.internalLinks.filter((path) => path.startsWith("/")),
+    ...(topicPath ? [topicPath] : []),
+  ])];
   const schema = [
     {
       "@context": "https://schema.org",
@@ -167,13 +185,13 @@ export function RankingPage() {
               by a licensed North Carolina plumber.
             </p>
           </section>
-          {page.internalLinks.length > 0 && (
+          {helpfulLinks.length > 0 && (
             <section className="mt-14 rounded-2xl border border-sky/20 bg-mist p-7">
               <h2 className="font-heading text-2xl font-bold text-navy">
                 Helpful next steps
               </h2>
               <div className="mt-5 flex flex-wrap gap-3">
-                {page.internalLinks.map((path) => {
+                {helpfulLinks.map((path) => {
                   const linkedPage = newRankingPages.find(
                     (candidate) => candidate.slug === path,
                   );

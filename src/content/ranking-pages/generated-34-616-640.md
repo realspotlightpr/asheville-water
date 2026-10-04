@@ -402,7 +402,7 @@ These references provide general guidance. Property-specific instructions from a
 **Meta description:** Troubleshoot UV water system alarms, low intensity, leaks, cloudy sleeves, and lamp failures. Learn what to check before resetting your UV system.
 **H1:** UV Water System Troubleshooting: Alarms, Lamps and Low UV Intensity
 **Query:** uv water treatment system troubleshooting
-**Internal links:** /products/uv-purification-system/; /resources/well-water-testing-wnc/; /contact/
+**Internal links:** /products/uv-sterilizer/; /resources/well-water-testing-wnc/; /contact/
 
 When a UV water system alarms, do not assume the water is being disinfected. Check the alarm code, power, lamp age, quartz sleeve, flow rate and pretreatment before resetting it. Until the cause is corrected and the system is verified, follow the manufacturer's instructions and use an alternate safe water source when microbiological safety is uncertain.
 

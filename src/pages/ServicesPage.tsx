@@ -12,6 +12,7 @@ const services = [
     searchLabel: "Whole-home water filtration in Asheville, NC",
     body: "Custom filtration for city or well water, selected around your water test, household demand, plumbing, and concerns such as chlorine, sediment, odors, or unwanted tastes.",
     outcomes: ["Cleaner water at every tap", "Treatment sized for your household", "Professional installation and startup"],
+    guidePath: "/whole-home-water-filtration-asheville-nc/",
   },
   {
     id: "reverse-osmosis",
@@ -19,6 +20,7 @@ const services = [
     searchLabel: "Reverse osmosis system installation",
     body: "Professionally installed under-sink reverse osmosis systems provide cleaner, better-tasting water for drinking, cooking, coffee, and ice without relying on bottled water.",
     outcomes: ["High-quality drinking water", "Compact under-sink installation", "Clear filter-maintenance guidance"],
+    guidePath: "/reverse-osmosis-installation-asheville-nc/",
   },
   {
     id: "well-water-treatment",
@@ -26,6 +28,7 @@ const services = [
     searchLabel: "Well water treatment in Western North Carolina",
     body: "Private-well treatment planned around testing and site conditions, including solutions for iron staining, sulfur odor, manganese, sediment, hardness, acidity, and microbial concerns.",
     outcomes: ["Treatment based on test results", "Solutions for common WNC well issues", "Proper flow-rate and equipment sizing"],
+    guidePath: "/well-water-treatment-asheville-nc/",
   },
   {
     id: "water-softeners",
@@ -33,6 +36,7 @@ const services = [
     searchLabel: "Water softener installation in Asheville",
     body: "Right-sized water softeners reduce hardness minerals that create scale, soap residue, spotting, and buildup in fixtures, plumbing, water heaters, and household appliances.",
     outcomes: ["Less scale and spotting", "Better soap and detergent performance", "Protection for plumbing and appliances"],
+    guidePath: "/water-softener-installation-asheville-nc/",
   },
   {
     id: "carbon-filtration",
@@ -40,6 +44,7 @@ const services = [
     searchLabel: "Whole-home carbon water filtration",
     body: "Whole-home activated-carbon filtration reduces chlorine and many taste or odor concerns in municipal water, improving water used for bathing, washing, drinking, and cooking.",
     outcomes: ["Reduced chlorine taste and odor", "Improved water throughout the home", "Low-maintenance treatment options"],
+    guidePath: "/whole-home-water-filtration-asheville-nc/",
   },
   {
     id: "city-water-treatment",
@@ -47,6 +52,7 @@ const services = [
     searchLabel: "City water filtration and softening",
     body: "Targeted filtration and softening for Asheville-area municipal water, designed around your home’s hardness, chlorine exposure, plumbing, family size, and water-quality priorities.",
     outcomes: ["Options for chlorine and hardness", "No one-size-fits-all packages", "Straightforward system recommendations"],
+    guidePath: "/water-filtration-systems-asheville-nc/",
   },
 ];
 
@@ -151,6 +157,10 @@ export function ServicesPage() {
                     </li>
                   ))}
                 </ul>
+                <Link to={service.guidePath} className="mt-6 inline-flex font-body text-sm font-semibold text-specialist hover:underline">
+                  Read the detailed service guide →
+                </Link>
+                <br />
                 <Link to="/contact" className="mt-7 inline-flex rounded-full bg-navy px-5 py-2.5 font-body text-sm font-bold text-white transition hover:bg-specialist">
                   Request a Free Consultation →
                 </Link>

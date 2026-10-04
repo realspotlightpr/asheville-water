@@ -509,7 +509,7 @@ export const resourceArticles: ResourceArticle[] = [
 ];
 
 export const social = {
-  instagram: "#",
-  linkedin: "#",
+  instagram: "https://www.instagram.com/ashevillewaterspecialists/",
+  youtube: "https://www.youtube.com/@AshevilleWaterSpecialists",
   ewgTapWater: "https://www.ewg.org/tapwater/",
 };

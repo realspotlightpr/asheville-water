@@ -72,7 +72,7 @@ These references provide general guidance. Property-specific instructions from a
 **Meta description:** Fix common spin-down sediment filter problems including low pressure, clogged screens, leaking purge valves, frequent flushing, and trapped sediment.
 **H1:** Spin-Down Sediment Filter Troubleshooting: Low Pressure, Clogs and Leaks
 **Query:** spin down sediment filter troubleshooting
-**Internal links:** /products/whole-home-filtration/; /sediment-filtration-well-water/; /contact/
+**Internal links:** /products/complete-home-system/; /sediment-filtration-well-water/; /contact/
 
 A spin-down filter that reduces pressure, will not flush clean or leaks from the purge valve usually has a clogged screen, undersized mesh, excessive sediment load, blocked flush outlet or damaged seal. Isolate and depressurize the housing according to the manufacturer's instructions before opening or cleaning it.
 

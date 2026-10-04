@@ -88,12 +88,13 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href={social.linkedin}
-                aria-label="LinkedIn"
+                href={social.youtube}
+                aria-label="YouTube"
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 9v11M4 5v.5M9 20v-6a3 3 0 016 0v6M9 9v11" strokeLinecap="round" />
+                  <path d="M21 12c0 2.4-.2 4-.5 4.8-.2.6-.7 1.1-1.3 1.3-1.1.4-5.3.4-7.2.4s-6.1 0-7.2-.4c-.6-.2-1.1-.7-1.3-1.3C3.2 16 3 14.4 3 12s.2-4 .5-4.8c.2-.6.7-1.1 1.3-1.3C5.9 5.5 10.1 5.5 12 5.5s6.1 0 7.2.4c.6.2 1.1.7 1.3 1.3.3.8.5 2.4.5 4.8Z" />
+                  <path d="m10 9 5 3-5 3V9Z" fill="currentColor" stroke="none" />
                 </svg>
               </a>
             </div>

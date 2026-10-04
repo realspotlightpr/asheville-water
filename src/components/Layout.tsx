@@ -8,6 +8,7 @@ import { GTranslateLoader } from "./GTranslateLoader";
 import { MetaPixel } from "./MetaPixel";
 import { GoogleAnalytics } from "./GoogleAnalytics";
 import { LeadConnectorChat } from "./LeadConnectorChat";
+import { ConversionTracking } from "./ConversionTracking";
 
 export function Layout() {
   return (
@@ -17,6 +18,7 @@ export function Layout() {
       <GTranslateLoader />
       <MetaPixel />
       <GoogleAnalytics />
+      <ConversionTracking />
       <LeadConnectorChat />
       <Navbar />
       <main className="flex-1">

@@ -105,7 +105,7 @@ These references provide general guidance. Property-specific instructions from a
 **Meta description:** Learn when to install a water filter before a tankless water heater, which water problems matter, and how to protect flow without using the wrong filter.
 **H1:** Should You Install a Water Filter Before a Tankless Water Heater?
 **Query:** water filter before tankless water heater
-**Internal links:** /products/whole-home-filtration/; /hard-water-asheville-nc/; /contact/
+**Internal links:** /products/complete-home-system/; /hard-water-treatment-asheville/; /contact/
 
 Yes, a filter or other pretreatment may belong before a tankless water heater when the incoming water contains sediment, hardness, iron or another condition addressed by the heater manufacturer. The correct solution depends on water testing and flow requirements. A small, overly restrictive cartridge can protect the heater from debris while starving it of flow.
 

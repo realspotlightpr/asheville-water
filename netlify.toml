@@ -29,6 +29,73 @@
   status = 301
   force = true
 
+# Consolidate exact-query duplicate guides into the stronger, earlier resource.
+[[redirects]]
+  from = "/diagnose-softener-salt-bridge/"
+  to = "/water-softener-salt-bridge/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/softener-brine-tank-full/"
+  to = "/water-softener-brine-tank-too-much-water/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/water-softener-leak/"
+  to = "/water-softener-leaking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/softener-discharge-septic/"
+  to = "/water-treatment-septic-system/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/organize-water-treatment-records/"
+  to = "/water-treatment-service-records/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/crawlspace-water-treatment/"
+  to = "/water-treatment-crawlspace-installation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/whole-house-filter-pressure-drop/"
+  to = "/water-pressure-whole-home-filtration/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vacation-rental-water-treatment/"
+  to = "/short-term-rental-water-treatment/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/orange-brown-water-stains/"
+  to = "/orange-stains-well-water/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/questions-water-treatment-installer/"
+  to = "/water-treatment-quote-questions/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/point-entry-vs-point-use-treatment/"
+  to = "/point-of-entry-vs-point-of-use-water-treatment/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

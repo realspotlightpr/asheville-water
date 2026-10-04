@@ -97,8 +97,23 @@ function parseSource(markdown: string): RankingPage[] {
       ];
     });
 }
+const consolidatedRankingSlugs = new Set([
+  "/diagnose-softener-salt-bridge/",
+  "/softener-brine-tank-full/",
+  "/water-softener-leak/",
+  "/softener-discharge-septic/",
+  "/organize-water-treatment-records/",
+  "/crawlspace-water-treatment/",
+  "/whole-house-filter-pressure-drop/",
+  "/vacation-rental-water-treatment/",
+  "/orange-brown-water-stains/",
+  "/questions-water-treatment-installer/",
+  "/point-entry-vs-point-use-treatment/",
+]);
+
 export const rankingPages = Object.values(sourceFiles)
   .flatMap(parseSource)
+  .filter((page) => !consolidatedRankingSlugs.has(page.slug))
   .sort((a, b) => a.number - b.number);
 export const newRankingPages = rankingPages.filter(
   (page) => page.slug !== "/service-areas/",

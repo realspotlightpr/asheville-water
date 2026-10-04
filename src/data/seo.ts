@@ -34,5 +34,7 @@ export const organizationSchema = {
   ],
   sameAs: [
     "https://www.instagram.com/ashevillewaterspecialists/",
+    "https://www.youtube.com/@AshevilleWaterSpecialists",
+    "https://gravatar.com/bravelyobservation7c028f6eaa",
   ],
 };
