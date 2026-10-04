@@ -144,13 +144,13 @@ for (const slug of [...productsSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match
 }
 
 const articleSource = fs.readFileSync(path.join(root, "src/data/articles.ts"), "utf8");
-for (const slug of [...articleSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1])) {
-  const heading = slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+const articlePattern = /\{\s*slug:\s*"([^"]+)",\s*title:\s*"([^"]+)",\s*description:\s*"([^"]+)",\s*readTime:\s*"[^"]+",\s*answer:\s*"([^"]+)"/g;
+for (const [, slug, title, description, answer] of articleSource.matchAll(articlePattern)) {
   routes[`/resources/${slug}`] = {
-    title: `${heading} | Asheville Water Specialists`,
-    description: `Read local guidance about ${heading.toLowerCase()} from Asheville Water Specialists.`,
-    heading,
-    intro: "Practical water-quality guidance for Asheville and Western North Carolina homeowners.",
+    title,
+    description,
+    heading: title,
+    intro: answer,
   };
 }
 
@@ -230,6 +230,7 @@ const updatedRoutes = new Set([
   "/reverse-osmosis-air-gap-faucet",
   "/water-filter-before-tankless-heater",
   "/spring-vs-drilled-well-water",
+  "/resources/pfas-in-wnc-water",
 ]);
 const refreshedOn = "2026-10-04";
 const sitemapUrls = [...new Set(Object.keys(routes))]

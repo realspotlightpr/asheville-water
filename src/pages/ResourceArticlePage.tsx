@@ -13,6 +13,8 @@ export function ResourceArticlePage() {
   if (!article) return <NotFound />;
 
   const path = `/resources/${article.slug}`;
+  const dateModified = article.slug === "pfas-in-wnc-water" ? "2026-10-04" : "2026-07-11";
+  const reviewedMonth = article.slug === "pfas-in-wnc-water" ? "October" : "July";
   const related = article.related.map((relatedSlug) => articleGuides.find((guide) => guide.slug === relatedSlug)).filter(Boolean);
   const schema = [
     {
@@ -21,7 +23,7 @@ export function ResourceArticlePage() {
       headline: article.title,
       description: article.description,
       datePublished: "2026-07-11",
-      dateModified: "2026-07-11",
+      dateModified,
       author: { "@type": "Organization", name: "Asheville Water Specialists", url: siteUrl },
       publisher: { "@type": "Organization", name: "Asheville Water Specialists", logo: { "@type": "ImageObject", url: `${siteUrl}/assets/asheville-water-logo.png` } },
       mainEntityOfPage: `${siteUrl}${path}`,
@@ -36,11 +38,20 @@ export function ResourceArticlePage() {
         { "@type": "ListItem", position: 3, name: article.title, item: `${siteUrl}${path}` },
       ],
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: article.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
   ];
 
   return (
     <>
-      <Seo title={`${article.title} | Asheville Water Specialists`} description={article.description} path={path} schema={schema} />
+      <Seo title={article.title} description={article.description} path={path} schema={schema} />
 
       <header className="relative overflow-hidden bg-navy py-16 text-white sm:py-20">
         <div className="pointer-events-none absolute -right-32 -top-40 h-96 w-96 rounded-full bg-sky/25 blur-3xl" />
@@ -52,7 +63,7 @@ export function ResourceArticlePage() {
           <h1 className="mt-4 font-heading text-4xl font-extrabold leading-tight sm:text-5xl">{article.title}</h1>
           <p className="mt-6 max-w-3xl font-body text-lg leading-relaxed text-white/70">{article.description}</p>
           <div className="mt-7 flex flex-wrap gap-3 font-body text-xs text-white/55">
-            <span>Reviewed July 2026</span><span aria-hidden="true">•</span><span>Western North Carolina homeowner guide</span>
+            <span>Reviewed {reviewedMonth} 2026</span><span aria-hidden="true">•</span><span>Western North Carolina homeowner guide</span>
           </div>
         </div>
       </header>
