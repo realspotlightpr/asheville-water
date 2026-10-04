@@ -132,32 +132,47 @@ After correction or installation, repeat the measurement that justified the work
 
 These references provide general guidance. Property-specific instructions from a certified laboratory, health department, utility, licensed plumber, well professional, electrician, or equipment manufacturer take priority.
 
-## 195. Reverse Osmosis TDS Readings Explained
+## 195. Reverse Osmosis TDS Readings
 **Slug:** `/reverse-osmosis-tds-reading/`
-**Title tag:** Reverse Osmosis TDS Readings: What Is Normal?
-**Meta description:** Understand reverse osmosis TDS readings, calculate membrane rejection rate, and learn why a TDS meter cannot confirm individual contaminants or safety.
-**H1:** Reverse Osmosis TDS Readings and Rejection Rate Explained
+**Title tag:** Reverse Osmosis TDS: Normal Readings & Rejection Rate
+**Meta description:** Calculate reverse osmosis rejection rate, understand normal RO TDS readings, and diagnose a sudden increase without confusing TDS with water safety.
+**H1:** Reverse Osmosis TDS Readings: What Is Normal and How to Calculate Rejection
 **Query:** reverse osmosis TDS reading
+**Internal links:** /products/reverse-osmosis-system/; /reverse-osmosis-air-gap-faucet/; /contact/
 
-A conductivity-based TDS meter estimates dissolved ionic content but does not identify individual contaminants or establish microbiological safety. A useful decision separates symptoms from diagnosis, confirms the scope of the concern, and assigns every proposed treatment stage a specific, verifiable job.
+There is no single “normal” reverse osmosis TDS number because the result depends on the feed water. Judge performance by rejection rate: subtract RO-water TDS from feed-water TDS, divide by feed-water TDS, then multiply by 100. A TDS meter estimates dissolved ions; it cannot identify individual contaminants or prove that water is safe.
 
-### Establish the evidence
+### Reverse osmosis rejection rate formula
 
-Measure source and permeate at similar temperature after stable flow, calculate rejection, and compare with membrane specifications and water chemistry. Record the water source, affected fixtures, timing, recent work, existing equipment, household demand, and any earlier results. Appearance, taste, odor, staining, scale, or pressure can guide investigation, but none proves that water is safe.
+Use this calculation: Rejection rate = ((feed TDS − RO TDS) ÷ feed TDS) × 100.
 
-For health-related contaminants or microorganisms, use a state-certified laboratory and follow local health-department guidance. For equipment performance, record the exact model, operating conditions, service age, settings, flow, pressure, and the manufacturer's validated or certified claims.
+Example: feed water measures 300 ppm and RO water measures 30 ppm. ((300 − 30) ÷ 300) × 100 = 90% rejection. Compare that result with the membrane manufacturer's specification under similar pressure, temperature and feed-water conditions. Do not compare your RO reading with a neighbor's number unless the feed water is comparable.
 
-### Compare the practical options
+### How to take a useful TDS reading
 
-Use laboratory testing for health-related targets and investigate falling rejection rather than chasing one universal TDS number. Compare service flow, capacity, pressure loss, inlet limits, drainage, electricity, consumables, sanitation, alarms, replacement parts, warranty, and total ownership work. Point-of-use and whole-home systems solve different scopes; use the smallest scope that fully addresses the verified goal.
+Measure untreated feed water and RO product water with the same calibrated meter at similar temperature. Let the faucet run until the reading stabilizes, use a clean sample cup and rinse the meter between samples. If the storage tank has been sitting unused, emptying one tank before retesting can produce a more representative operating sample.
 
-Avoid adding stages merely because they are available. Unnecessary equipment increases cost, pressure loss, maintenance, stagnant-water risk, and the chance that exhausted components go unnoticed. Source correction, well or plumbing repair, or a public-health action may be more important than filtration.
+TDS “creep” can temporarily raise the first water produced after the membrane sits idle. That does not necessarily mean the membrane has failed. Compare stable readings under repeatable conditions and look for a trend.
 
-### Verify and maintain
+### Why RO TDS may suddenly increase
 
-Plan bypass and isolation, gauges, sampling points, leak protection, freeze protection, drainage, and service clearance before installation. Use appropriately qualified professionals for plumbing, electrical, well, or public-health work.
+A rising product-water reading or falling rejection rate can result from an aging or damaged membrane, low feed pressure, cold water, a dry membrane installed incorrectly, exhausted pretreatment, a failed seal, incorrect tubing or a meter/sample error. A tank that has not been fully exchanged can also blur before-and-after results.
 
-After correction or installation, repeat the measurement that justified the work at a representative point. Keep the baseline, finished result, settings, installation date, consumable changes, and service history together. Investigate breakthrough, pressure loss, leaks, alarms, unusual water or salt use, and recurring symptoms rather than resetting a timer without diagnosis.
+Check the simple items first: repeat both readings, confirm the meter, verify feed pressure, review filter and membrane age, and inspect for crossed tubing or bypassed flow. Replace components based on measured performance and the manufacturer's schedule—not TDS alone.
+
+### What a TDS meter cannot tell you
+
+A TDS reading does not show which substances are present. Two samples with the same reading can contain different dissolved minerals or contaminants. The meter also does not measure bacteria and may not detect many compounds of concern at meaningful levels.
+
+If the goal is to confirm removal of arsenic, nitrate, lead, PFAS or another health-related contaminant, use a state-certified laboratory and sample according to its instructions. Select equipment with performance claims appropriate to the verified contaminant and conditions.
+
+### RO TDS questions homeowners ask
+
+Is zero TDS required? No. Household RO systems commonly leave some dissolved ions. The appropriate result depends on feed water and the tested performance of the specific membrane and system.
+
+Is a low TDS reading proof the water is safe? No. It is an equipment-performance clue, not a complete water-safety test.
+
+When should I replace the membrane? Consider the manufacturer's service guidance, rejection-rate trend, production rate, pressure and water chemistry together. A single reading taken under different conditions is not enough.
 
 ### Authoritative references
 
@@ -529,32 +544,51 @@ After correction or installation, repeat the measurement that justified the work
 
 These references provide general guidance. Property-specific instructions from a certified laboratory, health department, utility, licensed plumber, well professional, electrician, or equipment manufacturer take priority.
 
-## 207. RO Faucet Air Gap Explained
+## 207. Reverse Osmosis Air Gap Faucet Problems
 **Slug:** `/reverse-osmosis-air-gap-faucet/`
-**Title tag:** Reverse Osmosis Air Gap Faucet: Leaks, Noise & Fixes
-**Meta description:** Learn how a reverse osmosis air gap faucet works, why it may leak or gurgle, and what to inspect before changing the drain connection.
-**H1:** Reverse Osmosis Air Gap Faucets: How They Work and What Goes Wrong
+**Title tag:** RO Air Gap Faucet Leaking? Causes, Noise & Fixes
+**Meta description:** Is your reverse osmosis air gap faucet leaking or gurgling? Learn the common causes, safe checks, and why a blocked drain tube often sends water onto the sink.
+**H1:** Reverse Osmosis Air Gap Faucet Leaking or Making Noise? Start Here
 **Query:** reverse osmosis air gap faucet
+**Internal links:** /products/reverse-osmosis-system/; /reverse-osmosis-tds-reading/; /contact/
 
-An air-gap faucet provides a physical separation in the drain path but can make noise or leak onto the counter when tubing or drains are restricted. A useful decision separates symptoms from diagnosis, confirms the scope of the concern, and assigns every proposed treatment stage a specific, verifiable job.
+A reverse osmosis air gap faucet usually leaks onto the sink when reject water cannot move freely through the drain tubing. The most common causes are a clogged drain tube, blocked drain saddle, kinked line, poor routing or a slow sink drain. Gurgling during RO production can be normal; continuous leaking is not.
 
-### Establish the evidence
+### What an RO air gap faucet does
 
-Inspect drain saddle position, tube routing, blockage, sink drain condition, and the model's air-gap connections. Record the water source, affected fixtures, timing, recent work, existing equipment, household demand, and any earlier results. Appearance, taste, odor, staining, scale, or pressure can guide investigation, but none proves that water is safe.
+The air gap creates a physical break between the RO system's reject-water line and the household drain. It helps prevent drain water from being siphoned back toward the treatment system. During production, reject water travels up to the faucet's air gap and then down a larger tube to the drain saddle.
 
-For health-related contaminants or microorganisms, use a state-certified laboratory and follow local health-department guidance. For equipment performance, record the exact model, operating conditions, service age, settings, flow, pressure, and the manufacturer's validated or certified claims.
+If the downstream tube or drain connection is restricted, water backs up at the air-gap opening and spills onto the counter. Bypassing the air gap may violate the system instructions or plumbing requirements and can remove an intended protective feature.
 
-### Compare the practical options
+### Why water comes out of the air-gap hole
 
-Clear the actual restriction and preserve the required air gap rather than bypassing a protective feature. Compare service flow, capacity, pressure loss, inlet limits, drainage, electricity, consumables, sanitation, alarms, replacement parts, warranty, and total ownership work. Point-of-use and whole-home systems solve different scopes; use the smallest scope that fully addresses the verified goal.
+Check the larger drain tube from the faucet to the drain saddle. It should slope continuously toward the drain without kinks, loops, sags or pinching. Inspect the saddle opening for debris and mineral buildup, and confirm that it enters an appropriate part of the drain line according to the installation manual.
 
-Avoid adding stages merely because they are available. Unnecessary equipment increases cost, pressure loss, maintenance, stagnant-water risk, and the chance that exhausted components go unnoticed. Source correction, well or plumbing repair, or a public-health action may be more important than filtration.
+Also check the sink drain itself. A partially blocked disposal or trap can slow drainage and contribute to backup. If the air gap started leaking after a filter change or recent plumbing work, compare the tubing connections and routing with the model diagram before replacing parts.
 
-### Verify and maintain
+### Safe troubleshooting steps
 
-Plan bypass and isolation, gauges, sampling points, leak protection, freeze protection, drainage, and service clearance before installation. Use appropriately qualified professionals for plumbing, electrical, well, or public-health work.
+1. Note whether the leak occurs only while the RO system is producing water. If it leaks at other times, check for a faucet or supply-side leak.
 
-After correction or installation, repeat the measurement that justified the work at a representative point. Keep the baseline, finished result, settings, installation date, consumable changes, and service history together. Investigate breakthrough, pressure loss, leaks, alarms, unusual water or salt use, and recurring symptoms rather than resetting a timer without diagnosis.
+2. Turn off the RO feed-water valve before disconnecting tubing. Photograph every connection and follow the manufacturer's service instructions.
+
+3. Inspect the drain tube for kinks, buildup and incorrect routing. Clean or replace tubing only with compatible parts and preserve the required air-gap arrangement.
+
+4. Check the drain saddle opening and sink drain condition. Do not push debris farther into the plumbing.
+
+5. Restore water, dry the area and watch a full production cycle to verify that reject water drains without backing up.
+
+### Why the faucet gurgles or makes noise
+
+Some gurgling is expected when reject water and air enter the drain. Excessive or new noise can point to a restricted drain tube, poor routing, high reject-water flow or a drain saddle location that amplifies sound. Correct the restriction before trying to mask the noise.
+
+### RO air-gap questions homeowners ask
+
+Can I plug the air-gap hole? No. Blocking the opening can force water onto the counter or defeat the air gap's function.
+
+Can I switch to a non-air-gap faucet? Only when the system manufacturer and applicable plumbing requirements allow a compliant alternative. Have the drain connection reviewed rather than modifying it solely to stop noise.
+
+Why did it leak right after filter service? Tubing may have been crossed, kinked or shifted, or the RO system may be producing a longer cycle after the tank was emptied. Verify routing against the exact model diagram.
 
 ### Authoritative references
 

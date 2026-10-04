@@ -99,31 +99,51 @@ After correction or installation, repeat the measurement that justified the work
 
 These references provide general guidance. Property-specific instructions from a certified laboratory, health department, utility, licensed plumber, well professional, electrician, or equipment manufacturer take priority.
 
-## 234. Water Filter Before a Tankless Heater
+## 234. Water Filter Before a Tankless Water Heater
 **Slug:** `/water-filter-before-tankless-heater/`
-**Title tag:** Water Filter Before a Tankless Heater | Asheville Water Specialists
-**Meta description:** Water Filter Before a Tankless Heater: what to measure, what the evidence can show, and how to choose a practical next step for a Western North Carolina ho
+**Title tag:** Filter Before a Tankless Water Heater? What to Install
+**Meta description:** Learn when to install a water filter before a tankless water heater, which water problems matter, and how to protect flow without using the wrong filter.
+**H1:** Should You Install a Water Filter Before a Tankless Water Heater?
 **Query:** water filter before tankless water heater
+**Internal links:** /products/whole-home-filtration/; /hard-water-asheville-nc/; /contact/
 
-Pretreatment can protect small passages from sediment or scale only when selected for the actual incoming water and heater specifications. A useful decision separates symptoms from diagnosis, confirms the scope of the concern, and assigns every proposed treatment stage a specific, verifiable job.
+Yes, a filter or other pretreatment may belong before a tankless water heater when the incoming water contains sediment, hardness, iron or another condition addressed by the heater manufacturer. The correct solution depends on water testing and flow requirements. A small, overly restrictive cartridge can protect the heater from debris while starving it of flow.
 
-### Establish the evidence
+### What a filter can—and cannot—protect against
 
-Review sediment, hardness, iron, flow, pressure drop, heater inlet screen, and manufacturer requirements. Record the water source, affected fixtures, timing, recent work, existing equipment, household demand, and any earlier results. Appearance, taste, odor, staining, scale, or pressure can guide investigation, but none proves that water is safe.
+A sediment filter can capture sand, grit, rust and other suspended particles before they reach the heater's inlet screen and small water passages. It does not soften hard water or remove dissolved minerals. If scale is the concern, a basic sediment cartridge alone will not solve it.
 
-For health-related contaminants or microorganisms, use a state-certified laboratory and follow local health-department guidance. For equipment performance, record the exact model, operating conditions, service age, settings, flow, pressure, and the manufacturer's validated or certified claims.
+Hardness, iron, manganese, pH and total dissolved solids can affect maintenance and equipment selection. Review the heater manual for inlet-water limits, required flushing schedule, warranty conditions and minimum flow. Test private well water rather than choosing treatment from appearance alone.
 
-### Compare the practical options
+### Which treatment goes before the heater?
 
-Install serviceable pretreatment without starving flow and maintain both filter and heater records. Compare service flow, capacity, pressure loss, inlet limits, drainage, electricity, consumables, sanitation, alarms, replacement parts, warranty, and total ownership work. Point-of-use and whole-home systems solve different scopes; use the smallest scope that fully addresses the verified goal.
+Visible sand or grit: use appropriately sized sediment pretreatment with enough surface area and service flow for the home.
 
-Avoid adding stages merely because they are available. Unnecessary equipment increases cost, pressure loss, maintenance, stagnant-water risk, and the chance that exhausted components go unnoticed. Source correction, well or plumbing repair, or a public-health action may be more important than filtration.
+Hardness and recurring scale: consider water softening or another manufacturer-supported scale-control approach selected from measured hardness and household demand.
 
-### Verify and maintain
+Iron or manganese: identify whether the material is dissolved or particulate and select treatment around the actual concentration, pH, flow and other water chemistry.
 
-Plan bypass and isolation, gauges, sampling points, leak protection, freeze protection, drainage, and service clearance before installation. Use appropriately qualified professionals for plumbing, electrical, well, or public-health work.
+Chlorine, taste or odor: carbon filtration may be appropriate, but it must be sized for flow and maintained. Carbon does not replace sediment control, softening or health-contaminant treatment unless the exact system has the relevant certified claim.
 
-After correction or installation, repeat the measurement that justified the work at a representative point. Keep the baseline, finished result, settings, installation date, consumable changes, and service history together. Investigate breakthrough, pressure loss, leaks, alarms, unusual water or salt use, and recurring symptoms rather than resetting a timer without diagnosis.
+### Avoid pressure and flow problems
+
+Size pretreatment for peak household demand and the heater's required activation flow. Record pressure before and after the filter while fixtures are running. Include isolation valves, a serviceable bypass where appropriate, pressure gauges and enough clearance to change cartridges without disturbing the heater.
+
+Watch for a pressure drop that grows as the filter loads. A larger housing or staged sediment approach may provide longer service life than installing an unnecessarily fine cartridge. Correct a heavy-sediment source problem when possible instead of treating filter replacement as the only solution.
+
+### Installation order and maintenance
+
+Treatment generally belongs upstream of the equipment it is intended to protect, but the complete order must follow each component's instructions and local plumbing requirements. The arrangement may include the main shutoff, pressure regulation, sediment control, condition-specific treatment and then the tankless heater.
+
+Maintain the filter and heater as one system. Log pressure, filter changes, heater flushing or descaling and changes in hot-water flow. A neglected filter can create the very performance complaint it was installed to prevent.
+
+### Tankless heater filtration questions
+
+Do tankless water heaters have an inlet filter? Many have a small inlet screen, but it is not a substitute for properly sized pretreatment when the source carries substantial sediment or scale-forming hardness.
+
+What micron filter should I install? There is no universal micron rating. Choose it from the particle problem, flow requirement, housing size and manufacturer guidance. Finer is not automatically better.
+
+Does a whole-house water filter prevent scale? Only if the selected treatment is designed and verified for the scale-forming condition. A standard sediment or taste-and-odor filter does not soften water.
 
 ### Authoritative references
 

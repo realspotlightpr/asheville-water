@@ -9,6 +9,14 @@ export function RankingPage() {
   const { slug } = useParams(),
     page = newRankingPages.find((candidate) => candidate.slug === `/${slug}/`);
   if (!page) return <NotFound />;
+  const octoberUpdated = new Set([
+    "/troubleshooting-uv-system-wnc/",
+    "/troubleshooting-spin-down-filter-wnc/",
+    "/reverse-osmosis-tds-reading/",
+    "/reverse-osmosis-air-gap-faucet/",
+    "/water-filter-before-tankless-heater/",
+    "/spring-vs-drilled-well-water/",
+  ]).has(page.slug);
   const recentlyUpdated = new Set([
     "/acid-neutralizer-vs-water-softener/",
     "/filter-before-or-after-water-softener/",
@@ -18,7 +26,18 @@ export function RankingPage() {
     "/nsf-58-reverse-osmosis/",
     "/non-detect-water-test/",
   ]).has(page.slug);
-  const dateModified = recentlyUpdated ? "2026-09-24" : page.number >= 491 ? "2026-08-17" : "2026-08-04";
+  const dateModified = octoberUpdated
+    ? "2026-10-04"
+    : recentlyUpdated
+      ? "2026-09-24"
+      : page.number >= 491
+        ? "2026-08-17"
+        : "2026-08-04";
+  const reviewedMonth = octoberUpdated
+    ? "October"
+    : recentlyUpdated
+      ? "September"
+      : "August";
   const related = newRankingPages
     .filter(
       (candidate) =>
@@ -98,7 +117,7 @@ export function RankingPage() {
             {page.intro}
           </p>
           <p className="mt-7 font-body text-xs text-white/55">
-            Reviewed {recentlyUpdated ? "September" : "August"} 2026 · Testing-first guidance · Licensed NC plumber
+            Reviewed {reviewedMonth} 2026 · Testing-first guidance · Licensed NC plumber
             installation
           </p>
         </div>
@@ -148,6 +167,39 @@ export function RankingPage() {
               by a licensed North Carolina plumber.
             </p>
           </section>
+          {page.internalLinks.length > 0 && (
+            <section className="mt-14 rounded-2xl border border-sky/20 bg-mist p-7">
+              <h2 className="font-heading text-2xl font-bold text-navy">
+                Helpful next steps
+              </h2>
+              <div className="mt-5 flex flex-wrap gap-3">
+                {page.internalLinks.map((path) => {
+                  const linkedPage = newRankingPages.find(
+                    (candidate) => candidate.slug === path,
+                  );
+                  const label = linkedPage?.title ??
+                    (path === "/contact/"
+                      ? "Ask a water specialist"
+                      : path
+                          .split("/")
+                          .filter(Boolean)
+                          .at(-1)
+                          ?.replaceAll("-", " ")
+                          .replace(/\b\w/g, (letter) => letter.toUpperCase()) ??
+                        "Learn more");
+                  return (
+                    <Link
+                      key={path}
+                      to={path}
+                      className="rounded-full border border-sky/30 bg-white px-4 py-2 font-body text-sm font-semibold text-specialist transition hover:border-specialist hover:bg-specialist hover:text-white"
+                    >
+                      {label} →
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          )}
           {related.length > 0 && (
             <section className="mt-14">
               <h2 className="font-heading text-2xl font-bold text-navy">

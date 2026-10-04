@@ -396,36 +396,59 @@ EPA WaterSense — Fix a Leak: https://www.epa.gov/watersense/fix-leak-week
 
 These references provide general guidance. Property-specific instructions from a certified laboratory, health department, utility, licensed professional, environmental agency, healthcare professional, or equipment manufacturer take priority.
 
-## 628. UV Water Disinfection System Troubleshooting Guide
+## 628. UV Water System Troubleshooting
 **Slug:** `/troubleshooting-uv-system-wnc/`
-**Title tag:** UV Water Disinfection System Troubleshooting Guide | Asheville Water Specialists
-**Meta description:** UV Water Disinfection System Troubleshooting Guide: testing-first guidance, practical comparison criteria, and maintenance planning for Western North…
-**Query:** troubleshooting a uv water disinfection system in Western North Carolina
-**Internal links:** /products/; /services/; /contact/
+**Title tag:** UV Water System Troubleshooting: Alarms & No UV Fixes
+**Meta description:** Troubleshoot UV water system alarms, low intensity, leaks, cloudy sleeves, and lamp failures. Learn what to check before resetting your UV system.
+**H1:** UV Water System Troubleshooting: Alarms, Lamps and Low UV Intensity
+**Query:** uv water treatment system troubleshooting
+**Internal links:** /products/uv-purification-system/; /resources/well-water-testing-wnc/; /contact/
 
-Start with symptoms, readings, alarms, recent changes, and safe bypass options instead of changing several settings at once. A uv water disinfection system is intended for microorganism inactivation; a defensible plan addresses validated dose, flow control, UV transmittance, pretreatment, lamp and sleeve service, alarms, and power reliability.
+When a UV water system alarms, do not assume the water is being disinfected. Check the alarm code, power, lamp age, quartz sleeve, flow rate and pretreatment before resetting it. Until the cause is corrected and the system is verified, follow the manufacturer's instructions and use an alternate safe water source when microbiological safety is uncertain.
 
-### Confirm the equipment has a defined job
+### What a UV alarm usually means
 
-Start with representative water results and the household objective. This equipment is generally considered for microorganism inactivation, but the exact model must be evaluated against its published and certified claims. Record source type, plumbing size, pressure, peak and daily demand, available drainage and power, and existing treatment.
+An audible or visual alarm usually points to a lamp failure, expired lamp timer, low UV intensity, sensor fault, power problem or excessive flow. Write down the exact code before unplugging the controller. A reset may silence the warning without restoring the validated UV dose.
 
-### Design factors for a uv water disinfection system
+If the lamp is off, confirm the outlet and breaker are working, then inspect the controller and lamp connection only as directed by the manufacturer. Never look directly at an operating UV lamp. If the lamp is on but intensity is low, the problem may be a fouled quartz sleeve, aging lamp, cloudy incoming water, an obstructed sensor or flow beyond the unit's rating.
 
-Review validated dose, flow control, UV transmittance, pretreatment, lamp and sleeve service, alarms, and power reliability. Confirm rated operating temperature and pressure, materials, code and manufacturer requirements, service clearances, freeze or flood exposure, bypass behavior, startup procedure, and what happens during a power, drain, or communications failure.
+### UV system troubleshooting checklist
 
-### Troubleshooting Guide decisions
+1. Read and photograph the controller message. Record when the alarm began and whether power, plumbing, filters or the well were recently serviced.
 
-Start with symptoms, readings, alarms, recent changes, and safe bypass options instead of changing several settings at once. Compare written specifications rather than category labels. Ask who will commission the system, what baseline will be recorded, which reading proves performance, how consumables are sourced, what routine service requires, and whether qualified local support and replacement parts are available.
+2. Check power and flow. Confirm the unit is energized, valves are in their normal operating position and household flow is not exceeding the system's rated maximum.
 
-### Verification and records
+3. Check lamp age. UV output declines before a lamp necessarily burns out. Replace it on the manufacturer's schedule rather than judging it by visible light alone.
 
-After work is complete, check for leaks, pressure and flow effects, drain behavior, alarms, bypass labeling, and the measurement tied to microorganism inactivation. Keep model and serial numbers, photographs, settings, test reports, installation and service dates, warranties, and a plain-language emergency procedure.
+4. Inspect and clean the quartz sleeve using the procedure and cleaning product specified for the model. Iron, hardness scale and sediment can coat the sleeve and reduce UV transmission.
+
+5. Review pretreatment. A loaded sediment filter, unresolved iron or manganese, or cloudy water can reduce performance. Replace or service pretreatment based on pressure, condition and the manufacturer's instructions.
+
+6. Sanitize after opening the system. Lamp or sleeve replacement does not disinfect downstream plumbing. Follow the equipment maker's startup and sanitation procedure, then test when required by the health department or laboratory plan.
+
+### Why a UV light can be on but still not disinfect properly
+
+Visible light does not prove that the system is delivering its validated dose. Performance depends on lamp output, sleeve condition, UV transmittance, contact chamber design and flow. UV also does not remove sediment, minerals, metals, PFAS or other dissolved chemicals. Those concerns require separate testing and treatment.
+
+For private wells, use a state-certified laboratory for total coliform and E. coli testing. A positive result calls for source and well investigation—not simply a timer reset. Repeated bacteria results can indicate a well cap, casing, drainage or plumbing problem that should be corrected.
+
+### When to call for service
+
+Arrange service when the alarm returns after routine maintenance, the sleeve will not clean, the chamber leaks, the sensor remains low, the controller is damaged or water tests positive for bacteria. Keep the model number, alarm code, lamp date, flow rating and recent test results ready; those details shorten diagnosis.
+
+### UV troubleshooting questions homeowners ask
+
+Can I drink the water while the UV system is alarming? An alarm means validated treatment may not be occurring. Follow the manufacturer and local health guidance and use an alternate safe source until the cause is corrected when microbiological safety is in question.
+
+How often should a UV lamp be replaced? Use the interval specified for the exact unit, commonly based on elapsed operating time rather than whether the lamp still glows.
+
+Will UV make cloudy water safe? Cloudiness and suspended particles can shield microorganisms. Correct the cause and install appropriate pretreatment before relying on UV performance.
 
 ### Authoritative references
 
 NSF — Standards for Water Treatment Systems: https://www.nsf.org/consumer-resources/water-quality/water-filters-testing-treatment/standards-water-treatment-systems
 
-EPA WaterSense — Fix a Leak: https://www.epa.gov/watersense/fix-leak-week
+CDC — Guidelines for Testing Well Water: https://www.cdc.gov/drinking-water/safety/guidelines-for-testing-well-water.html
 
 These references provide general guidance. Property-specific instructions from a certified laboratory, health department, utility, licensed professional, environmental agency, healthcare professional, or equipment manufacturer take priority.
 

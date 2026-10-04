@@ -66,36 +66,63 @@ EPA WaterSense — Fix a Leak: https://www.epa.gov/watersense/fix-leak-week
 
 These references provide general guidance. Property-specific instructions from a certified laboratory, health department, utility, licensed professional, environmental agency, healthcare professional, or equipment manufacturer take priority.
 
-## 643. Spin-Down Sediment Filter Troubleshooting Guide
+## 643. Spin-Down Sediment Filter Troubleshooting
 **Slug:** `/troubleshooting-spin-down-filter-wnc/`
-**Title tag:** Spin-Down Sediment Filter Troubleshooting Guide | Asheville Water Specialists
-**Meta description:** Spin-Down Sediment Filter Troubleshooting Guide: testing-first guidance, practical comparison criteria, and maintenance planning for Western North…
-**Query:** troubleshooting a spin-down sediment filter in Western North Carolina
-**Internal links:** /products/; /services/; /contact/
+**Title tag:** Spin-Down Filter Troubleshooting: Low Flow & Clogs
+**Meta description:** Fix common spin-down sediment filter problems including low pressure, clogged screens, leaking purge valves, frequent flushing, and trapped sediment.
+**H1:** Spin-Down Sediment Filter Troubleshooting: Low Pressure, Clogs and Leaks
+**Query:** spin down sediment filter troubleshooting
+**Internal links:** /products/whole-home-filtration/; /sediment-filtration-well-water/; /contact/
 
-Start with symptoms, readings, alarms, recent changes, and safe bypass options instead of changing several settings at once. A spin-down sediment filter is intended for coarse-particle separation; a defensible plan addresses screen size, purge method, pressure rating, sediment load, clearances, freeze protection, and downstream filtration.
+A spin-down filter that reduces pressure, will not flush clean or leaks from the purge valve usually has a clogged screen, undersized mesh, excessive sediment load, blocked flush outlet or damaged seal. Isolate and depressurize the housing according to the manufacturer's instructions before opening or cleaning it.
 
-### Confirm the equipment has a defined job
+### Why a spin-down filter causes low water pressure
 
-Start with representative water results and the household objective. This equipment is generally considered for coarse-particle separation, but the exact model must be evaluated against its published and certified claims. Record source type, plumbing size, pressure, peak and daily demand, available drainage and power, and existing treatment.
+Compare pressure before and after the filter while water is flowing. A large difference points to a loaded screen or a unit that is too restrictive for the household's peak flow. Low pressure on both sides usually points elsewhere, such as the well pump, pressure tank, pressure switch, supply line or another treatment component.
 
-### Design factors for a spin-down sediment filter
+Do not automatically install a finer screen. Finer mesh captures smaller particles but can clog faster and increase pressure loss. Spin-down filters are generally best used as serviceable pretreatment for coarse sediment; smaller particles may require a properly sized downstream cartridge or media filter.
 
-Review screen size, purge method, pressure rating, sediment load, clearances, freeze protection, and downstream filtration. Confirm rated operating temperature and pressure, materials, code and manufacturer requirements, service clearances, freeze or flood exposure, bypass behavior, startup procedure, and what happens during a power, drain, or communications failure.
+### Step-by-step spin-down filter checks
 
-### Troubleshooting Guide decisions
+1. Record static and flowing pressure before changing anything. Note whether the problem affects every fixture or only one part of the home.
 
-Start with symptoms, readings, alarms, recent changes, and safe bypass options instead of changing several settings at once. Compare written specifications rather than category labels. Ask who will commission the system, what baseline will be recorded, which reading proves performance, how consumables are sourced, what routine service requires, and whether qualified local support and replacement parts are available.
+2. Flush the filter with water flowing as directed by its manual. A brief valve opening may not create enough velocity to carry heavy sand or grit out of the housing.
 
-### Verification and records
+3. If flushing does not restore pressure, isolate, depressurize and clean the screen. Inspect the mesh for embedded particles, tears, distortion and scale.
 
-After work is complete, check for leaks, pressure and flow effects, drain behavior, alarms, bypass labeling, and the measurement tied to coarse-particle separation. Keep model and serial numbers, photographs, settings, test reports, installation and service dates, warranties, and a plain-language emergency procedure.
+4. Inspect the purge valve and O-rings. Sediment trapped in the valve seat can cause dripping; worn seals or freeze damage may require replacement parts.
+
+5. Check installation direction and clearance. The flow arrow must match the piping, the bowl needs room for service and outdoor units must be protected from freezing and sunlight as required by the manufacturer.
+
+6. Track how quickly sediment returns. A filter that fills daily may be revealing a well, plumbing or source-water problem that deserves diagnosis rather than ever-more-frequent flushing.
+
+### Common symptoms and likely causes
+
+Low pressure after the filter: clogged screen, mesh that is too fine, undersized body or flow beyond the rated capacity.
+
+Purge valve will not stop dripping: grit in the valve seat, damaged O-ring, cracked valve or incomplete closure.
+
+Sediment remains after flushing: weak flush flow, compacted material, incorrect screen orientation or particles smaller than the screen openings.
+
+Screen clogs again quickly: heavy well sediment, iron or scale fouling, disturbed plumbing, deteriorating well components or the wrong filtration stage for the material present.
+
+### When a spin-down filter is not enough
+
+A spin-down filter does not disinfect water or reliably remove dissolved iron, hardness, arsenic, PFAS or other dissolved contaminants. Identify the material before adding treatment. If the water is persistently cloudy, gritty or discolored, document the source and consider representative laboratory testing plus an inspection of the well and plumbing.
+
+### Spin-down filter questions homeowners ask
+
+How often should I flush it? Flush frequency depends on sediment load, screen size, pressure change and the manufacturer's instructions. Use observed buildup and pressure—not a universal calendar—as the starting point.
+
+Should the filter go before the pressure tank? Placement depends on the model, well layout and manufacturer requirements. Incorrect placement can create service and pressure problems; have the design reviewed by a qualified well or plumbing professional.
+
+Can I leave the purge valve connected to a drain? Only if the discharge arrangement meets the manufacturer's instructions and local plumbing requirements, including appropriate air-gap or backflow protection where required.
 
 ### Authoritative references
 
 NSF — Standards for Water Treatment Systems: https://www.nsf.org/consumer-resources/water-quality/water-filters-testing-treatment/standards-water-treatment-systems
 
-EPA WaterSense — Fix a Leak: https://www.epa.gov/watersense/fix-leak-week
+NC DEQ — Private Well Information: https://www.deq.nc.gov/about/divisions/water-resources/groundwater-resources/private-well-information
 
 These references provide general guidance. Property-specific instructions from a certified laboratory, health department, utility, licensed professional, environmental agency, healthcare professional, or equipment manufacturer take priority.
 

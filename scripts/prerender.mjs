@@ -220,12 +220,24 @@ const routePriorities = {
   "/resources": "0.8",
   "/products": "0.7",
 };
-const lastModified = new Date().toISOString().slice(0, 10);
+// Keep sitemap dates meaningful: only refreshed URLs receive today's date.
+// A global build should not falsely tell crawlers that every article changed.
+const defaultLastModified = "2026-09-28";
+const updatedRoutes = new Set([
+  "/troubleshooting-uv-system-wnc",
+  "/troubleshooting-spin-down-filter-wnc",
+  "/reverse-osmosis-tds-reading",
+  "/reverse-osmosis-air-gap-faucet",
+  "/water-filter-before-tankless-heater",
+  "/spring-vs-drilled-well-water",
+]);
+const refreshedOn = "2026-10-04";
 const sitemapUrls = [...new Set(Object.keys(routes))]
   .sort((a, b) => a.localeCompare(b))
   .map((route) => {
     const priority = routePriorities[route] ?? (route.startsWith("/service-areas/") ? "0.8" : "0.7");
     const sitemapPath = route === "/" ? "/" : `${route.replace(/\/$/, "")}/`;
+    const lastModified = updatedRoutes.has(route) ? refreshedOn : defaultLastModified;
     return `  <url><loc>https://avlwaterspecialists.com${sitemapPath}</loc><lastmod>${lastModified}</lastmod><priority>${priority}</priority></url>`;
   })
   .join("\n");
