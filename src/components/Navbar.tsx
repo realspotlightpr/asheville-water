@@ -27,13 +27,13 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-mist bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-1 sm:px-6">
-        <Link to="/" onClick={() => setMobileOpen(false)}>
+      <div className="mx-auto flex w-full max-w-[1500px] items-center justify-between gap-4 px-4 py-1 sm:px-6 xl:px-8">
+        <Link className="shrink-0" to="/" onClick={() => setMobileOpen(false)}>
           <Logo />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-3 xl:flex 2xl:gap-5">
           {navMenus.map((menu) => (
             <div
               key={menu.label}
@@ -43,7 +43,7 @@ export function Navbar() {
             >
               <Link
                 to={menu.to}
-                className="flex items-center gap-1 font-body text-sm font-medium text-ink/80 transition hover:text-specialist"
+                className="flex items-center gap-1 whitespace-nowrap font-body text-[13px] font-medium text-ink/80 transition hover:text-specialist 2xl:text-sm"
               >
                 {menu.label}
                 <Chevron />
@@ -75,7 +75,7 @@ export function Navbar() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `font-body text-sm font-medium transition hover:text-specialist ${
+                `whitespace-nowrap font-body text-[13px] font-medium transition hover:text-specialist 2xl:text-sm ${
                   isActive ? "text-specialist" : "text-ink/80"
                 }`
               }
@@ -87,16 +87,16 @@ export function Navbar() {
             href={testKitUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-body text-sm font-semibold text-specialist transition hover:text-navy"
+            className="whitespace-nowrap font-body text-[13px] font-semibold text-specialist transition hover:text-navy 2xl:text-sm"
           >
             Water Testing
           </a>
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2.5 xl:flex 2xl:gap-3">
           <a
             href={business.phoneHref}
-            className="notranslate font-body text-sm font-semibold text-navy hover:text-specialist"
+            className="notranslate whitespace-nowrap font-body text-[13px] font-semibold text-navy hover:text-specialist 2xl:text-sm"
             translate="no"
           >
             {business.phone}
@@ -104,13 +104,13 @@ export function Navbar() {
           <LanguageToggle />
           <Link
             to="/contact#contact"
-            className="rounded-full bg-amber px-5 py-2.5 font-body text-sm font-semibold text-ink shadow-sm transition hover:brightness-95"
+            className="whitespace-nowrap rounded-full bg-amber px-4 py-2.5 font-body text-[13px] font-semibold text-ink shadow-sm transition hover:brightness-95 2xl:px-5 2xl:text-sm"
           >
             Get a Free Consultation
           </Link>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <Link
             to="/contact#contact"
             onClick={() => setMobileOpen(false)}
@@ -136,7 +136,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="max-h-[80vh] overflow-y-auto border-t border-mist bg-white px-4 py-4 lg:hidden">
+        <div className="max-h-[80vh] overflow-y-auto border-t border-mist bg-white px-4 py-4 xl:hidden">
           <nav className="flex flex-col gap-1">
             {navMenus.map((menu) => (
               <div key={menu.label} className="border-b border-mist/60">
