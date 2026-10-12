@@ -9,7 +9,7 @@ import { Features } from "../components/Features";
 import { Journey } from "../components/Journey";
 import { Stats } from "../components/Stats";
 import { ServiceArea } from "../components/ServiceArea";
-import { CtaBand } from "../components/CtaBand";
+import { HomeContact } from "../components/HomeContact";
 import { ProductSpotlight } from "../components/ProductSpotlight";
 import { Link } from "react-router-dom";
 
@@ -55,7 +55,7 @@ export function Home() {
       <Journey />
       <Stats />
       <ServiceArea />
-      <CtaBand />
+      <HomeContact />
     </>
   );
 }
