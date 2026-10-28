@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
-const formId = "9GV3TJcE4YcSgBqrwUd9";
+const formId = "2UXJNBw1z7leQKagbhm1";
+const formHeight = 834;
 
 type HighLevelFormProps = {
   placement: "hero" | "home" | "contact";
@@ -9,7 +10,6 @@ type HighLevelFormProps = {
 
 export function HighLevelForm({ placement, className = "" }: HighLevelFormProps) {
   const iframeId = `inline-${formId}-${placement}`;
-  const height = placement === "hero" ? 1060 : placement === "contact" ? 1280 : 1200;
 
   useEffect(() => {
     const scriptId = "highlevel-form-embed-script";
@@ -24,8 +24,8 @@ export function HighLevelForm({ placement, className = "" }: HighLevelFormProps)
 
   return (
     <iframe
-      src={`https://api.homeservicehub.app/widget/form/${formId}`}
-      style={{ width: "100%", height: `${height}px`, border: "none", borderRadius: "8px" }}
+      src={`https://api.leadconnectorhq.com/widget/form/${formId}`}
+      style={{ width: "100%", height: `${formHeight}px`, border: "none", borderRadius: "8px" }}
       className={className}
       id={iframeId}
       data-layout='{"id":"INLINE"}'
@@ -36,11 +36,13 @@ export function HighLevelForm({ placement, className = "" }: HighLevelFormProps)
       data-deactivation-type="neverDeactivate"
       data-deactivation-value=""
       data-form-name="Free Consultation - Website"
-      data-height={height}
+      data-height={formHeight}
       data-layout-iframe-id={iframeId}
       data-form-id={formId}
-      title="Request a free consultation from Asheville Water Specialists"
-      loading="eager"
+      data-cookie-consent="true"
+      data-cookie-consent-provider="auto"
+      title="Free Consultation - Website"
+      loading={placement === "hero" ? "eager" : "lazy"}
       scrolling="no"
     />
   );
