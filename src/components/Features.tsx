@@ -1,5 +1,5 @@
 import { Icon } from "./Icon";
-import { features } from "../data/site";
+import { features, stats } from "../data/site";
 
 export function Features() {
   return (
@@ -28,6 +28,24 @@ export function Features() {
             <p className="mt-2 font-body text-sm text-ink/70">{feature.body}</p>
           </div>
         ))}
+      </div>
+
+      <div className="mt-12 overflow-hidden rounded-[1.75rem] bg-[linear-gradient(135deg,var(--color-navy),var(--color-specialist))] px-6 py-8 shadow-[0_22px_60px_rgba(20,35,59,0.14)] sm:px-10">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-4">
+          {stats.map((stat, index) => (
+            <div
+              key={stat.label}
+              className={`text-center ${index % 2 === 1 ? "border-l border-white/15" : ""} lg:border-l lg:first:border-l-0`}
+            >
+              <p className="font-heading text-3xl font-extrabold text-amber sm:text-4xl">
+                {stat.value}
+              </p>
+              <p className="mx-auto mt-2 max-w-40 font-body text-xs leading-5 text-white/70 sm:text-sm">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

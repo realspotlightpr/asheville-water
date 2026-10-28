@@ -19,6 +19,115 @@ body {
   top: 0 !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--color-specialist);
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--color-sky);
+  outline-offset: 3px;
+}
+
+.premium-button {
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease,
+    color 180ms ease, filter 180ms ease;
+}
+
+.premium-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.025);
+}
+
+.premium-button:active {
+  transform: translateY(0) scale(0.985);
+}
+
+.motion-enhanced .section-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-enhanced .section-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.water-parallax {
+  transform: translate3d(0, var(--water-parallax-y, 0px), 0) scale(1.06);
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes hero-media-settle {
+  from { transform: scale(1.055); }
+  to { transform: scale(1); }
+}
+
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nav-dropdown-in {
+  from { opacity: 0; transform: translateY(-8px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes nav-mobile-in {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes page-header-enter {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tab-panel-enter {
+  from { opacity: 0.25; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-media {
+  animation: hero-media-settle 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-enter {
+  opacity: 0;
+  animation: hero-enter 720ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-enter-1 { animation-delay: 80ms; }
+.hero-enter-2 { animation-delay: 150ms; }
+.hero-enter-3 { animation-delay: 230ms; }
+.hero-enter-4 { animation-delay: 310ms; }
+.hero-enter-5 { animation-delay: 390ms; }
+
+.nav-dropdown-in {
+  transform-origin: top left;
+  animation: nav-dropdown-in 180ms ease-out both;
+}
+
+.nav-mobile-in {
+  transform-origin: top center;
+  animation: nav-mobile-in 220ms ease-out both;
+}
+
+.page-header-enter {
+  animation: page-header-enter 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.tab-panel-enter {
+  animation: tab-panel-enter 280ms ease-out both;
+}
+
 .gtranslate_wrapper,
 .gt_float_switcher,
 [class^="gt_float"],
@@ -33,4 +142,87 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading);
+}
+
+@keyframes water-body-scan {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  15%,
+  70% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+    transform: translateY(330px);
+  }
+}
+
+@keyframes water-systemic-pulse {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(0.985);
+    transform-origin: center;
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.015);
+    transform-origin: center;
+  }
+}
+
+.water-body-scan {
+  animation: water-body-scan 4.8s ease-in-out infinite;
+}
+
+.water-systemic-pulse {
+  animation: water-systemic-pulse 3.6s ease-in-out infinite;
+}
+
+.water-body-shell,
+.water-organ {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .water-parallax {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .premium-button,
+  .section-reveal,
+  .hero-media,
+  .hero-enter,
+  .nav-dropdown-in,
+  .nav-mobile-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .page-header-enter,
+  .tab-panel-enter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .water-body-scan,
+  .water-systemic-pulse {
+    animation: none;
+  }
+
+  .water-body-scan {
+    opacity: 0.35;
+  }
 }

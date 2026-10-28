@@ -3,6 +3,16 @@ export type Language = "en" | "es";
 export function readLanguage(): Language {
   if (typeof document === "undefined") return "en";
 
+  try {
+    const selected = window.localStorage.getItem("aws_language");
+    if (selected === "en" || selected === "es") return selected;
+
+    const stored = JSON.parse(window.localStorage.getItem("__GT_TRANSLATE_LANGS") || "null");
+    if (stored?.tgtLang === "es") return "es";
+  } catch {
+    // Fall through to the legacy translation cookie when storage is unavailable.
+  }
+
   const translationCookies = document.cookie
     .split(";")
     .map((cookie) => cookie.trim())
@@ -61,9 +71,11 @@ export function changeLanguage(language: Language) {
   const persistent = "max-age=31536000;SameSite=Lax";
   const domains = cookieDomains(hostname);
 
+  window.localStorage.setItem("aws_language", language);
   document.cookie = `aws_language=${language};path=/;${persistent}`;
 
   if (language === "en") {
+    window.localStorage.removeItem("__GT_TRANSLATE_LANGS");
     document.cookie = `googtrans=;path=/;${deleted}`;
     domains.forEach((domain) => {
       document.cookie = `googtrans=;path=/;domain=${domain};${deleted}`;
@@ -71,11 +83,30 @@ export function changeLanguage(language: Language) {
   } else {
     const value = "/en/es";
 
+    window.localStorage.setItem(
+      "__GT_TRANSLATE_LANGS",
+      JSON.stringify({ srcLang: "en", tgtLang: "es" }),
+    );
     document.cookie = `googtrans=${value};path=/;${persistent}`;
     domains.forEach((domain) => {
       document.cookie = `googtrans=${value};path=/;domain=${domain};${persistent}`;
     });
   }
 
-  window.location.reload();
+  let attempts = 0;
+  const activateWidgetLanguage = () => {
+    const gtranslateWindow = window as Window & {
+      doGTranslate?: (languagePair: string) => void;
+    };
+
+    if (typeof gtranslateWindow.doGTranslate === "function") {
+      gtranslateWindow.doGTranslate(`en|${language}`);
+      return;
+    }
+
+    attempts += 1;
+    if (attempts < 50) window.setTimeout(activateWidgetLanguage, 100);
+  };
+
+  activateWidgetLanguage();
 }

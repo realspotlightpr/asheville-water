@@ -21,8 +21,8 @@ export function Products({ limit, showViewAll, heading, consultationOnly = false
           {heading ?? "Systems Built for Your Home's Water"}
         </h2>
         <p className="mt-4 font-body text-ink/70">
-          We test first, explain the options clearly, and only recommend what your water
-          actually needs — nothing more.
+          Compare whole-home filtration and reverse osmosis options for Asheville city
+          water and private wells, then explore the full service guide for details.
         </p>
       </div>
 
@@ -43,6 +43,9 @@ export function Products({ limit, showViewAll, heading, consultationOnly = false
                 alt={product.name}
                 className="h-full w-full object-contain transition duration-300 hover:scale-105"
                 loading="lazy"
+                decoding="async"
+                width="480"
+                height="320"
               />
             </div>
             <h3 className="font-heading text-lg font-semibold text-navy">

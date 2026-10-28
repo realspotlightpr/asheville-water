@@ -5,6 +5,12 @@ import { siteUrl } from "../data/seo";
 import { articleGuides } from "../data/articles";
 import { NotFound } from "./NotFound";
 
+function headingId(heading: string) {
+  return heading
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
 
 export function ResourceArticlePage() {
   const { slug } = useParams();
@@ -76,6 +82,20 @@ export function ResourceArticlePage() {
             <p className="mt-3 font-heading text-xl font-semibold leading-relaxed text-navy sm:text-2xl">{article.answer}</p>
           </section>
 
+          <nav className="mt-8 border-y border-mist py-6" aria-labelledby="guide-contents">
+            <p id="guide-contents" className="font-body text-xs font-bold uppercase tracking-[0.18em] text-specialist">In this guide</p>
+            <ol className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+              {article.sections.map((section, index) => (
+                <li key={section.heading}>
+                  <a href={`#${headingId(section.heading)}`} className="group flex items-start gap-3 font-body text-sm leading-6 text-ink/70 hover:text-specialist">
+                    <span className="font-semibold text-specialist/60">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="underline-offset-4 group-hover:underline">{section.heading}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+
           <section className="mt-10 rounded-2xl border border-mist p-6 sm:p-8" aria-labelledby="key-takeaways">
             <h2 id="key-takeaways" className="font-heading text-2xl font-bold text-navy">Key Takeaways</h2>
             <ul className="mt-5 grid gap-4 sm:grid-cols-2">
@@ -90,7 +110,7 @@ export function ResourceArticlePage() {
 
           <div className="mt-14 space-y-14">
             {article.sections.map((section, index) => (
-              <section key={section.heading}>
+              <section key={section.heading} id={headingId(section.heading)} className="scroll-mt-32">
                 <div className="flex items-start gap-4">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-specialist font-heading text-sm font-bold text-white">{index + 1}</span>
                   <h2 className="pt-1 font-heading text-2xl font-bold text-navy sm:text-3xl">{section.heading}</h2>

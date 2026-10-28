@@ -9,11 +9,13 @@ import { MetaPixel } from "./MetaPixel";
 import { GoogleAnalytics } from "./GoogleAnalytics";
 import { LeadConnectorChat } from "./LeadConnectorChat";
 import { ConversionTracking } from "./ConversionTracking";
+import { ScrollMotion } from "./ScrollMotion";
 
 export function Layout() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <ScrollToTop />
+      <ScrollMotion />
       <TranslationNavigationGuard />
       <GTranslateLoader />
       <MetaPixel />

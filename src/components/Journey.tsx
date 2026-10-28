@@ -19,7 +19,7 @@ export function Journey() {
             From Free Consultation to Clean Water — Start to Finish
           </h2>
           <p className="mx-auto mt-4 max-w-2xl font-body text-ink/65">
-            In three steps, you’ll know what is in your water, what it means, and what we would install — if anything.
+            In six clear steps, you’ll know what is in your water, what it means, and what we would install — if anything.
           </p>
         </div>
 

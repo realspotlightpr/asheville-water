@@ -1,8 +1,8 @@
-import extraLargeSoftenerImage from "../../images/WATER SOFTENER WITH CHLORINE FILTRATION.png";
-import cityWaterDualTankImage from "../../images/CITY WATER DUAL TANK.png";
+import extraLargeSoftenerImage from "../../images/WATER SOFTENER WITH CHLORINE FILTRATION.webp";
+import cityWaterDualTankImage from "../../images/CITY WATER DUAL TANK.webp";
 import carbonFilterImage from "../../images/WHOLE HOME WATER FILER CARBON ONLY TANK.webp";
 import saltFreeConditionerImage from "../../images/WHOLE HOME SALT-FREE CONDITIONER.webp";
-import ironSulfurRemovalImage from "../../images/PREMIUM HOME IRON AND SULFUR REMOVAL SYSTEM.png";
+import ironSulfurRemovalImage from "../../images/PREMIUM HOME IRON AND SULFUR REMOVAL SYSTEM.webp";
 
 export const business = {
   name: "Asheville Water Specialists",

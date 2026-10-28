@@ -13,33 +13,36 @@ export function CtaBand({
   return (
     <section className="relative overflow-hidden bg-navy">
       <img
-        src="/assets/cta-clean-water-bg.png"
+        src="/assets/cta-clean-water-bg.jpg"
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
+        decoding="async"
+        width="1800"
+        height="600"
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-specialist/75" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(20,35,59,0.25)_100%)]" />
 
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-6 px-4 py-20 text-center sm:px-6">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-6 px-4 py-20 text-center sm:px-6 sm:py-24">
         <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 font-body text-xs font-semibold uppercase tracking-[0.18em] text-sky backdrop-blur-sm">
           Your Water, Clearly Explained
         </span>
-        <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
+        <h2 className="max-w-3xl text-balance font-heading text-3xl font-bold leading-tight text-white sm:text-4xl">
           {heading}
         </h2>
         <p className="max-w-2xl font-body text-lg text-white/80">{sub}</p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             to="/contact"
-            className="rounded-full bg-amber px-7 py-3.5 font-body text-base font-semibold text-ink shadow-lg transition hover:-translate-y-0.5 hover:brightness-105"
+            className="premium-button inline-flex min-h-12 items-center rounded-full bg-amber px-7 py-3.5 font-body text-base font-semibold text-ink shadow-lg"
           >
             Get a Free Consultation
           </Link>
           <a
             href={business.phoneHref}
-            className="rounded-full border-2 border-white/80 bg-navy/20 px-7 py-3.5 font-body text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white hover:text-specialist"
+            className="premium-button inline-flex min-h-12 items-center rounded-full border-2 border-white/80 bg-navy/20 px-7 py-3.5 font-body text-base font-semibold text-white backdrop-blur-sm hover:bg-white hover:text-specialist"
           >
             Call <span className="notranslate" translate="no">{business.phone}</span>
           </a>

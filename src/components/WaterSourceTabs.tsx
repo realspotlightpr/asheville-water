@@ -16,12 +16,17 @@ export function WaterSourceTabs() {
         </h2>
       </div>
 
-      <div className="mt-10 flex flex-wrap justify-center gap-3">
+      <div className="mt-10 flex flex-wrap justify-center gap-3" role="tablist" aria-label="Choose your water source">
         {waterSources.map((s, i) => (
           <button
             key={s.key}
             onClick={() => setActive(i)}
-            className={`rounded-full px-5 py-2.5 font-body text-sm font-semibold transition ${
+            id={`water-source-tab-${i}`}
+            type="button"
+            role="tab"
+            aria-selected={i === active}
+            aria-controls="water-source-panel"
+            className={`min-h-11 rounded-full px-5 py-2.5 font-body text-sm font-semibold transition ${
               i === active
                 ? "bg-specialist text-white shadow-sm"
                 : "bg-mist text-ink/70 hover:bg-sky/15"
@@ -32,18 +37,24 @@ export function WaterSourceTabs() {
         ))}
       </div>
 
-      <div className="mt-8 grid gap-8 rounded-3xl bg-mist p-8 sm:p-10 lg:grid-cols-2">
+      <div
+        key={source.key}
+        id="water-source-panel"
+        role="tabpanel"
+        aria-labelledby={`water-source-tab-${active}`}
+        className="tab-panel-enter mt-8 grid gap-8 rounded-3xl border border-sky/10 bg-mist p-8 sm:p-10 lg:grid-cols-2"
+      >
         <div>
           <h3 className="font-heading text-2xl font-bold text-navy">
             {source.heading}
           </h3>
           <p className="mt-4 font-body text-ink/70">{source.intro}</p>
         </div>
-        <ul className="space-y-3">
+        <ul className="divide-y divide-sky/15 border-y border-sky/15">
           {source.signs.map((sign) => (
             <li
               key={sign}
-              className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm"
+              className="flex items-start gap-3 py-4"
             >
               <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky/15 text-specialist">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

@@ -21,6 +21,9 @@ export function ProductDetailPage() {
               src={product.image}
               alt={product.name}
               className="h-72 w-full object-contain drop-shadow-lg"
+              width="560"
+              height="420"
+              decoding="async"
             />
           </div>
           <div>

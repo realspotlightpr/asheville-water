@@ -23,12 +23,51 @@ const routes = {
     description: "Whole-home filtration, water softeners, reverse osmosis, carbon filtration, and well-water treatment in Asheville and Western NC. Book a free consultation.",
     heading: "Water Filtration & Treatment Services in Asheville, NC",
     intro: "Explore professional water treatment services selected around your water source, household demand, plumbing, and water-quality goals.",
+    sections: [
+      {
+        heading: "Start With Your Water, Not a Piece of Equipment",
+        paragraphs: [
+          "Asheville homes can have very different water concerns depending on the source, neighborhood, plumbing, and household demand. We listen, test, explain the results, and recommend only the treatment that addresses your priorities.",
+          "Whole-home treatment is designed around peak flow, bathrooms, family size, available installation space, and the maintenance each component requires. The result should solve the measured problem without unnecessary equipment or pressure loss.",
+        ],
+      },
+      {
+        heading: "Whole-Home Filtration, Softening, and Drinking Water",
+        paragraphs: [
+          "Whole-home filtration can address sediment, chlorine, unwanted tastes, odors, and other water-quality concerns throughout the house. Water softeners target hardness minerals that create scale and spotting. Under-sink reverse osmosis focuses on high-quality drinking and cooking water.",
+          "Private-well treatment may require separate stages for iron, sulfur, manganese, sediment, acidity, or microbial concerns. Those components should be selected from representative testing and arranged in the correct sequence for the home’s flow requirements.",
+        ],
+      },
+      {
+        heading: "A Clear Path to Better Water",
+        paragraphs: [
+          "Tell us what you notice and whether the home uses municipal water or a private well. We evaluate the water and installation conditions, explain what the findings mean, and review practical options before any installation decision.",
+          "Asheville Water Specialists provides licensed North Carolina plumbing installation, clear maintenance guidance, written warranty information, and a free consultation without a high-pressure sales process.",
+        ],
+      },
+    ],
   },
   "/service-areas": {
     title: "Water Treatment Service Areas | Asheville Water Specialists",
     description: "Water filtration, softener, reverse osmosis, and well-water treatment across Asheville and Western North Carolina.",
     heading: "Water Treatment Across Western North Carolina",
     intro: "Serving Asheville, Hendersonville, Weaverville, Arden, Fletcher, Black Mountain, Candler, and nearby communities.",
+    sections: [
+      {
+        heading: "City and Well-Water Service Across Western North Carolina",
+        paragraphs: [
+          "Asheville Water Specialists serves homes throughout a 35-mile radius of downtown Asheville. The region includes municipal systems, private wells, historic houses, new construction, mountain properties, and rural communities, so treatment must be selected for the individual property.",
+          "Our service area includes Asheville, Hendersonville, Weaverville, Arden, Fletcher, Black Mountain, Candler, Canton, Brevard, Waynesville, and Mills River. Service availability depends on the project location and installation scope.",
+        ],
+      },
+      {
+        heading: "Testing-First Water Treatment for Each Home",
+        paragraphs: [
+          "We evaluate water source, test results, household demand, plumbing, available space, and the problems the homeowner wants to solve before recommending a system. That may lead to whole-home filtration, softening, reverse osmosis, private-well treatment, or a combination designed to work together.",
+          "A free consultation is the best way to confirm whether a property is within the service radius and identify the most useful next step for its water.",
+        ],
+      },
+    ],
   },
   "/about": {
     title: "About Asheville Water Specialists | Local Water Treatment Experts",
@@ -98,7 +137,19 @@ const routes = {
 // Expand the high-value content clusters so each city, product, and resource URL
 // receives a route-specific HTML fallback during the static build.
 const citySource = fs.readFileSync(path.join(root, "src/data/cities.ts"), "utf8");
-const citySlugs = [...citySource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1]);
+const cityProfiles = [...citySource.matchAll(/\{\s*slug:\s*"([^"]+)"([\s\S]*?)\n\s*\},?/g)].map((match) => {
+  const field = (name) => match[2].match(new RegExp(`${name}:\\s*"([^"]+)"`))?.[1] || "";
+  return {
+    slug: match[1],
+    name: field("name"),
+    county: field("county"),
+    tagline: field("tagline"),
+    summary: field("summary"),
+    localContext: field("localContext"),
+    homeownerNote: field("homeownerNote"),
+  };
+});
+const citySlugs = cityProfiles.map((profile) => profile.slug);
 const citySeoOverrides = {
   asheville: {
     title: "Asheville Water Treatment & Filtration | Local Experts",
@@ -122,13 +173,34 @@ const citySeoOverrides = {
   },
 };
 for (const slug of citySlugs) {
-  const city = slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  const profile = cityProfiles.find((entry) => entry.slug === slug);
+  const city = profile?.name || slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
   const override = citySeoOverrides[slug];
   routes[`/service-areas/${slug}`] = {
     title: override?.title ?? `Water Filtration & Softening in ${city}, NC | Asheville Water Specialists`,
     description: override?.description ?? `Water filtration, softener, reverse osmosis, and well-water treatment for ${city}, NC homes. Free personalized water report.`,
     heading: override?.heading ?? `Water Filtration & Softening in ${city}, NC`,
     intro: `Get a free water report for your ${city} home. We test city or well water, explain the results, and recommend only the treatment your home needs.`,
+    sections: [
+      {
+        heading: `Water Solutions Built Around Your ${city} Home`,
+        paragraphs: [profile?.summary, profile?.localContext, profile?.homeownerNote].filter(Boolean),
+      },
+      {
+        heading: `What We Evaluate in ${city}`,
+        paragraphs: [
+          `Before recommending equipment for a ${city} home, we confirm the water source, measured concerns, household size, peak flow, existing plumbing, installation space, and the difference between whole-home protection and point-of-use drinking-water goals.`,
+          "Water softeners address hardness minerals and scale. Filtration can target sediment, chlorine, taste, odor, iron, sulfur, or other measured conditions. Reverse osmosis focuses on drinking and cooking water. Each technology has a specific job and should be selected accordingly.",
+        ],
+      },
+      {
+        heading: `Licensed Water Treatment Installation Near ${city}`,
+        paragraphs: [
+          `Asheville Water Specialists provides testing-first recommendations and licensed North Carolina plumbing installation for qualifying ${city} properties within the Western North Carolina service area.`,
+          "The consultation explains what a proposed system treats, what it does not treat, how it is maintained, and how the components work together before the homeowner decides.",
+        ],
+      },
+    ],
   };
 }
 const siteSource = fs.readFileSync(path.join(root, "src/data/site.ts"), "utf8");
