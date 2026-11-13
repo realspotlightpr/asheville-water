@@ -14,7 +14,10 @@ declare global {
 
 export function initializeGoogleAnalytics() {
   window.dataLayer ||= [];
-  window.gtag ||= (...args: unknown[]) => window.dataLayer?.push(args);
+  window.gtag ||= function gtag() {
+    // Google tag commands use the standard arguments-object queue protocol.
+    window.dataLayer?.push(arguments);
+  };
 
   if (!document.querySelector("script[data-aws-google-analytics]")) {
     const script = document.createElement("script");
