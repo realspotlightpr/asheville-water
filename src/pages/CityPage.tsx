@@ -3,7 +3,7 @@ import { CtaBand } from "../components/CtaBand";
 import { Icon } from "../components/Icon";
 import { Seo } from "../components/Seo";
 import { business } from "../data/site";
-import { cityProfiles } from "../data/cities";
+import { cityProfiles, getCitySeo } from "../data/cities";
 import { NotFound } from "./NotFound";
 import { siteUrl } from "../data/seo";
 
@@ -51,8 +51,7 @@ export function CityPage() {
 
   if (!city) return <NotFound />;
 
-  const title = city.seoTitle ?? `Water Filtration & Softening in ${city.name}, NC | Asheville Water Specialists`;
-  const description = city.seoDescription ?? `Water filtration, softeners, reverse osmosis, and private-well treatment in ${city.name}, NC. Licensed installation and a free consultation.`;
+  const { title, description, heading } = getCitySeo(city);
   const path = `/service-areas/${city.slug}`;
   const nearbyCities = city.nearby.map((nearbySlug) => cityProfiles.find((profile) => profile.slug === nearbySlug)).filter(Boolean);
 
@@ -136,7 +135,7 @@ export function CityPage() {
             <div>
               <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-sky">{city.county} Service Area</p>
               <h1 className="mt-4 max-w-4xl font-heading text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-                {city.seoHeading ?? `Water Filtration & Softening in ${city.name}, NC`}
+                {heading}
               </h1>
               <p className="mt-6 max-w-3xl font-body text-lg leading-relaxed text-white/75">{city.tagline}</p>
               <p className="mt-4 max-w-3xl font-body text-sm leading-7 text-white/65">

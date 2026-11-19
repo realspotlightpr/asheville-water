@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { readSeoSiteData } from "./seo-site-data.mjs";
+import { cityProfiles, getCitySeo } from "./load-city-data.mjs";
 
 const root = process.cwd();
 const dist = path.join(root, "dist");
@@ -137,52 +138,14 @@ const routes = {
 
 // Expand the high-value content clusters so each city, product, and resource URL
 // receives a route-specific HTML fallback during the static build.
-const citySource = fs.readFileSync(path.join(root, "src/data/cities.ts"), "utf8");
-const cityProfiles = [...citySource.matchAll(/\{\s*slug:\s*"([^"]+)"([\s\S]*?)\n\s*\},?/g)].map((match) => {
-  const field = (name) => match[2].match(new RegExp(`${name}:\\s*"([^"]+)"`))?.[1] || "";
-  return {
-    slug: match[1],
-    name: field("name"),
-    county: field("county"),
-    tagline: field("tagline"),
-    summary: field("summary"),
-    localContext: field("localContext"),
-    homeownerNote: field("homeownerNote"),
-  };
-});
-const citySlugs = cityProfiles.map((profile) => profile.slug);
-const citySeoOverrides = {
-  asheville: {
-    title: "Asheville Water Treatment & Filtration | Local Experts",
-    description: "Asheville water treatment, filtration, softeners, reverse osmosis, and well-water solutions. Get a testing-first plan and licensed NC installation.",
-    heading: "Asheville Water Treatment & Filtration",
-  },
-  hendersonville: {
-    title: "Water Filtration & Softeners in Hendersonville, NC",
-    description: "Water filtration and water softeners for Hendersonville, NC homes. Compare testing-first city and well-water solutions with licensed installation.",
-    heading: "Water Filtration & Softeners in Hendersonville, NC",
-  },
-  weaverville: {
-    title: "Water Filtration & Softeners in Weaverville, NC",
-    description: "Water filtration, softeners, reverse osmosis, and private-well treatment in Weaverville, NC. Start with a local, testing-first water plan.",
-    heading: "Water Filtration & Softeners in Weaverville, NC",
-  },
-  arden: {
-    title: "Arden Water Filtration & Softener Installation | NC",
-    description: "Arden water filtration, water softeners, reverse osmosis, and well-water treatment sized for your home. Get a local testing-first recommendation.",
-    heading: "Arden Water Filtration & Softener Installation",
-  },
-};
-for (const slug of citySlugs) {
-  const profile = cityProfiles.find((entry) => entry.slug === slug);
-  const city = profile?.name || slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
-  const override = citySeoOverrides[slug];
+for (const profile of cityProfiles) {
+  const { slug, name: city } = profile;
+  const metadata = getCitySeo(profile);
   routes[`/service-areas/${slug}`] = {
-    title: override?.title ?? `Water Filtration & Softening in ${city}, NC | Asheville Water Specialists`,
-    description: override?.description ?? `Water filtration, softener, reverse osmosis, and well-water treatment for ${city}, NC homes. Free personalized water report.`,
-    heading: override?.heading ?? `Water Filtration & Softening in ${city}, NC`,
+    ...metadata,
     intro: `Get a free water report for your ${city} home. We test city or well water, explain the results, and recommend only the treatment your home needs.`,
     sections: [
+      { heading: `${profile.county} Service Area`, paragraphs: [profile.tagline] },
       {
         heading: `Water Solutions Built Around Your ${city} Home`,
         paragraphs: [profile?.summary, profile?.localContext, profile?.homeownerNote].filter(Boolean),
@@ -200,6 +163,15 @@ for (const slug of citySlugs) {
           `Asheville Water Specialists provides testing-first recommendations and licensed North Carolina plumbing installation for qualifying ${city} properties within the Western North Carolina service area.`,
           "The consultation explains what a proposed system treats, what it does not treat, how it is maintained, and how the components work together before the homeowner decides.",
         ],
+      },
+      {
+        heading: `Also Serving Communities Near ${city}`,
+        paragraphs: [],
+        links: profile.nearby.map((nearbySlug) => {
+          const nearby = cityProfiles.find((entry) => entry.slug === nearbySlug);
+          if (!nearby) throw new Error(`Unknown nearby city: ${nearbySlug}`);
+          return { href: `/service-areas/${nearby.slug}/`, label: `${nearby.name}, NC` };
+        }).concat([{ href: "/service-areas/", label: "All Service Areas" }]),
       },
     ],
   };
@@ -345,7 +317,7 @@ function escapeHtml(value) {
 for (const [route, page] of Object.entries(routes)) {
   const canonicalPath = route === "/" ? "/" : `${route.replace(/\/$/, "")}/`;
   const canonicalUrl = `https://avlwaterspecialists.com${canonicalPath}`;
-  const staticSections = page.sections?.map((section) => `<section><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</section>`).join("") || "";
+  const staticSections = page.sections?.map((section) => `<section><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}${section.links ? `<ul>${section.links.map(({ href, label }) => `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`).join("")}</ul>` : ""}</section>`).join("") || "";
   const staticLinks = page.links ? `<nav aria-label="Water treatment and consultation"><ul>${page.links.map(({ href, label }) => `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`).join("")}</ul></nav>` : "";
   const staticBody = `<div id="root"><main><h1>${escapeHtml(page.heading)}</h1><p>${escapeHtml(page.intro)}</p>${staticSections}${staticLinks}<p>Asheville Water Specialists serves homeowners throughout Western North Carolina with water filtration, softening, reverse osmosis, and well-water treatment.</p></main></div>`;
   const html = template
