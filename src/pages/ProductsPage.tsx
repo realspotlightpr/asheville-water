@@ -1,3 +1,5 @@
+import { Seo } from "../components/Seo";
+import { productCatalogSeo } from "../data/productSeo";
 import { Link } from "react-router-dom";
 import { PageHeader } from "../components/PageHeader";
 import { Products } from "../components/Products";
@@ -7,6 +9,7 @@ import { addOns } from "../data/site";
 export function ProductsPage() {
   return (
     <>
+      <Seo {...productCatalogSeo} />
       <PageHeader
         eyebrow="Water Treatment Systems"
         title="Systems Built for Your Home's Water"

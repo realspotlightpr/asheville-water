@@ -49,7 +49,9 @@ export function Products({ limit, showViewAll, heading, consultationOnly = false
               />
             </div>
             <h3 className="font-heading text-lg font-semibold text-navy">
-              {product.name}
+              <Link to={`/products/${product.slug}/`} className="hover:underline">
+                {product.name}
+              </Link>
             </h3>
             {showPricing && <p className="mt-2 font-heading text-2xl font-bold text-specialist">{product.price}</p>}
             {product.features ? (
