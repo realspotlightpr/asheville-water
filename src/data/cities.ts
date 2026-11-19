@@ -141,3 +141,12 @@ export const cityProfiles: CityProfile[] = [
     nearby: ["fletcher", "hendersonville", "arden", "brevard"],
   },
 ];
+
+// Shared by the interactive page and build-time HTML; keep metadata identical.
+export function getCitySeo(city: CityProfile) {
+  return {
+    title: city.seoTitle ?? `Water Filtration & Softening in ${city.name}, NC | Asheville Water Specialists`,
+    description: city.seoDescription ?? `Water filtration, softeners, reverse osmosis, and private-well treatment in ${city.name}, NC. Licensed installation and a free consultation.`,
+    heading: city.seoHeading ?? `Water Filtration & Softening in ${city.name}, NC`,
+  };
+}
