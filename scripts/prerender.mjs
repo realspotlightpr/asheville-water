@@ -1,3 +1,4 @@
+import { serviceDecision, commercialGuideServiceLinks } from "./load-service-decision.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { readSeoSiteData } from "./seo-site-data.mjs";
@@ -26,6 +27,7 @@ const routes = {
     heading: "Water Filtration & Treatment Services in Asheville, NC",
     intro: "Explore professional water treatment services selected around your water source, household demand, plumbing, and water-quality goals.",
     sections: [
+      serviceDecision,
       {
         heading: "Start With Your Water, Not a Piece of Equipment",
         paragraphs: [
@@ -307,6 +309,13 @@ for (const file of fs.readdirSync(rankingContentDir).filter((name) => name.endsW
       .filter((section) => section.paragraphs.length);
     routes[route] = { title, description, heading, intro: firstParagraph, sections };
   }
+}
+
+// Only these existing commercial guides receive a named service next step.
+for (const [guidePath, link] of Object.entries(commercialGuideServiceLinks)) {
+  const page = routes[guidePath.replace(/\/$/, "")];
+  if (!page) throw new Error(`Missing commercial guide: ${guidePath}`);
+  page.sections.push({ heading: "Explore Our Services", paragraphs: [], links: [link] });
 }
 
 function escapeHtml(value) {

@@ -1,3 +1,4 @@
+import { serviceDecision } from "../data/serviceDecision";
 import { Link } from "react-router-dom";
 import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
@@ -138,6 +139,15 @@ export function ServicesPage() {
               Call {business.phone}
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-12">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="font-heading text-2xl font-bold text-navy">{serviceDecision.heading}</h2>
+          {serviceDecision.paragraphs.map((paragraph) => (
+            <p key={paragraph} className="mt-4 max-w-3xl font-body leading-7 text-ink/70">{paragraph}</p>
+          ))}
         </div>
       </section>
 
