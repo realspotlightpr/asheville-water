@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { readSeoSiteData } from "./seo-site-data.mjs";
 import { cityProfiles, getCitySeo } from "./load-city-data.mjs";
+import { productCatalogSeo, getProductSeo } from "./load-product-seo.mjs";
 
 const root = process.cwd();
 const dist = path.join(root, "dist");
@@ -15,8 +16,7 @@ const routes = {
     intro: "Know what is in your water before you buy a system. Get a free personalized water report, clear recommendations, and licensed North Carolina plumber installation.",
   },
   "/products": {
-    title: "Home Water Filtration Systems | Asheville Water Specialists",
-    description: "Compare whole-home filtration, softening, well-water treatment, and drinking-water reverse osmosis systems for Western North Carolina homes.",
+    ...productCatalogSeo,
     heading: "Systems Built for Your Home's Water",
     intro: "Licensed installation and clear recommendations based on your city or well water.",
   },
@@ -180,8 +180,7 @@ const siteSource = fs.readFileSync(path.join(root, "src/data/site.ts"), "utf8");
 const { products, phone, phoneHref } = readSeoSiteData(siteSource);
 for (const product of products) {
   routes[`/products/${product.slug}`] = {
-    title: `${product.name} | Asheville Water Specialists`,
-    description: product.blurb,
+    ...getProductSeo(product),
     heading: product.name,
     intro: product.blurb,
     sections: [{ heading: "System Category", paragraphs: [product.category] }],

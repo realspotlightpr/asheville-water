@@ -1,3 +1,5 @@
+import { Seo } from "../components/Seo";
+import { getProductSeo } from "../data/productSeo";
 import { useParams, Link } from "react-router-dom";
 import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
@@ -12,6 +14,7 @@ export function ProductDetailPage() {
 
   return (
     <>
+      <Seo {...getProductSeo(product)} />
       <PageHeader eyebrow={product.category} title={product.name} />
 
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
@@ -58,7 +61,7 @@ export function ProductDetailPage() {
         </div>
 
         <div className="mt-12 text-center">
-          <Link to="/products" className="font-body text-sm font-semibold text-specialist hover:underline">
+          <Link to="/products/" className="font-body text-sm font-semibold text-specialist hover:underline">
             ← Back to all products
           </Link>
         </div>
