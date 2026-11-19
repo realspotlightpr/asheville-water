@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { readSeoSiteData } from "./seo-site-data.mjs";
 
 const root = process.cwd();
 const dist = path.join(root, "dist");
@@ -204,15 +205,32 @@ for (const slug of citySlugs) {
   };
 }
 const siteSource = fs.readFileSync(path.join(root, "src/data/site.ts"), "utf8");
-const productsSource = siteSource.match(/export const products[^=]*= \[([\s\S]*?)\n\];/)?.[1] || "";
-for (const slug of [...productsSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1])) {
-  if (slug === "" || citySlugs.includes(slug)) continue;
-  routes[`/products/${slug}`] = {
-    title: `${slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase())} | Asheville Water Specialists`,
-    description: "Explore a water treatment system with clear specifications and licensed Asheville-area installation.",
-    heading: slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
-    intro: "See what this system treats, who it is for, what installation includes, and whether it fits your home's water.",
+const { products, phone, phoneHref } = readSeoSiteData(siteSource);
+for (const product of products) {
+  routes[`/products/${product.slug}`] = {
+    title: `${product.name} | Asheville Water Specialists`,
+    description: product.blurb,
+    heading: product.name,
+    intro: product.blurb,
+    sections: [{ heading: "System Category", paragraphs: [product.category] }],
   };
+}
+
+// Include the same useful navigation and contact paths in the initial HTML.
+// These are existing routes; no URLs, sitemap entries, prices or claims added.
+const productLinks = products.map(({ slug, name }) => ({ href: `/products/${slug}/`, label: name }));
+const serviceLinks = [
+  { href: "/services/", label: "Water filtration and treatment services" },
+  { href: "/products/", label: "Compare water treatment systems" },
+  { href: "/service-areas/", label: "Western North Carolina service areas" },
+];
+for (const [route, page] of Object.entries(routes)) {
+  if (route === "/" || route === "/services" || route === "/products" || route === "/service-areas" || route === "/contact" || route.startsWith("/products/") || route.startsWith("/service-areas/")) {
+    page.links = serviceLinks.filter(({ href }) => href !== `${route}/`);
+    if (["/", "/services", "/products"].includes(route)) page.links = [...page.links, ...productLinks];
+    if (route === "/service-areas") page.links = [...page.links, ...cityProfiles.map(({ slug, name }) => ({ href: `/service-areas/${slug}/`, label: `Water treatment in ${name}` }))];
+    page.links = [...page.links, { href: "/contact/", label: "Get a Free Consultation" }, { href: phoneHref, label: `Call ${phone}` }];
+  }
 }
 
 const articleSource = fs.readFileSync(path.join(root, "src/data/articles.ts"), "utf8");
@@ -328,7 +346,8 @@ for (const [route, page] of Object.entries(routes)) {
   const canonicalPath = route === "/" ? "/" : `${route.replace(/\/$/, "")}/`;
   const canonicalUrl = `https://avlwaterspecialists.com${canonicalPath}`;
   const staticSections = page.sections?.map((section) => `<section><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</section>`).join("") || "";
-  const staticBody = `<div id="root"><main><h1>${escapeHtml(page.heading)}</h1><p>${escapeHtml(page.intro)}</p>${staticSections}<p>Asheville Water Specialists serves homeowners throughout Western North Carolina with water filtration, softening, reverse osmosis, and well-water treatment.</p></main></div>`;
+  const staticLinks = page.links ? `<nav aria-label="Water treatment and consultation"><ul>${page.links.map(({ href, label }) => `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`).join("")}</ul></nav>` : "";
+  const staticBody = `<div id="root"><main><h1>${escapeHtml(page.heading)}</h1><p>${escapeHtml(page.intro)}</p>${staticSections}${staticLinks}<p>Asheville Water Specialists serves homeowners throughout Western North Carolina with water filtration, softening, reverse osmosis, and well-water treatment.</p></main></div>`;
   const html = template
     .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(page.title)}</title>`)
     .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escapeHtml(page.description)}" />`)
