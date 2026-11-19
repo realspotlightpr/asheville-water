@@ -1,3 +1,4 @@
+import { commercialGuideServiceLinks } from "../data/serviceDecision";
 import { Link, useParams } from "react-router-dom";
 import { CtaBand } from "../components/CtaBand";
 import { Seo } from "../components/Seo";
@@ -59,9 +60,11 @@ export function RankingPage() {
             : /filter|filtration|sediment|iron|carbon|media/.test(topicText)
               ? "/resources/topics/sediment-iron-filtration/"
               : undefined;
+  const serviceLink = commercialGuideServiceLinks[page.slug];
   const helpfulLinks = [...new Set([
     ...page.internalLinks.filter((path) => path.startsWith("/")),
     ...(topicPath ? [topicPath] : []),
+    ...(serviceLink ? [serviceLink.href] : []),
   ])];
   const schema = [
     {
@@ -195,7 +198,7 @@ export function RankingPage() {
                   const linkedPage = newRankingPages.find(
                     (candidate) => candidate.slug === path,
                   );
-                  const label = linkedPage?.title ??
+                  const label = (serviceLink?.href === path ? serviceLink.label : undefined) ?? linkedPage?.title ??
                     (path === "/contact/"
                       ? "Ask a water specialist"
                       : path
