@@ -96,7 +96,5 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Netlify serves public/404.html with HTTP 404 for unmatched paths.
+# Valid React routes have directory index files from scripts/prerender.mjs.
