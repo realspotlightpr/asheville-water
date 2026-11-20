@@ -4,7 +4,7 @@ const formId = "2UXJNBw1z7leQKagbhm1";
 const formHeight = 834;
 
 type HighLevelFormProps = {
-  placement: "hero" | "home" | "contact";
+  placement: "hero" | "contact";
   className?: string;
 };
 
