@@ -1,6 +1,4 @@
 import { business } from "../data/site";
-import { HighLevelForm } from "./HighLevelForm";
-import { SmsConsentDisclosure } from "./SmsConsentDisclosure";
 
 function InfoIcon({ type }: { type: "phone" | "email" | "area" }) {
   const paths = {
@@ -81,20 +79,17 @@ export function HomeContact() {
           </div>
 
           <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xl sm:p-7">
-            <div className="mb-6 flex items-center justify-between gap-4 border-b border-slate-100 pb-5">
-              <div>
-                <p className="font-heading text-lg font-bold text-navy">Request Your Free Consultation</p>
-                <p className="mt-1 font-body text-xs text-ink/50">Secure form powered by HighLevel</p>
-              </div>
-              <span className="rounded-full bg-emerald-100 px-3 py-1 font-body text-[10px] font-bold uppercase tracking-wide text-emerald-800">Live Form</span>
-            </div>
-
-            <div className="overflow-hidden rounded-lg bg-white">
-              <HighLevelForm placement="home" />
-            </div>
-            <div className="mt-4 text-center">
-              <SmsConsentDisclosure />
-            </div>
+            <p className="font-heading text-lg font-bold text-navy">Request Your Free Consultation</p>
+            <p className="mt-2 font-body text-sm text-ink/75">
+              Tell us about your water and what you’d like to improve. We’ll help you understand your options.
+            </p>
+            <a
+              href="/contact/#contact"
+              className="mt-6 inline-flex min-h-11 items-center justify-center rounded-lg bg-amber px-5 py-3 font-heading text-sm font-bold text-navy hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"
+            >
+              Open the consultation form
+            </a>
+            <p className="mt-3 font-body text-xs text-ink/60">The form opens on our contact page.</p>
           </div>
         </div>
       </div>
