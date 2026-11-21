@@ -81,12 +81,11 @@ export function HomeContact() {
           </div>
 
           <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xl sm:p-7">
-            <div className="mb-6 flex items-center justify-between gap-4 border-b border-slate-100 pb-5">
+            <div className="mb-6 border-b border-slate-100 pb-5">
               <div>
                 <p className="font-heading text-lg font-bold text-navy">Request Your Free Consultation</p>
                 <p className="mt-1 font-body text-xs text-ink/50">Secure form powered by HighLevel</p>
               </div>
-              <span className="rounded-full bg-emerald-100 px-3 py-1 font-body text-[10px] font-bold uppercase tracking-wide text-emerald-800">Live Form</span>
             </div>
 
             <div className="overflow-hidden rounded-lg bg-white">
