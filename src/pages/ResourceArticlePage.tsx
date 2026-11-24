@@ -19,8 +19,8 @@ export function ResourceArticlePage() {
   if (!article) return <NotFound />;
 
   const path = `/resources/${article.slug}`;
-  const dateModified = article.slug === "pfas-in-wnc-water" ? "2026-10-04" : "2026-07-11";
-  const reviewedMonth = article.slug === "pfas-in-wnc-water" ? "October" : "July";
+  const dateModified = article.slug === "lead-pipes-older-homes" ? "2026-11-24" : article.slug === "pfas-in-wnc-water" ? "2026-10-04" : "2026-07-11";
+  const reviewedMonth = article.slug === "lead-pipes-older-homes" ? "November" : article.slug === "pfas-in-wnc-water" ? "October" : "July";
   const related = article.related.map((relatedSlug) => articleGuides.find((guide) => guide.slug === relatedSlug)).filter(Boolean);
   const schema = [
     {

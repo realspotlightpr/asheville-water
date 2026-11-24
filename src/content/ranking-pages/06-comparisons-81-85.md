@@ -2,12 +2,13 @@
 
 ## 81. Acid Neutralizer vs. Water Softener
 **Slug:** `/acid-neutralizer-vs-water-softener/`
-**Title tag:** Acid Neutralizer vs Water Softener: Which Do You Need?
-**Meta description:** Compare an acid neutralizer vs water softener, the test results each addresses, correct system order, and when a well-water home may need both.
-**H1:** Acid Neutralizer vs. Water Softener: Key Differences
+**Title tag:** Acid Neutralizer vs Water Softener for Well Water
+**Meta description:** Acid neutralizers raise low pH; water softeners remove hardness. Compare test results, symptoms, system order, and when an Asheville-area well may need both.
+**H1:** Acid Neutralizer vs. Water Softener: Which Does Your Well Need?
 **Query:** acid neutralizer vs water softener
+**Internal links:** /resources/well-water-testing-wnc; /services#well-water-treatment; /services#water-softeners; /services#whole-home-filtration; /contact/
 
-An acid neutralizer and a water softener solve different water-chemistry problems. A neutralizer raises low pH to reduce corrosive conditions, while a softener reduces calcium and magnesium hardness. Choosing from symptoms alone can miss the underlying issue, so begin with a representative water test.
+Choose an acid neutralizer when testing confirms low-pH, corrosive water. Choose a water softener when testing confirms calcium-and-magnesium hardness. They are not substitutes, and a well with both conditions may need a neutralizer first and a softener second. Begin with a representative water test rather than symptoms alone.
 
 ### What each system changes
 
@@ -24,6 +25,8 @@ Do not add a softener simply to address low pH, and do not expect an acid neutra
 ### Questions to ask before choosing
 
 Request results for pH, alkalinity, hardness, iron, manganese, copper, and lead when plumbing corrosion is a concern. Ask how the proposed system will affect finished-water hardness, pressure, maintenance, and annual media or salt use. Retesting after installation verifies that the treatment is doing the intended job.
+
+For an Asheville-area private well, use a certified laboratory result to define the problem, then compare the result with the treatment system's documented operating range. Our well-water testing guide explains what to measure, while the well-treatment, softening, and whole-home filtration service pages show the different scopes available after testing.
 
 ## 82. Iron Filter vs. Water Softener
 **Slug:** `/iron-filter-vs-water-softener/`

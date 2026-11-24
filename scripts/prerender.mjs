@@ -225,6 +225,23 @@ for (const [, slug, title, description, answer] of articleSource.matchAll(articl
     intro: answer,
   };
 }
+if (routes["/resources/lead-pipes-older-homes"]) {
+  routes["/resources/lead-pipes-older-homes"].links = [
+    "/resources/well-water-testing-wnc/",
+    "/services#whole-home-filtration",
+    "/contact/",
+  ];
+  routes["/resources/lead-pipes-older-homes"].references = [
+    {
+      label: "City of Asheville: Lead Awareness and Free Lead Testing",
+      url: "https://www.ashevillenc.gov/department/water/lead-awareness/",
+    },
+    {
+      label: "EPA: Certified Filters to Reduce Lead",
+      url: "https://www.epa.gov/water-research/consumer-tool-identifying-point-use-and-pitcher-filters-certified-reduce-lead",
+    },
+  ];
+}
 
 const resourceTopicRoutes = {
   "/resources/topics/well-water": {
@@ -301,6 +318,14 @@ for (const file of fs.readdirSync(rankingContentDir).filter((name) => name.endsW
     const title = block.match(/\*\*Title tag:\*\*\s*(.+)$/m)?.[1]?.trim() || `${draftTitle} | Asheville Water Specialists`;
     const firstParagraph = block.split(/\n\s*\n/).map((part) => part.trim()).find((part) => part && !part.startsWith("#") && !part.startsWith("**")) || `Practical guidance about ${draftTitle.toLowerCase()}.`;
     const description = block.match(/\*\*Meta description:\*\*\s*(.+)$/m)?.[1]?.trim() || `${firstParagraph.slice(0, 150).replace(/[.,;:]?$/, "")}…`;
+    const links = (block.match(/\*\*Internal links:\*\*\s*(.+)$/m)?.[1] || "")
+      .split(/;|,/)
+      .map((value) => value.trim())
+      .filter((value) => value.startsWith("/"));
+    const references = [...block.matchAll(/^[- ]*(.+?):\s*(https:\/\/\S+)$/gm)].map((match) => ({
+      label: match[1].trim(),
+      url: match[2].trim(),
+    }));
     const body = block
       .replace(/^## .+$/m, "")
       .replace(/^\*\*(?:URL|Slug|Title tag|Meta description|H1|Primary query|Query|Schema|Internal links|CTA|Production note):\*\*.*$/gm, "")
@@ -316,7 +341,7 @@ for (const file of fs.readdirSync(rankingContentDir).filter((name) => name.endsW
           .filter((paragraph) => paragraph && paragraph !== "---"),
       }))
       .filter((section) => section.paragraphs.length);
-    routes[route] = { title, description, heading, intro: firstParagraph, sections };
+    routes[route] = { title, description, heading, intro: firstParagraph, sections, links, references };
   }
 }
 
@@ -328,7 +353,13 @@ for (const [route, page] of Object.entries(routes)) {
   const canonicalPath = route === "/" ? "/" : `${route.replace(/\/$/, "")}/`;
   const canonicalUrl = `https://avlwaterspecialists.com${canonicalPath}`;
   const staticSections = page.sections?.map((section) => `<section><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</section>`).join("") || "";
-  const staticBody = `<div id="root"><main><h1>${escapeHtml(page.heading)}</h1><p>${escapeHtml(page.intro)}</p>${staticSections}<p>Asheville Water Specialists serves homeowners throughout Western North Carolina with water filtration, softening, reverse osmosis, and well-water treatment.</p></main></div>`;
+  const staticLinks = page.links?.length
+    ? `<nav aria-label="Helpful next steps"><h2>Helpful next steps</h2>${page.links.map((href) => `<a href="${escapeHtml(href)}">${escapeHtml(href.replace(/^\/+|\/$/g, "").replaceAll("-", " "))}</a>`).join(" ")}</nav>`
+    : "";
+  const staticReferences = page.references?.length
+    ? `<section><h2>Authoritative sources</h2><ul>${page.references.map((reference) => `<li><a href="${escapeHtml(reference.url)}" rel="noreferrer">${escapeHtml(reference.label)}</a></li>`).join("")}</ul></section>`
+    : "";
+  const staticBody = `<div id="root"><main><h1>${escapeHtml(page.heading)}</h1><p>${escapeHtml(page.intro)}</p>${staticSections}${staticLinks}${staticReferences}<p>Asheville Water Specialists serves homeowners throughout Western North Carolina with water filtration, softening, reverse osmosis, and well-water treatment.</p></main></div>`;
   const html = template
     .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(page.title)}</title>`)
     .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escapeHtml(page.description)}" />`)
@@ -374,12 +405,23 @@ const updatedRoutes = new Set([
   ...Object.keys(resourceTopicRoutes),
 ]);
 const refreshedOn = "2026-10-04";
+const novemberUpdatedRoutes = new Set([
+  "/acid-neutralizer-vs-water-softener",
+  "/troubleshooting-spin-down-filter-wnc",
+  "/winter-well-water-problems",
+  "/resources/lead-pipes-older-homes",
+]);
+const novemberRefreshedOn = "2026-11-24";
 const sitemapUrls = [...new Set(Object.keys(routes))]
   .sort((a, b) => a.localeCompare(b))
   .map((route) => {
     const priority = routePriorities[route] ?? (route.startsWith("/service-areas/") ? "0.8" : "0.7");
     const sitemapPath = route === "/" ? "/" : `${route.replace(/\/$/, "")}/`;
-    const lastModified = updatedRoutes.has(route) ? refreshedOn : defaultLastModified;
+    const lastModified = novemberUpdatedRoutes.has(route)
+      ? novemberRefreshedOn
+      : updatedRoutes.has(route)
+        ? refreshedOn
+        : defaultLastModified;
     return `  <url><loc>https://avlwaterspecialists.com${sitemapPath}</loc><lastmod>${lastModified}</lastmod><priority>${priority}</priority></url>`;
   })
   .join("\n");

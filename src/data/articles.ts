@@ -182,14 +182,15 @@ export const articleGuides: ArticleGuide[] = [
   },
   {
     slug: "lead-pipes-older-homes",
-    title: "Lead in Older Western NC Homes: Pipes, Testing, and Certified Filters",
-    description: "Learn how lead enters drinking water in older homes, why the utility result may not match your tap, how to test, and which certified filters can reduce exposure.",
+    title: "Lead Water Testing in Asheville: Free City Kits and Certified Filters",
+    description: "Learn how Asheville city-water customers can request a free lead test kit, why home plumbing matters, and how to choose a certified lead-reduction filter.",
     readTime: "9 min read",
     answer: "Lead usually enters household drinking water through corrosion of lead service lines, solder, brass, fixtures, or internal plumbing—not because it is visibly present in source water. The only way to know the level at a specific tap is proper sampling and laboratory testing.",
     takeaways: ["Lead has no taste, smell, or color in drinking water.", "Home-specific plumbing can make your result different from the utility average.", "Use cold water for drinking and cooking, and follow local flushing guidance.", "Choose filters certified for lead reduction under applicable NSF/ANSI standards."],
     sections: [
       { heading: "Where lead can enter a home’s water", paragraphs: ["Older service lines, lead solder, brass fixtures, galvanized pipe downstream of lead, and some plumbing components can contribute lead when water remains in contact with them. Corrosion depends on water chemistry, temperature, stagnation time, and plumbing condition.", "Asheville’s utility publishes lead sampling and a service-line inventory, but a system-wide result cannot describe every individual property or faucet." ] },
-      { heading: "How to test correctly", paragraphs: ["Contact the water utility or a state-certified laboratory for sampling instructions. Different sample types answer different questions: a first-draw sample evaluates water that sat in plumbing, while sequential or flushed samples can help locate the source.", "Do not rely on a general TDS meter or visual inspection. If construction, plumbing replacement, or disturbance occurred, ask whether follow-up testing is appropriate." ] },
+      { heading: "Free lead testing for City of Asheville water customers", paragraphs: ["The City of Asheville's current Lead Awareness program says city water customers can request a free lead test kit through RTI CleanPlus using their water account number. The city says kits typically ship within three business days and results generally arrive by email in four to six weeks. Customers of another utility should contact that utility about testing or its recent lead-and-copper results.", "This is an ongoing customer testing and service-line inventory program, not an active contamination alert. Check the City of Asheville Lead Awareness page for current eligibility, instructions, and timelines before requesting a kit." ] },
+      { heading: "How to test correctly", paragraphs: ["Follow the kit, water utility, or state-certified laboratory sampling instructions exactly. Different sample types answer different questions: a first-draw sample evaluates water that sat in plumbing, while sequential or flushed samples can help locate the source.", "Do not rely on a general TDS meter or visual inspection. If construction, plumbing replacement, or disturbance occurred, ask whether follow-up testing is appropriate." ] },
       { heading: "Immediate exposure-reduction steps", paragraphs: ["Until results are understood, use cold water for drinking, cooking, and infant formula because hot water can dissolve metals more readily. Follow utility guidance on flushing after stagnation and regularly clean faucet aerators where particles can collect.", "Boiling does not remove lead. As water evaporates, it can increase the concentration." ] },
       { heading: "Choosing a filter for lead", paragraphs: ["EPA advises selecting point-of-use or pitcher filters evaluated by an accredited certification body for lead reduction. Look for the exact reduction claim and standards listed on the product—not merely an NSF logo.", "EPA’s consumer tool highlights products certified for lead reduction to 5 ppb or less and particulate reduction capabilities under NSF/ANSI 53 and 42. Replace cartridges on schedule because capacity is finite." ] },
     ],
@@ -200,6 +201,7 @@ export const articleGuides: ArticleGuide[] = [
       { question: "Can I shower in water containing lead?", answer: "EPA guidance focuses on ingestion because human skin does not absorb lead in water. Drinking, cooking, and formula preparation are the primary concerns." },
     ],
     sources: [
+      { label: "City of Asheville: Lead Awareness and Free Lead Testing", url: "https://www.ashevillenc.gov/department/water/lead-awareness/" },
       { label: "EPA: Certified Filters to Reduce Lead", url: "https://www.epa.gov/water-research/consumer-tool-identifying-point-use-and-pitcher-filters-certified-reduce-lead" },
       { label: "City of Asheville: 2025 Water Quality Report", url: "https://www.ashevillenc.gov/department/water/water-quality-report/" },
     ],
