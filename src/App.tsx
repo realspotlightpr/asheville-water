@@ -1,3 +1,4 @@
+import { BadgesPage } from "./pages/BadgesPage";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
@@ -39,6 +40,7 @@ function App() {
           <Route path="service-areas" element={<ServiceAreasPage />} />
           <Route path="service-areas/:slug" element={<CityPage />} />
           <Route path="gallery" element={<GalleryPage />} />
+          <Route path="badges" element={<BadgesPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="resources" element={<ResourcesPage />} />
           <Route path="resources/library" element={<ResourceLibraryPage />} />

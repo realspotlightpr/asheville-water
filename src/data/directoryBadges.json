@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Best Rated Company",
+    "directory": "https://bestrated.company/us/",
+    "listing": "https://bestrated.company/us/water-softener-installers/asheville/#co-asheville-water-specialists",
+    "image": "https://bestrated.company/us/badge/518-asheville-water-specialists.svg?size=compact",
+    "alt": "Verified on Best Rated Company",
+    "width": 160, "height": 44,
+    "description": "Our Asheville water softener installer listing shows the website and contact details Best Rated Company checked."
+  },
+  {
+    "name": "Great Local Pros",
+    "directory": "https://greatlocalpros.com/",
+    "listing": "https://greatlocalpros.com/pros/asheville-water-specialists-candler-nc/",
+    "image": "https://greatlocalpros.com/badges/glp-verified.svg",
+    "alt": "Asheville Water Specialists is verified and listed on Great Local Pros",
+    "width": 180, "height": 52,
+    "description": "Find our Candler water treatment profile and business contact details in the Great Local Pros directory."
+  },
+  {
+    "name": "Houzz",
+    "directory": "https://www.houzz.com/",
+    "listing": "https://www.houzz.com/pro/colby-fifer/__public",
+    "image": "/assets/houzz-profile-logo.svg",
+    "alt": "Asheville Water Specialists on Houzz",
+    "width": 114, "height": 28,
+    "description": "Visit our professional profile on Houzz for information about our water treatment services in Western North Carolina."
+  }
+]

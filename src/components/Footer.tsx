@@ -1,3 +1,5 @@
+import { DirectoryBadge } from "./DirectoryBadge";
+import badges from "../data/directoryBadges.json";
 import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
 import { business, serviceCities, resourceArticles, social } from "../data/site";
@@ -13,6 +15,7 @@ const serviceLinks = [
 ];
 
 const companyLinks = [
+  { label: "Badges & Directory Profiles", to: "/badges/" },
   { label: "About Us", to: "/about" },
   { label: "Gallery", to: "/gallery" },
   { label: "FAQ", to: "/resources" },
@@ -99,23 +102,9 @@ export function Footer() {
                 </svg>
               </a>
             </div>
-            <a
-              href="https://bestrated.company/us/water-softener-installers/asheville/#co-asheville-water-specialists"
-              title="Asheville Water Specialists on Best Rated Company"
-              rel="nofollow"
-              className="mt-4 inline-block max-w-full rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-specialist"
-            >
-              <img
-                src="https://bestrated.company/us/badge/518-asheville-water-specialists.svg?size=compact"
-                alt="Verified on Best Rated Company"
-                width={160}
-                height={44}
-                loading="lazy"
-                decoding="async"
-                referrerPolicy="no-referrer"
-                className="block h-auto max-w-full"
-              />
-            </a>
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3" aria-label="Business directory profiles">
+              {badges.map(badge => <DirectoryBadge key={badge.name} badge={badge} />)}
+            </div>
           </div>
 
           <Column title="Services" links={serviceLinks} />
