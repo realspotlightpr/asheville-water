@@ -311,6 +311,27 @@ for (const file of fs.readdirSync(rankingContentDir).filter((name) => name.endsW
   }
 }
 
+// Add crawler-visible links only to the two November refreshes.
+const novemberGuideLinks = {
+  "/acid-neutralizer-vs-water-softener": [
+    { href: "/resources/well-water-testing-wnc/", label: "Well-water testing guide" },
+    { href: "/services/#well-water-treatment", label: "Well-water treatment services" },
+    { href: "/services/#water-softeners", label: "Water softeners" },
+    { href: "/services/#whole-home-filtration", label: "Whole-home filtration" },
+    { href: "/contact/", label: "Request a consultation" },
+  ],
+  "/winter-well-water-problems": [
+    { href: "/resources/well-water-testing-wnc/", label: "Well-water testing guide" },
+    { href: "/services/#well-water-treatment", label: "Well-water treatment services" },
+    { href: "/services/#whole-home-filtration", label: "Whole-home filtration" },
+    { href: "/contact/", label: "Request a consultation" },
+  ],
+};
+for (const [route, links] of Object.entries(novemberGuideLinks)) {
+  if (!routes[route]) throw new Error("Missing November guide: " + route);
+  routes[route].links = links;
+}
+
 // Only these existing commercial guides receive a named service next step.
 for (const [guidePath, link] of Object.entries(commercialGuideServiceLinks)) {
   const page = routes[guidePath.replace(/\/$/, "")];
@@ -378,7 +399,9 @@ const sitemapUrls = [...new Set(Object.keys(routes))]
   .map((route) => {
     const priority = routePriorities[route] ?? (route.startsWith("/service-areas/") ? "0.8" : "0.7");
     const sitemapPath = route === "/" ? "/" : `${route.replace(/\/$/, "")}/`;
-    const lastModified = updatedRoutes.has(route) ? refreshedOn : defaultLastModified;
+    const lastModified = Object.hasOwn(novemberGuideLinks, route)
+      ? "2026-11-25"
+      : updatedRoutes.has(route) ? refreshedOn : defaultLastModified;
     return `  <url><loc>https://avlwaterspecialists.com${sitemapPath}</loc><lastmod>${lastModified}</lastmod><priority>${priority}</priority></url>`;
   })
   .join("\n");

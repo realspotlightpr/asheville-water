@@ -27,14 +27,19 @@ export function RankingPage() {
     "/nsf-58-reverse-osmosis/",
     "/non-detect-water-test/",
   ]).has(page.slug);
-  const dateModified = octoberUpdated
+  const novemberUpdated = page.slug === "/acid-neutralizer-vs-water-softener/" || page.slug === "/winter-well-water-problems/";
+  const dateModified = novemberUpdated
+    ? "2026-11-25"
+    : octoberUpdated
     ? "2026-10-04"
     : recentlyUpdated
       ? "2026-09-24"
       : page.number >= 491
         ? "2026-08-17"
         : "2026-08-04";
-  const reviewedMonth = octoberUpdated
+  const reviewedMonth = novemberUpdated
+    ? "November"
+    : octoberUpdated
     ? "October"
     : recentlyUpdated
       ? "September"
