@@ -168,6 +168,7 @@ export function CityPage() {
             <p className="mt-5 font-body text-base leading-8 text-ink/70">{city.summary}</p>
             <p className="mt-5 font-body text-base leading-8 text-ink/70">{city.localContext}</p>
             <p className="mt-5 font-body text-base leading-8 text-ink/70">{city.homeownerNote}</p>
+            {city.slug === "asheville" && <Link to="/whole-home-water-filtration-asheville-nc/" className="mt-4 inline-flex font-semibold text-specialist underline">Explore whole-home water filtration in Asheville</Link>}
             {city.slug === "hendersonville" && (
               <p className="mt-5 font-body text-base leading-8 text-ink/70">
                 Homeowners comparing hardness and scale solutions can review our detailed{" "}

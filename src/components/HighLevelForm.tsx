@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { listenForConsultation } from "../lib/consultationTracking";
+import { useEffect, useRef } from "react";
 
 const formId = "2UXJNBw1z7leQKagbhm1";
 const formHeight = 834;
@@ -9,6 +10,10 @@ type HighLevelFormProps = {
 };
 
 export function HighLevelForm({ placement, className = "" }: HighLevelFormProps) {
+  const frame = useRef<HTMLIFrameElement>(null);
+  useEffect(() => {
+    if (frame.current) return listenForConsultation(frame.current, placement);
+  }, [placement]);
   const iframeId = `inline-${formId}-${placement}`;
 
   useEffect(() => {
@@ -23,7 +28,7 @@ export function HighLevelForm({ placement, className = "" }: HighLevelFormProps)
   }, []);
 
   return (
-    <iframe
+    <iframe ref={frame}
       src={`https://api.leadconnectorhq.com/widget/form/${formId}`}
       style={{ width: "100%", height: `${formHeight}px`, border: "none", borderRadius: "8px" }}
       className={className}

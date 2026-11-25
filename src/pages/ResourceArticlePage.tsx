@@ -155,6 +155,7 @@ export function ResourceArticlePage() {
             </div>
           </section>
 
+          {article.slug === "well-water-testing-wnc" && <Link to="/whole-home-water-filtration-asheville-nc/" className="mt-8 inline-flex font-semibold text-specialist underline">Planning whole-home filtration in Asheville? Explore installation options.</Link>}
           <div className="mt-12"><Link to="/resources" className="font-body text-sm font-semibold text-specialist hover:underline">← All resources</Link></div>
         </article>
       </main>

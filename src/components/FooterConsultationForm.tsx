@@ -1,3 +1,4 @@
+import { listenForConsultation } from "../lib/consultationTracking";
 import { useEffect, useRef, useState } from "react";
 
 const defaultHeight = 834;
@@ -6,7 +7,8 @@ export function FooterConsultationForm() {
   const resizeRef = useRef<ResizeObserver | null>(null);
   const [height, setHeight] = useState(defaultHeight);
 
-  useEffect(() => () => resizeRef.current?.disconnect(), []);
+  const stopTracking = useRef<(() => void) | undefined>(undefined);
+  useEffect(() => () => { resizeRef.current?.disconnect(); stopTracking.current?.(); }, []);
 
   return (
     <iframe
@@ -18,7 +20,10 @@ export function FooterConsultationForm() {
       onLoad={(event) => {
         resizeRef.current?.disconnect();
         const content = event.currentTarget.contentDocument?.getElementById("consultation-widget");
+        stopTracking.current?.();
         if (!content) return;
+        const frame = content.querySelector("iframe");
+        if (frame) stopTracking.current = listenForConsultation(frame, "homepage-footer");
         const resize = () => {
           const nextHeight = Math.ceil(content.getBoundingClientRect().height);
           if (nextHeight > 0) setHeight(nextHeight);
