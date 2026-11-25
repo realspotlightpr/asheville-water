@@ -99,6 +99,23 @@ export function Footer() {
                 </svg>
               </a>
             </div>
+            <a
+              href="https://bestrated.company/us/water-softener-installers/asheville/#co-asheville-water-specialists"
+              title="Asheville Water Specialists on Best Rated Company"
+              rel="nofollow"
+              className="mt-4 inline-block max-w-full rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-specialist"
+            >
+              <img
+                src="https://bestrated.company/us/badge/518-asheville-water-specialists.svg?size=compact"
+                alt="Verified on Best Rated Company"
+                width={160}
+                height={44}
+                loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
+                className="block h-auto max-w-full"
+              />
+            </a>
           </div>
 
           <Column title="Services" links={serviceLinks} />
