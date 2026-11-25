@@ -14,12 +14,17 @@ export function ConversionTracking() {
         page_path: window.location.pathname,
       };
 
+      if (link.protocol === "tel:") {
+        trackAnalyticsEvent("phone_clicked", { page_path: window.location.pathname });
+        return;
+      }
+
       if (href.includes("gosimplelab.com/store/AWSPE")) {
         trackAnalyticsEvent("water_test_kit_clicked", common);
         return;
       }
 
-      if (link.pathname === "/contact/" || link.pathname === "/contact") {
+      if (link.hash === "#contact" || link.pathname === "/contact/" || link.pathname === "/contact") {
         trackAnalyticsEvent("consultation_cta_clicked", common);
         return;
       }

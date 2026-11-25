@@ -11,7 +11,10 @@ const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
 
 const directoryBadges = JSON.parse(fs.readFileSync(path.join(root, "src/data/directoryBadges.json"), "utf8"));
 
+const filtration = JSON.parse(fs.readFileSync(path.join(root, "src/data/ashevilleFiltration.json"), "utf8"));
+const filtrationRoute = filtration.path.slice(0, -1);
 const routes = {
+  [filtrationRoute]: { ...filtration, links: [{ href: "/contact/", label: "Get my free consultation" }, { href: "tel:+18285510885", label: "Call (828) 551-0885" }] },
   "/badges": {
     title: "Business Badges & Directory Profiles | Asheville Water Specialists",
     description: "Find Asheville Water Specialists on Best Rated Company, Great Local Pros and Houzz.",
@@ -348,6 +351,11 @@ for (const [guidePath, link] of Object.entries(commercialGuideServiceLinks)) {
   page.sections.push({ heading: "Explore Our Services", paragraphs: [], links: [link] });
 }
 
+const filtrationLinkSources = ["/", "/service-areas/asheville", "/resources/well-water-testing-wnc"];
+for (const route of filtrationLinkSources) {
+  (routes[route].links ||= []).push({ href: filtration.path, label: "Whole-home water filtration in Asheville" });
+}
+
 function escapeHtml(value) {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
@@ -408,7 +416,7 @@ const sitemapUrls = [...new Set(Object.keys(routes))]
   .map((route) => {
     const priority = routePriorities[route] ?? (route.startsWith("/service-areas/") ? "0.8" : "0.7");
     const sitemapPath = route === "/" ? "/" : `${route.replace(/\/$/, "")}/`;
-    const lastModified = route === "/badges" ? "2026-11-25" : Object.hasOwn(novemberGuideLinks, route)
+    const lastModified = (route === "/badges" || route === filtrationRoute || filtrationLinkSources.includes(route)) ? "2026-11-25" : Object.hasOwn(novemberGuideLinks, route)
       ? "2026-11-25"
       : updatedRoutes.has(route) ? refreshedOn : defaultLastModified;
     return `  <url><loc>https://avlwaterspecialists.com${sitemapPath}</loc><lastmod>${lastModified}</lastmod><priority>${priority}</priority></url>`;
