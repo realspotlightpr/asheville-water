@@ -9,7 +9,16 @@ const root = process.cwd();
 const dist = path.join(root, "dist");
 const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
 
+const directoryBadges = JSON.parse(fs.readFileSync(path.join(root, "src/data/directoryBadges.json"), "utf8"));
+
 const routes = {
+  "/badges": {
+    title: "Business Badges & Directory Profiles | Asheville Water Specialists",
+    description: "Find Asheville Water Specialists on Best Rated Company, Great Local Pros and Houzz.",
+    heading: "Business badges & directory profiles",
+    intro: "Open a profile to see how each directory lists our business.",
+    sections: directoryBadges.map(badge => ({ heading: badge.name, paragraphs: [badge.description], links: [{ href: badge.listing, label: "Our listing on " + badge.name }, { href: badge.directory, label: "Browse " + badge.name }] })),
+  },
   "/": {
     title: "Asheville Water Specialists | Whole-Home Water Filtration in WNC",
     description: "Whole-home water filtration, softeners, reverse osmosis, and well-water treatment for Asheville and Western North Carolina.",
@@ -399,7 +408,7 @@ const sitemapUrls = [...new Set(Object.keys(routes))]
   .map((route) => {
     const priority = routePriorities[route] ?? (route.startsWith("/service-areas/") ? "0.8" : "0.7");
     const sitemapPath = route === "/" ? "/" : `${route.replace(/\/$/, "")}/`;
-    const lastModified = Object.hasOwn(novemberGuideLinks, route)
+    const lastModified = route === "/badges" ? "2026-11-25" : Object.hasOwn(novemberGuideLinks, route)
       ? "2026-11-25"
       : updatedRoutes.has(route) ? refreshedOn : defaultLastModified;
     return `  <url><loc>https://avlwaterspecialists.com${sitemapPath}</loc><lastmod>${lastModified}</lastmod><priority>${priority}</priority></url>`;
